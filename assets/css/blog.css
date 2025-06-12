@@ -1,7 +1,7 @@
 :root {
     --primary-color: #1434CB;
     --color-dark-navy: #0F172A;
-    --primary-hover-color: #01D1EE;
+    --primary-hover-color: #fcc015;
     --primary-stroke: #D3DDFD;
     --light-heading: #484848;
     --light-paragraph: #333;
@@ -1731,15 +1731,6 @@ footer {
         cursor: pointer;
     }
 
-    .navbar-list > li:hover {
-        color: var(--primary-hover-color);
-    }
-
-    .navbar-list > li:hover svg {
-        stroke: var(--primary-hover-color);
-        transform: rotate(180deg);
-    }
-
     .navbar-list > li {
         font-size: 14px;
     }
@@ -1770,15 +1761,6 @@ footer {
         display: flex;
         gap: 4rem;
         align-items: center;
-    }
-
-    .navbar-list > li:hover .nav-link {
-        color: var(--primary-hover-color);
-    }
-
-    .navbar-list > li:hover svg {
-        stroke: var(--primary-hover-color);
-        transform: rotate(180deg);
     }
 
     .mobile-booster-white-logo {
