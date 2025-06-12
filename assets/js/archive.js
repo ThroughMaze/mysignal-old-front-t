@@ -26,6 +26,27 @@ document.querySelector('.subscribe-form').addEventListener('submit', (e) => {
     }
 })
 
+// Newsletter form
+const newsletterForm = document.querySelector('.newsletter-form');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (e.currentTarget.checkValidity()) {
+            // Show success message
+            const formContainer = e.currentTarget.closest('.card-body');
+            formContainer.innerHTML = `
+                <div class="text-center py-4">
+                    <i class="fas fa-check-circle text-success" style="font-size: 3rem;"></i>
+                    <h4 class="mt-3" style="color: var(--primary-color);">Thank You!</h4>
+                    <p class="mb-0">You've been successfully subscribed to our newsletter.</p>
+                </div>
+            `;
+        } else {
+            e.currentTarget.classList.add('was-validated');
+        }
+    });
+}
+
 // Mobile menu toggle
 document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.querySelector('[data-bs-toggle="collapse"]');
@@ -57,13 +78,59 @@ document.querySelectorAll('.country-item').forEach((country) => {
     })
 })
 
+// Back to top button
+const backToTopButton = document.getElementById('back-to-top');
+if (backToTopButton) {
+    // Show button when user scrolls down 300px
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+
+    // Scroll to top when button is clicked
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Product search functionality
+const productSearch = document.getElementById('productSearch');
+if (productSearch) {
+    productSearch.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        const productCards = document.querySelectorAll('.archive-product-card');
+        
+        productCards.forEach(card => {
+            const title = card.querySelector('h4').textContent.toLowerCase();
+            const description = card.querySelector('.product-description').textContent.toLowerCase();
+            const features = Array.from(card.querySelectorAll('.feature-tag')).map(tag => tag.textContent.toLowerCase());
+            
+            const matchesSearch = 
+                title.includes(searchTerm) || 
+                description.includes(searchTerm) || 
+                features.some(feature => feature.includes(searchTerm));
+            
+            card.closest('.col-12').style.display = matchesSearch ? 'block' : 'none';
+        });
+        
+        updateResultsCount();
+    });
+}
+
 // Archive-specific functionality
 class ArchiveManager {
     constructor() {
         this.filters = {
             coverage: [],
             signal: [],
-            carrier: []
+            carrier: [],
+            price: []
         };
         this.sortBy = 'newest';
         this.currentPage = 1;
@@ -77,6 +144,7 @@ class ArchiveManager {
         this.bindEvents();
         this.initPagination();
         this.updateResultsCount();
+        this.setupLoadMore();
     }
 
     bindEvents() {
@@ -134,7 +202,8 @@ class ArchiveManager {
         this.filters = {
             coverage: [],
             signal: [],
-            carrier: []
+            carrier: [],
+            price: []
         };
         
         // Uncheck all checkboxes
@@ -145,6 +214,12 @@ class ArchiveManager {
         // Reset sort
         document.getElementById('sort-select').value = 'newest';
         this.sortBy = 'newest';
+        
+        // Reset search
+        const searchInput = document.getElementById('productSearch');
+        if (searchInput) {
+            searchInput.value = '';
+        }
         
         // Apply changes
         this.applyFilters();
@@ -272,62 +347,110 @@ class ArchiveManager {
         const paginationContainer = document.querySelector('.pagination');
         if (!paginationContainer) return;
 
-        this.renderPagination();
-    }
-
-    renderPagination() {
-        const paginationContainer = document.querySelector('.pagination');
-        const totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
+        // Set up pagination buttons
+        const prevButton = paginationContainer.querySelector('.prev');
+        const nextButton = paginationContainer.querySelector('.next');
+        const pageButtons = paginationContainer.querySelectorAll('.page-btn:not(.prev):not(.next)');
         
-        if (totalPages <= 1) {
-            paginationContainer.innerHTML = '';
-            return;
-        }
-
-        let paginationHTML = '';
+        // Add click events
+        pageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                pageButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Update current page
+                this.currentPage = parseInt(button.textContent);
+                
+                // Enable/disable prev/next buttons
+                prevButton.disabled = this.currentPage === 1;
+                nextButton.disabled = this.currentPage === pageButtons.length;
+                
+                // Scroll to top of results
+                document.querySelector('.archive-results-header').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
         
-        // Previous button
-        paginationHTML += `
-            <button class="page-btn prev ${this.currentPage === 1 ? 'disabled' : ''}" 
-                    onclick="archiveManager.goToPage(${this.currentPage - 1})"
-                    ${this.currentPage === 1 ? 'disabled' : ''}>
-                <
-            </button>
-        `;
-        
-        // Page numbers
-        for (let i = 1; i <= totalPages; i++) {
-            if (i === this.currentPage) {
-                paginationHTML += `<button class="page-btn active">${i}</button>`;
-            } else {
-                paginationHTML += `<button class="page-btn" onclick="archiveManager.goToPage(${i})">${i}</button>`;
+        // Prev button
+        prevButton.addEventListener('click', () => {
+            if (this.currentPage > 1) {
+                this.currentPage--;
+                
+                // Update active button
+                pageButtons.forEach(btn => {
+                    if (parseInt(btn.textContent) === this.currentPage) {
+                        btn.click();
+                    }
+                });
             }
-        }
+        });
         
         // Next button
-        paginationHTML += `
-            <button class="page-btn next ${this.currentPage === totalPages ? 'disabled' : ''}" 
-                    onclick="archiveManager.goToPage(${this.currentPage + 1})"
-                    ${this.currentPage === totalPages ? 'disabled' : ''}>
-                >
-            </button>
-        `;
-        
-        paginationContainer.innerHTML = paginationHTML;
+        nextButton.addEventListener('click', () => {
+            if (this.currentPage < pageButtons.length) {
+                this.currentPage++;
+                
+                // Update active button
+                pageButtons.forEach(btn => {
+                    if (parseInt(btn.textContent) === this.currentPage) {
+                        btn.click();
+                    }
+                });
+            }
+        });
     }
 
-    goToPage(page) {
-        const totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
+    setupLoadMore() {
+        const loadMoreBtn = document.getElementById('load-more');
+        if (!loadMoreBtn) return;
         
-        if (page < 1 || page > totalPages) return;
-        
-        this.currentPage = page;
-        this.renderPagination();
-        
-        // Scroll to top of results
-        document.querySelector('.archive-results-header').scrollIntoView({
-            behavior: 'smooth'
+        loadMoreBtn.addEventListener('click', () => {
+            // Show loading state
+            loadMoreBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Loading...';
+            loadMoreBtn.disabled = true;
+            
+            // Simulate loading delay
+            setTimeout(() => {
+                this.loadMoreProducts();
+                
+                // Reset button
+                loadMoreBtn.innerHTML = '<i class="fas fa-sync-alt me-2"></i>Load More Products';
+                loadMoreBtn.disabled = false;
+            }, 1000);
         });
+    }
+
+    loadMoreProducts() {
+        const container = document.querySelector('.archive-products-grid .row');
+        const productTemplate = container.querySelector('.col-12').cloneNode(true);
+        
+        // Add 3 more products
+        for (let i = 0; i < 3; i++) {
+            const newProduct = productTemplate.cloneNode(true);
+            
+            // Randomize some details to make it look different
+            const productCard = newProduct.querySelector('.archive-product-card');
+            const productTitle = newProduct.querySelector('h4');
+            const productPrice = newProduct.querySelector('.current-price');
+            
+            productTitle.textContent = `Signal Booster ${Math.floor(Math.random() * 1000)}`;
+            productPrice.textContent = `£${(Math.random() * 500 + 100).toFixed(2)}`;
+            
+            // Remove any badges
+            const badge = newProduct.querySelector('.product-badge');
+            if (badge) badge.remove();
+            
+            // Add to container
+            container.appendChild(newProduct);
+        }
+        
+        // Update total count
+        this.totalItems += 3;
+        this.updateResultsCount();
     }
 }
 
@@ -336,3 +459,40 @@ const archiveManager = new ArchiveManager();
 
 // Make it globally available for pagination buttons
 window.archiveManager = archiveManager;
+
+// Add CSS for back to top button
+const style = document.createElement('style');
+style.textContent = `
+    .back-to-top-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-hover-color));
+        color: white;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 99;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .back-to-top-btn.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .back-to-top-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+`;
+document.head.appendChild(style);
