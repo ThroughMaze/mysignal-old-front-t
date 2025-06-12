@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script type="module" crossorigin src="/assets/js/archive.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/js/bootstrap.js">
   <link rel="modulepreload" crossorigin href="/assets/js/_commonjsHelpers.js">
@@ -24,8 +25,9 @@
                      class="mobile-booster-logo"/>
             </a>
             <div id="header-icons" class="d-flex d-lg-none">
-                <a id="cart" href="#">
+                <a id="cart" href="cart.html" class="cart-icon-container">
                     <img src="data:image/svg+xml,%3csvg%20width='48'%20height='48'%20viewBox='0%200%2048%2048'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M31.4684%2035H16.0004C15.7168%2035.0001%2015.4364%2034.9398%2015.1779%2034.8232C14.9193%2034.7066%2014.6885%2034.5364%2014.5008%2034.3238C14.3131%2034.1112%2014.1727%2033.8611%2014.089%2033.5901C14.0054%2033.3191%2013.9803%2033.0334%2014.0154%2032.752L15.7344%2019H31.7344L33.4534%2032.752C33.4886%2033.0334%2033.4635%2033.3191%2033.3798%2033.5901C33.2961%2033.8611%2033.1558%2034.1112%2032.9681%2034.3238C32.7803%2034.5364%2032.5495%2034.7066%2032.291%2034.8232C32.0324%2034.9398%2031.7521%2035.0001%2031.4684%2035Z'%20stroke='black'%20stroke-width='2'%20stroke-miterlimit='10'%20stroke-linecap='square'/%3e%3cpath%20d='M19.7344%2022V17C19.7378%2015.9402%2020.1603%2014.9248%2020.9097%2014.1754C21.6591%2013.426%2022.6746%2013.0034%2023.7344%2013V13C24.7942%2013.0034%2025.8096%2013.426%2026.559%2014.1754C27.3084%2014.9248%2027.7309%2015.9402%2027.7344%2017V22'%20stroke='black'%20stroke-width='2'%20stroke-miterlimit='10'%20stroke-linecap='square'/%3e%3c/svg%3e"/>
+                    <span class="cart-count">3</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                         aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -114,8 +116,9 @@
                         <img class="logo" src="https://flagcdn.com/gb.svg">
                         <img src="data:image/svg+xml,%3csvg%20width='12'%20height='8'%20viewBox='0%200%2012%208'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M1%201.5L6%206.5L11%201.5'%20stroke='black'%20stroke-width='1.4'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"/>
                     </div>
-                    <a id="cart-desktop-header" href="#">
+                    <a id="cart-desktop-header" href="cart.html" class="cart-icon-container">
                         <img src="data:image/svg+xml,%3csvg%20width='48'%20height='48'%20viewBox='0%200%2048%2048'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M31.4684%2035H16.0004C15.7168%2035.0001%2015.4364%2034.9398%2015.1779%2034.8232C14.9193%2034.7066%2014.6885%2034.5364%2014.5008%2034.3238C14.3131%2034.1112%2014.1727%2033.8611%2014.089%2033.5901C14.0054%2033.3191%2013.9803%2033.0334%2014.0154%2032.752L15.7344%2019H31.7344L33.4534%2032.752C33.4886%2033.0334%2033.4635%2033.3191%2033.3798%2033.5901C33.2961%2033.8611%2033.1558%2034.1112%2032.9681%2034.3238C32.7803%2034.5364%2032.5495%2034.7066%2032.291%2034.8232C32.0324%2034.9398%2031.7521%2035.0001%2031.4684%2035Z'%20stroke='black'%20stroke-width='2'%20stroke-miterlimit='10'%20stroke-linecap='square'/%3e%3cpath%20d='M19.7344%2022V17C19.7378%2015.9402%2020.1603%2014.9248%2020.9097%2014.1754C21.6591%2013.426%2022.6746%2013.0034%2023.7344%2013V13C24.7942%2013.0034%2025.8096%2013.426%2026.559%2014.1754C27.3084%2014.9248%2027.7309%2015.9402%2027.7344%2017V22'%20stroke='black'%20stroke-width='2'%20stroke-miterlimit='10'%20stroke-linecap='square'/%3e%3c/svg%3e"/>
+                        <span class="cart-count">3</span>
                     </a>
                 </div>
             </div>
@@ -162,11 +165,16 @@
 
 <main>
     <!-- Enhanced Archive Hero Section -->
-    <section class="archive-hero-section blog-hero-section">
+    <section class="archive-hero-section">
         <div class="hero-section-content container archive-hero-content">
             <div class="hero-text">
-                <h1>Signal Boosters Archive</h1>
+                <h1>Signal Boosters Collection</h1>
                 <p class="hero-subtext">Discover our premium collection of mobile signal boosters designed for every space and need. From compact home solutions to enterprise-grade systems.</p>
+                
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search for signal boosters..." id="productSearch">
+                </div>
             </div>
             <div class="hero-illustration">
                 <img src="/assets/images/2150040428-removebg-preview%202.png"
@@ -176,12 +184,12 @@
     </section>
 
     <!-- Breadcrumb Navigation -->
-    <section class="container mt-4">
+    <section class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="/archive.html">Archive</a></li>
-                <li class="breadcrumb-item active" aria-current="page">All Categories</li>
+                <li class="breadcrumb-item"><a href="/archive.html">Shop</a></li>
+                <li class="breadcrumb-item active" aria-current="page">All Signal Boosters</li>
             </ol>
         </nav>
     </section>
@@ -192,7 +200,7 @@
             <div class="row">
                 <div class="col-12 col-lg-3">
                     <div class="filter-sidebar">
-                        <h3>Filter Products</h3>
+                        <h3>Refine Your Search</h3>
                         
                         <div class="filter-group">
                             <h5>Coverage Area</h5>
@@ -256,6 +264,28 @@
                                 <label class="filter-option">
                                     <input type="checkbox" name="carrier" value="three">
                                     <span>Three UK</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h5>Price Range</h5>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" name="price" value="budget">
+                                    <span>Under £200</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="price" value="mid">
+                                    <span>£200 - £500</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="price" value="premium">
+                                    <span>£500 - £800</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="price" value="enterprise">
+                                    <span>Over £800</span>
                                 </label>
                             </div>
                         </div>
@@ -448,6 +478,13 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Load More Button -->
+                    <div class="text-center mb-5">
+                        <button class="btn-primary px-5 py-3" id="load-more">
+                            <i class="fas fa-sync-alt me-2"></i>Load More Products
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -455,11 +492,23 @@
 
     <!-- Enhanced Pagination -->
     <section class="pagination-container">
-        <div class="pagination"></div>
+        <div class="pagination">
+            <button class="page-btn prev" disabled>
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <span class="dots">...</span>
+            <button class="page-btn">8</button>
+            <button class="page-btn next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
     </section>
 
     <!-- Enhanced Related Categories -->
-    <section class="container">
+    <section class="container mb-5">
         <h2 style="text-align: center; margin-bottom: 3rem; color: var(--color-dark-navy); font-weight: 700;">Browse by Category</h2>
         <div class="row row-gap-4 mt-4">
             <div class="col-12 col-md-6 col-lg-3">
@@ -501,6 +550,35 @@
                     <p>Large-scale installations and custom solutions</p>
                     <span class="category-count">4 products</span>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="container-fluid py-5 mb-5" style="background-color: #F0F4FF;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4" style="color: var(--primary-color); font-weight: 700;">Stay Updated</h2>
+                    <p class="mb-4" style="color: var(--Blue-Gray-600); font-size: 1.125rem;">Subscribe to our newsletter for exclusive offers, new product announcements, and expert tips to improve your signal quality.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm rounded-4 p-4">
+                        <div class="card-body">
+                            <form class="newsletter-form needs-validation" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-md-8">
+                                        <input type="email" class="form-control form-control-lg" placeholder="Your email address" required>
+                                        <div class="invalid-feedback">Please provide a valid email address.</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="submit" class="btn-primary w-100 h-100">Subscribe</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -635,6 +713,11 @@
         </div>
     </div>
 </div>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" class="back-to-top-btn">
+    <i class="fas fa-arrow-up"></i>
+</button>
 
 </body>
 </html>
