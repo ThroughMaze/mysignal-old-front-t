@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Mobile Booster - Clear signal, every time</title>
-    <link rel="stylesheet" href="./assets/css/bootstrap.css"/>
-    <link rel="stylesheet" href="assets/css/index.css"/>
+    <title>Mobile Booster</title>
+    <!-- Load CSS files -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/assets/css/index.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Load JavaScript files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.min.js"
+            integrity="sha512-2sI5N95oT62ughlApCe/8zL9bQAXKsPPtZZI2KE3dznuZ8HpE2gTMHYzyVN7OoSPJCM1k9ZkhcCo3FvOirIr2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="/assets/js/index.js"></script>
 </head>
 <body>
 <header class="header-blue">
@@ -29,6 +35,12 @@
                     </div>
                 </button>
             </div>
+            <a href="#hero-section-content" id="up-btn" class="go-to-top">
+            <span class="circle-down-arrow">
+<img src="assets/images/landing/circle-up-arrow.svg"/>
+            </span>
+                <p>Find my booster quiz</p>
+            </a>
             <div class="collapse navbar-collapse d-none d-lg-block" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-lg-0 navbar-nav-scroll navbar-list"
                     style="--bs-scroll-height: 100px;">
@@ -42,21 +54,21 @@
                         <ul role="menu" class="navbar-dropdown dropdown-menu" data-bs-popper="static">
                             <li class="navbar-dropdown-list">
                                 <p class="navbar-dropdown-heading">Shop by coverage</p>
-                                <a href="product.html" class="navbar-dropdown-links">Small Space (0: 300 SQM)</a>
-                                <a href="product.html" class="navbar-dropdown-links">Midsize Space (300 : 500 SQM)</a>
-                                <a href="product.html" class="navbar-dropdown-links">Large Space (500: 1000 SQM)</a>
-                                <a href="product.html" class="navbar-dropdown-links">huge space (1000 : 5000 SQM)</a>
+                                <a href="#" class="navbar-dropdown-links">Small Space (0: 300 SQM)</a>
+                                <a href="#" class="navbar-dropdown-links">Midsize Space (300 : 500 SQM)</a>
+                                <a href="#" class="navbar-dropdown-links">Large Space (500: 1000 SQM)</a>
+                                <a href="#" class="navbar-dropdown-links">huge space (1000 : 5000 SQM)</a>
                             </li>
                             <li class="navbar-dropdown-list">
                                 <p class="navbar-dropdown-heading">Shop by signal type</p>
-                                <a href="product.html" class="navbar-dropdown-links">3G</a>
-                                <a href="product.html" class="navbar-dropdown-links">4G</a>
-                                <a href="product.html" class="navbar-dropdown-links">5G</a>
-                                <a href="product.html" class="navbar-dropdown-links">3G & 4G & 5G</a>
+                                <a href="#" class="navbar-dropdown-links">3G</a>
+                                <a href="#" class="navbar-dropdown-links">4G</a>
+                                <a href="#" class="navbar-dropdown-links">5G</a>
+                                <a href="#" class="navbar-dropdown-links">3G & 4G & 5G</a>
                             </li>
                             <li class="navbar-dropdown-list navbar-dropdown-suggestion">
                                 <img src="assets/images/landing/Black1%201.png"/>
-                                <a href="product.html" class="btn-primary w-100">show more</a>
+                                <a href="#" class="btn-primary w-100">show more</a>
                             </li>
                         </ul>
                     </li>
@@ -69,15 +81,15 @@
                         </div>
                         <div class="navbar-dropdown">
                             <div class="navbar-dropdown-list">
-                                <a href="product.html" class="navbar-dropdown-heading-lighter">Vodafone</a>
-                                <a href="product.html" class="navbar-dropdown-heading-lighter">O2</a>
-                                <a href="product.html" class="navbar-dropdown-heading-lighter">giffgaff</a>
-                                <a href="product.html" class="navbar-dropdown-heading-lighter">Tesco Mobile</a>
-                                <a href="product.html" class="navbar-dropdown-heading-lighter">EE</a>
-                                <a href="product.html" class="navbar-dropdown-heading-lighter">BT</a>
-                                <a href="product.html" class="navbar-dropdown-heading-lighter">ID UK</a>
-                                <a href="product.html" class="navbar-dropdown-heading-lighter">Three UK</a>
-                                <a href="product.html" class="navbar-dropdown-heading-lighter">Virgin UK</a>
+                                <a href="#" class="navbar-dropdown-heading-lighter">Vodafone</a>
+                                <a href="#" class="navbar-dropdown-heading-lighter">O2</a>
+                                <a href="#" class="navbar-dropdown-heading-lighter">giffgaff</a>
+                                <a href="#" class="navbar-dropdown-heading-lighter">Tesco Mobile</a>
+                                <a href="#" class="navbar-dropdown-heading-lighter">EE</a>
+                                <a href="#" class="navbar-dropdown-heading-lighter">BT</a>
+                                <a href="#" class="navbar-dropdown-heading-lighter">ID UK</a>
+                                <a href="#" class="navbar-dropdown-heading-lighter">Three UK</a>
+                                <a href="#" class="navbar-dropdown-heading-lighter">Virgin UK</a>
                             </div>
                         </div>
                     </li>
@@ -90,13 +102,13 @@
                         </div>
                         <ul class="navbar-dropdown dropdown-menu" id="frequency-dropdown">
                             <li class="navbar-dropdown-list">
-                                <a href="product.html" class="navbar-dropdown-heading-lighter">700 MHz (5G)</a>
-                                <a href="product.html" class="navbar-dropdown-heading-lighter">700/800 MHz</a>
-                                <a href="product.html" class="navbar-dropdown-heading-lighter">700/1800 MHz</a>
-                                <a href="product.html" class="navbar-dropdown-heading-lighter">900/210 MHz</a>
-                                <a href="product.html" class="navbar-dropdown-heading-lighter">800/2600 MHz</a>
-                                <a href="product.html" class="navbar-dropdown-heading-lighter">800/900/2100 MHz</a>
-                                <a href="product.html" class="navbar-dropdown-heading-lighter">700/900/1800 /2100/2600 MHz</a>
+                                <a href="#" class="navbar-dropdown-heading-lighter">700 MHz (5G)</a>
+                                <a href="#" class="navbar-dropdown-heading-lighter">700/800 MHz</a>
+                                <a href="#" class="navbar-dropdown-heading-lighter">700/1800 MHz</a>
+                                <a href="#" class="navbar-dropdown-heading-lighter">900/210 MHz</a>
+                                <a href="#" class="navbar-dropdown-heading-lighter">800/2600 MHz</a>
+                                <a href="#" class="navbar-dropdown-heading-lighter">800/900/2100 MHz</a>
+                                <a href="#" class="navbar-dropdown-heading-lighter">700/900/1800 /2100/2600 MHz</a>
                             </li>
                         </ul>
                     </li>
@@ -104,14 +116,9 @@
                         <a class="nav-link" href="#" role="button">Floor Plan Analysis</a>
                     </li>
                 </ul>
-                <div class="d-none d-lg-flex gap-3">
-                    <div id="openPopup" class="country-logo" data-bs-toggle="modal" data-bs-target="#country-modal">
-                        <img class="logo" src="https://flagcdn.com/gb.svg">
-                        <img src="assets/images/landing/white-down-arrow.svg"/>
-                    </div>
-                    <a id="cart-desktop-header" href="#">
-                        <img src="assets/images/landing/cart-white.svg"/>
-                    </a>
+                <div id="openPopup" class="country-logo" data-bs-toggle="modal" data-bs-target="#country-modal">
+                    <img class="logo" src="https://flagcdn.com/gb.svg">
+                    <img src="assets/images/landing/white-down-arrow.svg"/>
                 </div>
             </div>
         </div>
@@ -123,308 +130,53 @@
                     <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">Shop</a>
                     <ul class="inner-list">
-                        <li><a href="product.html">Micro-Home (300 SQM)</a></li>
-                        <li><a href="product.html">Home (500 SQM)</a></li>
-                        <li><a href="product.html">Hotel (1000 SQM)</a></li>
-                        <li><a href="product.html">Factory (5000 SQM)</a></li>
+                        <li><a href="#">Micro-Home (300 SQM)</a></li>
+                        <li><a href="#">Home (500 SQM)</a></li>
+                        <li><a href="#">Hotel (1000 SQM)</a></li>
+                        <li><a href="#">Factory (5000 SQM)</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">Carriers</a>
                     <ul class="inner-list">
-                        <li><a href="product.html">Vodafone</a></li>
-                        <li><a href="product.html">O2</a></li>
-                        <li><a href="product.html">EE</a></li>
-                        <li><a href="product.html">Three UK</a></li>
+                        <li><a href="#">Micro-Home (300 SQM)</a></li>
+                        <li><a href="#">Home (500 SQM)</a></li>
+                        <li><a href="#">Hotel (1000 SQM)</a></li>
+                        <li><a href="#">Factory (5000 SQM)</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">Frequency</a>
                     <ul class="inner-list">
-                        <li><a href="product.html">700 MHz (5G)</a></li>
-                        <li><a href="product.html">700/800 MHz</a></li>
-                        <li><a href="product.html">800/2600 MHz</a></li>
-                        <li><a href="product.html">All Frequencies</a></li>
+                        <li><a href="#">Micro-Home (300 SQM)</a></li>
+                        <li><a href="#">Home (500 SQM)</a></li>
+                        <li><a href="#">Hotel (1000 SQM)</a></li>
+                        <li><a href="#">Factory (5000 SQM)</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a href="#" class="nav-link">Floor Plan Analysis</a></li>
             </ul>
+
         </div>
     </nav>
 </header>
-
 <main>
-    <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-section-content container">
-            <div class="hero-text">
-                <h1>Get stronger connections anywhere – find the perfect signal booster for your needs</h1>
-                <p class="hero-subtext">Boost your mobile signal strength with our premium range of signal boosters.
-                    Perfect for homes, offices, and large buildings.</p>
-            </div>
-            <div class="hero-illustration">
-                <img src="assets/images/landing/hero-illustration.svg"
-                     alt="Get stronger connections anywhere – find the perfect signal booster for your needs"/>
-            </div>
-        </div>
         <div class="hero-section-white-bg"></div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section container">
-        <div class="section-tags">Features</div>
-        <h2 class="section-heading">Why Choose Our Signal Boosters?</h2>
-        <div class="features">
-            <div class="features-card">
-                <img src="assets/images/landing/premium-icon.png" alt="Premium Quality"/>
-                <div class="features-card-content">
-                    <h3 class="features-card-content-heading">Premium Quality</h3>
-                    <p class="features-card-content-subtext">Built with the highest quality materials and cutting-edge
-                        technology for reliable performance.</p>
-                </div>
-            </div>
-            <div class="features-card">
-                <img src="assets/images/landing/support-icon.png" alt="24/7 Support"/>
-                <div class="features-card-content">
-                    <h3 class="features-card-content-heading">24/7 Support</h3>
-                    <p class="features-card-content-subtext">Our expert team is available around the clock to help you
-                        with installation and troubleshooting.</p>
-                </div>
-            </div>
-            <div class="features-card">
-                <img src="assets/images/landing/warranty-icon.png" alt="2-Year Warranty"/>
-                <div class="features-card-content">
-                    <h3 class="features-card-content-heading">2-Year Warranty</h3>
-                    <p class="features-card-content-subtext">All our products come with a comprehensive 2-year warranty
-                        for your peace of mind.</p>
-                </div>
-            </div>
-            <div class="features-card">
-                <img src="assets/images/landing/refund-icon.png" alt="30-Day Money Back"/>
-                <div class="features-card-content">
-                    <h3 class="features-card-content-heading">30-Day Money Back</h3>
-                    <p class="features-card-content-subtext">Not satisfied? Get a full refund within 30 days, no
-                        questions asked.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="categories-section container">
-        <div class="section-tags">Categories</div>
-        <h2 class="section-heading">Find the Perfect Booster for Your Space</h2>
-        <div class="categories-content">
-            <div class="tabs-container">
-                <div class="tab">
-                    <a href="#home-tab" data-bs-toggle="tab" class="active">Home</a>
-                </div>
-                <div class="tab">
-                    <a href="#office-tab" data-bs-toggle="tab">Office</a>
-                </div>
-                <div class="tab">
-                    <a href="#warehouse-tab" data-bs-toggle="tab">Warehouse</a>
-                </div>
-                <div class="tab">
-                    <a href="#hotel-tab" data-bs-toggle="tab">Hotel</a>
-                </div>
-                <div class="tab">
-                    <a href="#factory-tab" data-bs-toggle="tab">Factory</a>
-                </div>
-                <div class="tab">
-                    <a href="#hospital-tab" data-bs-toggle="tab">Hospital</a>
-                </div>
-            </div>
-            <div class="tab-content">
-                <div class="tab-pane active" id="home-tab">
-                    <div class="tabs-content">
-                        <div class="tab-product-card">
-                            <img src="assets/images/landing/tabs-content-1.png" alt="Home Signal Booster"
-                                 class="tab-product-card-img"/>
-                            <div class="tab-product-card-content">
-                                <h3 class="tab-product-card-heading">Home Signal Booster Pro</h3>
-                                <p class="tab-product-card-subtext">Perfect for residential use, covers up to 300 SQM
-                                    with crystal clear signal enhancement.</p>
-                                <p class="tab-product-card-price">£299.99</p>
-                                <a href="product.html" class="btn-primary">View Product</a>
-                            </div>
-                        </div>
-                        <div class="tab-product-card">
-                            <img src="assets/images/landing/tabs-content-1.png" alt="Home Signal Booster Plus"
-                                 class="tab-product-card-img"/>
-                            <div class="tab-product-card-content">
-                                <h3 class="tab-product-card-heading">Home Signal Booster Plus</h3>
-                                <p class="tab-product-card-subtext">Enhanced version for larger homes, covers up to 500
-                                    SQM with advanced signal processing.</p>
-                                <p class="tab-product-card-price">£399.99</p>
-                                <a href="product.html" class="btn-primary">View Product</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tabs-content-img-container">
-                        <img src="assets/images/landing/tabs-content-1.png" alt="Home Installation"
-                             class="tabs-content-img"/>
-                        <a href="product.html" class="btn-primary">Shop Home Boosters</a>
-                    </div>
-                </div>
-                <div class="tab-pane" id="office-tab">
-                    <div class="tabs-content">
-                        <div class="tab-product-card">
-                            <img src="assets/images/landing/tabs-content-1.png" alt="Office Signal Booster"
-                                 class="tab-product-card-img"/>
-                            <div class="tab-product-card-content">
-                                <h3 class="tab-product-card-heading">Office Signal Booster Pro</h3>
-                                <p class="tab-product-card-subtext">Designed for office environments, supports multiple
-                                    users and devices simultaneously.</p>
-                                <p class="tab-product-card-price">£599.99</p>
-                                <a href="product.html" class="btn-primary">View Product</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tabs-content-img-container">
-                        <img src="assets/images/landing/tabs-content-1.png" alt="Office Installation"
-                             class="tabs-content-img"/>
-                        <a href="product.html" class="btn-primary">Shop Office Boosters</a>
-                    </div>
-                </div>
-                <div class="tab-pane" id="warehouse-tab">
-                    <div class="tabs-content">
-                        <div class="tab-product-card">
-                            <img src="assets/images/landing/tabs-content-1.png" alt="Warehouse Signal Booster"
-                                 class="tab-product-card-img"/>
-                            <div class="tab-product-card-content">
-                                <h3 class="tab-product-card-heading">Warehouse Signal Booster</h3>
-                                <p class="tab-product-card-subtext">Industrial-grade booster for large warehouse spaces
-                                    up to 2000 SQM.</p>
-                                <p class="tab-product-card-price">£899.99</p>
-                                <a href="product.html" class="btn-primary">View Product</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tabs-content-img-container">
-                        <img src="assets/images/landing/tabs-content-1.png" alt="Warehouse Installation"
-                             class="tabs-content-img"/>
-                        <a href="product.html" class="btn-primary">Shop Warehouse Boosters</a>
-                    </div>
-                </div>
-                <div class="tab-pane" id="hotel-tab">
-                    <div class="tabs-content">
-                        <div class="tab-product-card">
-                            <img src="assets/images/landing/tabs-content-1.png" alt="Hotel Signal Booster"
-                                 class="tab-product-card-img"/>
-                            <div class="tab-product-card-content">
-                                <h3 class="tab-product-card-heading">Hotel Signal Booster</h3>
-                                <p class="tab-product-card-subtext">Perfect for hospitality industry, ensures guests have
-                                    excellent signal throughout the building.</p>
-                                <p class="tab-product-card-price">£1299.99</p>
-                                <a href="product.html" class="btn-primary">View Product</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tabs-content-img-container">
-                        <img src="assets/images/landing/tabs-content-1.png" alt="Hotel Installation"
-                             class="tabs-content-img"/>
-                        <a href="product.html" class="btn-primary">Shop Hotel Boosters</a>
-                    </div>
-                </div>
-                <div class="tab-pane" id="factory-tab">
-                    <div class="tabs-content">
-                        <div class="tab-product-card">
-                            <img src="assets/images/landing/tabs-content-1.png" alt="Factory Signal Booster"
-                                 class="tab-product-card-img"/>
-                            <div class="tab-product-card-content">
-                                <h3 class="tab-product-card-heading">Factory Signal Booster</h3>
-                                <p class="tab-product-card-subtext">Heavy-duty booster designed for industrial
-                                    environments with maximum coverage.</p>
-                                <p class="tab-product-card-price">£1599.99</p>
-                                <a href="product.html" class="btn-primary">View Product</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tabs-content-img-container">
-                        <img src="assets/images/landing/tabs-content-1.png" alt="Factory Installation"
-                             class="tabs-content-img"/>
-                        <a href="product.html" class="btn-primary">Shop Factory Boosters</a>
-                    </div>
-                </div>
-                <div class="tab-pane" id="hospital-tab">
-                    <div class="tabs-content">
-                        <div class="tab-product-card">
-                            <img src="assets/images/landing/tabs-content-1.png" alt="Hospital Signal Booster"
-                                 class="tab-product-card-img"/>
-                            <div class="tab-product-card-content">
-                                <h3 class="tab-product-card-heading">Hospital Signal Booster</h3>
-                                <p class="tab-product-card-subtext">Medical-grade signal booster with interference
-                                    protection for critical healthcare environments.</p>
-                                <p class="tab-product-card-price">£1999.99</p>
-                                <a href="product.html" class="btn-primary">View Product</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tabs-content-img-container">
-                        <img src="assets/images/landing/tabs-content-1.png" alt="Hospital Installation"
-                             class="tabs-content-img"/>
-                        <a href="product.html" class="btn-primary">Shop Hospital Boosters</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Struggle Section -->
-    <section class="struggle-section">
-        <div class="struggle-section-content container">
-            <h2>Struggling with poor mobile signal?</h2>
-            <span>Don't let weak signal hold you back. Our signal boosters provide reliable, consistent coverage for all your communication needs.</span>
-            <a href="product.html" class="btn-secondary">Shop Now</a>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="work-section container">
-        <div class="section-tags">How it works</div>
-        <h2 class="work-section-heading section-heading">Simple 3-Step Installation</h2>
-        <div class="work-section-content">
-            <div class="work-section-content-card">
-                <img src="assets/images/landing/how-work-1.png" alt="Step 1"/>
-                <div class="work-section-card-text">
-                    <h3>1. Install External Antenna</h3>
-                    <p>Mount the external antenna in an area with the strongest signal, typically on your roof or
-                        outside wall.</p>
-                </div>
-            </div>
-            <div class="work-section-content-card">
-                <img src="assets/images/landing/how-work-2.png" alt="Step 2"/>
-                <div class="work-section-card-text">
-                    <h3>2. Connect the Booster</h3>
-                    <p>Place the signal booster unit inside your building and connect it to the external antenna using
-                        the provided cable.</p>
-                </div>
-            </div>
-            <div class="work-section-content-card">
-                <img src="assets/images/landing/how-work-3.png" alt="Step 3"/>
-                <div class="work-section-card-text">
-                    <h3>3. Position Internal Antenna</h3>
-                    <p>Install the internal antenna in the area where you need improved signal coverage and enjoy
-                        enhanced connectivity.</p>
-                </div>
-            </div>
-        </div>
-        <a href="#" class="work-section-btn">
-            <span>Learn more about installation</span>
-            <img src="assets/images/landing/circle-up-arrow.svg" alt="Learn more"/>
-        </a>
-    </section>
-
-    <!-- Booster Quiz Section -->
-    <section class="booster-quiz-section" id="booster-quiz">
         <div class="container">
-            <h3 class="booster-quiz-section-heading">Unsure of which signal Booster you need?</h3>
-            <p class="booster-quiz-section-subheading">Engage in our 30-second booster quiz by answering a few
-                questions, and discover the perfect booster
-                tailored to your needs.</p>
+            <div id="hero-section-content" class="hero-section-content">
+                <div class="hero-text">
+                    <h1>Clear signal, every time</h1>
+                    <p class="hero-subtext">Get stronger connections anywhere – find the perfect signal booster for your
+                        needs.</p>
+                </div>
+                <div class="hero-illustration">
+                    <img src="assets/images/landing/hero-illustration.svg"
+                         alt="Get stronger connections anywhere – find the perfect signal booster for your needs"/>
+                </div>
+            </div>
             <div class="booster-quiz" id="booster-quiz">
                 <div class="tooltip-arrow"></div>
                 <div class="tooltip" data-tooltip="data_only">
@@ -445,11 +197,11 @@ This is for larger buildings who need extra cable from roof to the Booster insid
                             class="booster-quiz-counter" id="page-indicator">(1/3)</span>
                     </p>
                 </div>
-                <div id="prev-lg" class="slider-btn sm-none">
-                    <img src="assets/images/landing/prev-arrow.svg"/>
-                    <span>Previous</span>
-                </div>
                 <div class="slider-container">
+                    <div id="prev-lg" class="slider-btn sm-none">
+                        <img src="assets/images/landing/prev-arrow.svg"/>
+                        <span>Previous</span>
+                    </div>
                     <div id="slider" class="slider">
                         <div>
                             <div id="slide1" class="booster-quiz-cards-container slide">
@@ -560,15 +312,15 @@ This is for larger buildings who need extra cable from roof to the Booster insid
                         <input type="hidden" name="frequencies"
                                value="[{termID:483,list:[202,308,307,200,309,201,198,310,315]},{termID:37,list:[203,202,308,307,200,309,201,198,310,312,378]},{termID:486,list:[203,202,308,307,200,309,201,198,310,314,378]},{termID:490,list:[203,202,308,307,200,309,201,198,310,315,378]},{termID:488,list:[202,308,307,200,309,201,198,310,312,315,378]},{termID:30,list:[203,312,315,378]},{termID:485,list:[203,202,308,307,200,309,201,198,310,314,312,315,378]},{termID:318,list:[202,312,378]},{termID:319,list:[203,202,308,307,200,309,201,198,310,312,315,378]},{termID:489,list:[436]},{termID:27,list:[436,314]},{termID:29,list:[203,200,309,310,312,378]},{termID:504,list:[203,202,200,198,312,315,378]}]">
                     </div>
-                </div>
-                <div class="slider-btn-sm-container">
-                    <div id="prev" class="slider-btn">
-                        <img src="assets/images/landing/prev-arrow.svg"/>
-                        <span>Previous</span>
-                    </div>
-                    <div class="slider-btn" id="next">
-                        <img src="assets/images/landing/next-arrow.svg"/>
-                        <span>Next</span>
+                    <div class="slider-btn-sm-container">
+                        <div id="prev" class="slider-btn">
+                            <img src="assets/images/landing/prev-arrow.svg"/>
+                            <span>Previous</span>
+                        </div>
+                        <div class="slider-btn" id="next">
+                            <img src="assets/images/landing/next-arrow.svg"/>
+                            <span>Next</span>
+                        </div>
                     </div>
                 </div>
                 <div class="progress-bar-container">
@@ -577,214 +329,553 @@ This is for larger buildings who need extra cable from roof to the Booster insid
             </div>
         </div>
     </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
+    <section class="features-section container">
+        <div class="section-tags">
+            <p>benefits</p>
+        </div>
+        <h2 class="section-heading">Our Unbeatable Features</h2>
+        <div class="features">
+            <div class="features-card">
+                <img src="assets/images/landing/truck-icon.svg"/>
+                <div class="features-card-content">
+                    <p class="features-card-content-heading">Free Delivery In The UK</p>
+                    <span class="features-card-content-subtext">Boost with convenience - enjoy free delivery on all our boosters, Arrives in 5-7 Working Days</span>
+                </div>
+            </div>
+            <div class="features-card">
+                <img src="assets/images/landing/warranty-icon.png"/>
+                <div class="features-card-content">
+                    <p class="features-card-content-heading">1-Year Warranty</p>
+                    <span class="features-card-content-subtext">Experience worry-free boosting with a compli-mentary 1-year warranty on all our products.</span>
+                </div>
+            </div>
+            <div class="features-card">
+                <img src="assets/images/landing/cable-icon.svg"/>
+                <div class="features-card-content">
+                    <p class="features-card-content-heading">Free 10m Cable</p>
+                    <span class="features-card-content-subtext">Enhance your signal without extra costs - each booster comes with a free 10m cable.</span>
+                </div>
+            </div>
+            <div class="features-card">
+                <img src="assets/images/landing/premium-icon.png"/>
+                <div class="features-card-content">
+                    <p class="features-card-content-heading">Premium Quality</p>
+                    <span class="features-card-content-subtext">Rely on the best - our boosters are crafted with top-notch materials and precision.</span>
+                </div>
+            </div>
+            <div class="features-card">
+                <img src="assets/images/landing/support-icon.png"/>
+                <div class="features-card-content">
+                    <p class="features-card-content-heading">24/7 chat support</p>
+                    <span class="features-card-content-subtext">Get help anytime with our 24/7 live chat support. Our experts are ready to assist you whenever you need.</span>
+                </div>
+            </div>
+            <div class="features-card">
+                <img src="assets/images/landing/refund-icon.png"/>
+                <div class="features-card-content">
+                    <p class="features-card-content-heading">Money-Back Guarantee</p>
+                    <span class="features-card-content-subtext">Experience confidence - our boosters are guaranteed, or your money back.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="categories-section container">
+        <div class="section-tags">
+            <p>Categories</p>
+        </div>
+        <h2 class="section-heading leading-normal lg-w-75">Boost Your Connection: Find the Perfect Signal
+            Solution for Any Space</h2>
+        <div class="categories-content">
+            <ul class="nav nav-fill nav-tabs tabs-container" role="tablist">
+                <li class="tab" role="presentation">
+                    <a class="active " id="fill-tab-0" data-bs-toggle="tab" href="#fill-tabpanel-0" role="tab"
+                       aria-controls="fill-tabpanel-0" aria-selected="true"> Homes </a>
+                </li>
+                <li class="tab" role="presentation">
+                    <a class="" id="fill-tab-1" data-bs-toggle="tab" href="#fill-tabpanel-1" role="tab"
+                       aria-controls="fill-tabpanel-1" aria-selected="false"> Offices </a>
+                </li>
+                <li class="tab" role="presentation">
+                    <a class="" id="fill-tab-2" data-bs-toggle="tab" href="#fill-tabpanel-2" role="tab"
+                       aria-controls="fill-tabpanel-2" aria-selected="false"> Hotels </a>
+                </li>
+                <li class="tab" role="presentation">
+                    <a class="" id="fill-tab-3" data-bs-toggle="tab" href="#fill-tabpanel-3" role="tab"
+                       aria-controls="fill-tabpanel-3" aria-selected="false"> Farms </a>
+                </li>
+                <li class="tab" role="presentation">
+                    <a class="" id="fill-tab-4" data-bs-toggle="tab" href="#fill-tabpanel-4" role="tab"
+                       aria-controls="fill-tabpanel-4" aria-selected="false"> Boats </a>
+                </li>
+                <li class="tab" role="presentation">
+                    <a class="" id="fill-tab-5" data-bs-toggle="tab" href="#fill-tabpanel-5" role="tab"
+                       aria-controls="fill-tabpanel-5" aria-selected="false"> Warehouses </a>
+                </li>
+            </ul>
+            <div class="tab-content" id="tab-content">
+                <div class="tab-pane active" id="fill-tabpanel-0" role="tabpanel" aria-labelledby="fill-tab-0">
+                    <div class="tabs-content-img-container">
+                        <img src="assets/images/landing/tabs-content-1.png" class="tabs-content-img"/>
+                        <a href="#" class="btn-primary ">show more for homes</a>
+                    </div>
+                    <div class="tabs-content">
+                        <a href="#" class="tab-product-card">
+                            <img src="assets/images/landing/Black1%201.png" class="tab-product-card-img"/>
+                            <span class="tab-product-card-content">
+                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
+                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
+                        <span class="tab-product-card-price">£ 200.00</span>
+                    </span>
+                        </a>
+                        <a href="#" class="tab-product-card">
+                            <img src="assets/images/landing/signal-expert.png" class="tab-product-card-img"/>
+                            <span class="tab-product-card-content">
+                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
+                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
+                        <span class="tab-product-card-price">£ 200.00</span>
+                    </span>
+                        </a>
+                    </div>
+                    <a href="#" class="btn-primary lg-none">show more for homes</a>
+                </div>
+                <div class="tab-pane" id="fill-tabpanel-1" role="tabpanel" aria-labelledby="fill-tab-1">
+                    <div class="tabs-content-img-container">
+                        <img src="assets/images/landing/tabs-content-1.png" class="tabs-content-img"/>
+                        <a href="#" class="btn-primary ">show more for homes</a>
+                    </div>
+                    <div class="tabs-content">
+                        <a href="#" class="tab-product-card">
+                            <img src="assets/images/landing/signal-expert.png" class="tab-product-card-img"/>
+                            <span class="tab-product-card-content">
+                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
+                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
+                        <span class="tab-product-card-price">£ 200.00</span>
+                    </span>
+                        </a>
+                        <a href="#" class="tab-product-card">
+                            <img src="assets/images/landing/Black1%201.png" class="tab-product-card-img"/>
+                            <span class="tab-product-card-content">
+                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
+                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
+                        <span class="tab-product-card-price">£ 200.00</span>
+                    </span>
+                        </a>
+                    </div>
+                    <a href="#" class="btn-primary lg-none">show more for homes</a>
+                </div>
+                <div class="tab-pane" id="fill-tabpanel-2" role="tabpanel" aria-labelledby="fill-tab-2">
+                    <div class="tabs-content-img-container">
+                        <img src="assets/images/landing/tabs-content-1.png" class="tabs-content-img"/>
+                        <a href="#" class="btn-primary ">show more for homes</a>
+                    </div>
+                    <div class="tabs-content">
+                        <a href="#" class="tab-product-card">
+                            <img src="assets/images/landing/Black1%201.png" class="tab-product-card-img"/>
+                            <span class="tab-product-card-content">
+                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
+                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
+                        <span class="tab-product-card-price">£ 200.00</span>
+                    </span>
+                        </a>
+                        <a href="#" class="tab-product-card">
+                            <img src="assets/images/landing/signal-expert.png" class="tab-product-card-img"/>
+                            <span class="tab-product-card-content">
+                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
+                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
+                        <span class="tab-product-card-price">£ 200.00</span>
+                    </span>
+                        </a>
+                    </div>
+                    <a href="#" class="btn-primary lg-none">show more for homes</a>
+                </div>
+                <div class="tab-pane" id="fill-tabpanel-3" role="tabpanel" aria-labelledby="fill-tab-3">
+                    <div class="tabs-content-img-container">
+                        <img src="assets/images/landing/tabs-content-1.png" class="tabs-content-img"/>
+                        <a href="#" class="btn-primary ">show more for homes</a>
+                    </div>
+                    <div class="tabs-content">
+                        <a href="#" class="tab-product-card">
+                            <img src="assets/images/landing/signal-expert.png" class="tab-product-card-img"/>
+                            <span class="tab-product-card-content">
+                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
+                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
+                        <span class="tab-product-card-price">£ 200.00</span>
+                    </span>
+                        </a>
+                        <a href="#" class="tab-product-card">
+                            <img src="assets/images/landing/Black1%201.png" class="tab-product-card-img"/>
+                            <span class="tab-product-card-content">
+                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
+                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
+                        <span class="tab-product-card-price">£ 200.00</span>
+                    </span>
+                        </a>
+                    </div>
+                    <a href="#" class="btn-primary lg-none">show more for homes</a>
+                </div>
+                <div class="tab-pane" id="fill-tabpanel-4" role="tabpanel" aria-labelledby="fill-tab-4">
+                    <div class="tabs-content-img-container">
+                        <img src="assets/images/landing/tabs-content-1.png" class="tabs-content-img"/>
+                        <a href="#" class="btn-primary ">show more for homes</a>
+                    </div>
+                    <div class="tabs-content">
+                        <a href="#" class="tab-product-card">
+                            <img src="assets/images/landing/Black1%201.png" class="tab-product-card-img"/>
+                            <span class="tab-product-card-content">
+                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
+                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
+                        <span class="tab-product-card-price">£ 200.00</span>
+                    </span>
+                        </a>
+                        <a href="#" class="tab-product-card">
+                            <img src="assets/images/landing/signal-expert.png" class="tab-product-card-img"/>
+                            <span class="tab-product-card-content">
+                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
+                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
+                        <span class="tab-product-card-price">£ 200.00</span>
+                    </span>
+                        </a>
+                    </div>
+                    <a href="#" class="btn-primary lg-none">show more for homes</a>
+                </div>
+                <div class="tab-pane" id="fill-tabpanel-5" role="tabpanel" aria-labelledby="fill-tab-5">
+                    <div class="tabs-content-img-container">
+                        <img src="assets/images/landing/tabs-content-1.png" class="tabs-content-img"/>
+                        <a href="#" class="btn-primary ">show more for homes</a>
+                    </div>
+                    <div class="tabs-content">
+                        <a href="#" class="tab-product-card">
+                            <img src="assets/images/landing/signal-expert.png" class="tab-product-card-img"/>
+                            <span class="tab-product-card-content">
+                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
+                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
+                        <span class="tab-product-card-price">£ 200.00</span>
+                    </span>
+                        </a>
+                        <a href="#" class="tab-product-card">
+                            <img src="assets/images/landing/Black1%201.png" class="tab-product-card-img"/>
+                            <span class="tab-product-card-content">
+                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
+                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
+                        <span class="tab-product-card-price">£ 200.00</span>
+                    </span>
+                        </a>
+                    </div>
+                    <a href="#" class="btn-primary lg-none">show more for homes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="struggle-section">
         <div class="container">
-            <div class="section-tags">FAQ</div>
-            <h2 class="faq-section-heading section-heading">Frequently Asked Questions</h2>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <button class="faq-card-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq1"
-                            aria-expanded="false" aria-controls="faq1">
-                        <p>How do signal boosters work?</p>
-                        <div class="faq-icon">
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </button>
-                    <div id="faq1" class="collapse">
-                        <div class="accordion-body">
-                            Signal boosters work by capturing weak cellular signals from outside, amplifying them, and
-                            then rebroadcasting the stronger signal inside your building. This process involves three
-                            main components: an external antenna, an amplifier unit, and an internal antenna.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="faq-card-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq2"
-                            aria-expanded="false" aria-controls="faq2">
-                        <p>Will a signal booster work with my carrier?</p>
-                        <div class="faq-icon">
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </button>
-                    <div id="faq2" class="collapse">
-                        <div class="accordion-body">
-                            Yes, our signal boosters are designed to work with all major UK carriers including EE,
-                            Vodafone, O2, Three, and many others. They boost all cellular frequencies used by these
-                            networks.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="faq-card-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq3"
-                            aria-expanded="false" aria-controls="faq3">
-                        <p>How much area can a signal booster cover?</p>
-                        <div class="faq-icon">
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </button>
-                    <div id="faq3" class="collapse">
-                        <div class="accordion-body">
-                            Coverage area depends on the specific model and the strength of the outside signal. Our
-                            boosters range from 300 SQM for residential use up to 5000 SQM for large commercial
-                            buildings. The stronger the outside signal, the larger the coverage area.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="faq-card-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq4"
-                            aria-expanded="false" aria-controls="faq4">
-                        <p>Is professional installation required?</p>
-                        <div class="faq-icon">
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </button>
-                    <div id="faq4" class="collapse">
-                        <div class="accordion-body">
-                            While our boosters are designed for easy self-installation with detailed instructions, we
-                            also offer professional installation services. For complex installations or large buildings,
-                            professional installation is recommended to ensure optimal performance.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="faq-card-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq5"
-                            aria-expanded="false" aria-controls="faq5">
-                        <p>What's included in the warranty?</p>
-                        <div class="faq-icon">
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </button>
-                    <div id="faq5" class="collapse">
-                        <div class="accordion-body">
-                            All our signal boosters come with a comprehensive 2-year warranty covering manufacturing
-                            defects and performance issues. We also offer 24/7 technical support and a 30-day
-                            money-back guarantee if you're not completely satisfied.
-                        </div>
-                    </div>
-                </div>
+            <div class="struggle-section-content">
+                <h2>Struggling with Signal in a Big Space?</h2>
+                <span>Our Floor Plan Analysis ensures even the largest spaces get complete signal coverage. With expert engineers evaluating your layout, we'll design a solution tailored to eliminate weak spots and keep your connectivity strong and reliable.</span>
+                <a href="#" class="btn-secondary">Learn More</a>
             </div>
         </div>
     </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials-section container">
-        <div class="section-tags">Testimonials</div>
-        <h2 class="section-heading">What Our Customers Say</h2>
-        <div class="glide">
-            <div class="glide__track" data-glide-el="track">
-                <ul class="glide__slides">
-                    <li class="glide__slide">
-                        <h3 class="review-header">Excellent signal improvement!</h3>
-                        <p class="review-description">After installing the Mobile Booster Pro, our home office finally
-                            has reliable signal. No more dropped calls during important meetings. Highly recommended!
-                        </p>
-                        <div class="review-info-container">
-                            <img src="assets/images/landing/review-img-1.png" alt="Sarah Johnson"/>
-                            <div class="review-info">
-                                <p class="reviewer-name">Sarah Johnson</p>
-                                <p class="reviewer-title">Home Office User</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="glide__slide">
-                        <h3 class="review-header">Perfect for our warehouse</h3>
-                        <p class="review-description">We installed the industrial booster in our 2000 SQM warehouse.
-                            Now our staff can communicate clearly throughout the entire facility. Great investment!</p>
-                        <div class="review-info-container">
-                            <img src="assets/images/landing/review-img-2.png" alt="Mike Thompson"/>
-                            <div class="review-info">
-                                <p class="reviewer-name">Mike Thompson</p>
-                                <p class="reviewer-title">Warehouse Manager</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="glide__slide">
-                        <h3 class="review-header">Easy installation process</h3>
-                        <p class="review-description">The installation was straightforward with clear instructions. The
-                            signal improvement was immediate and dramatic. Customer support was also very helpful.</p>
-                        <div class="review-info-container">
-                            <img src="assets/images/landing/review-img-1.png" alt="Emma Davis"/>
-                            <div class="review-info">
-                                <p class="reviewer-name">Emma Davis</p>
-                                <p class="reviewer-title">Residential Customer</p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+    <section class="work-section container">
+        <h2 class="work-section-heading">How it works</h2>
+        <div class="row justify-content-center px-lg-4" style="gap: 2.5rem;">
+            <div class="work-section-content-card col col-md-6 col-lg-4 p-0">
+                <img src="assets/images/landing/how-work-1.png"/>
+                <div class="work-section-card-text">
+                    <h3>Step 1: Receive</h3>
+                    <p>The external antenna captures weak cell signals from nearby towers, gathering all available
+                        network
+                        connections in your area.</p>
+                </div>
             </div>
-            <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-                    <img src="assets/images/landing/glide-left-arrow.svg" alt="Previous"/>
-                </button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-                    <img src="assets/images/landing/glide-left-arrow.svg" alt="Next"/>
-                </button>
+            <div class="work-section-content-card col col-md-6 col-lg-4 p-0">
+                <img src="assets/images/landing/how-work-2.png"/>
+                <div class="work-section-card-text">
+                    <h3>Step 2: Amplify</h3>
+                    <p>Our powerful signal amplifier boosts the captured signal up to 32x, significantly enhancing its
+                        strength and quality.</p>
+                </div>
+            </div>
+            <div class="work-section-content-card col col-md-6 col-lg-4 p-0">
+                <img src="assets/images/landing/how-work-3.png"/>
+                <div class="work-section-card-text">
+                    <h3>Step 3: Broadcast</h3>
+                    <p>The inside antenna distributes the amplified signal throughout space, providing strong, reliable
+                        coverage to all your mobile devices.</p>
+                </div>
             </div>
         </div>
+        <a href="#" class="work-section-btn">
+            <span>See How Our Boosters Work</span>
+            <img src="assets/images/landing/next-arrow.svg"/>
+        </a>
     </section>
-
-    <!-- Boosting Section -->
     <section class="boosting-section">
         <div class="boosting-img-bg">
-            <img src="assets/images/landing/boosting-1.png" alt="Background decoration"/>
+            <img src="assets/images/landing/boosting-1.png"/>
         </div>
         <div class="boosting-img-bg">
-            <img src="assets/images/landing/boosting-2.png" alt="Background decoration"/>
+            <img src="assets/images/landing/boosting-2.png"/>
         </div>
         <div class="boosting-img-bg">
-            <img src="assets/images/landing/boosting-3.png" alt="Background decoration"/>
+            <img src="assets/images/landing/boosting-3.png"/>
         </div>
         <div class="boosting-img-bg">
-            <img src="assets/images/landing/boosting-4.png" alt="Background decoration"/>
+            <img src="assets/images/landing/boosting-4.png"/>
         </div>
         <div class="boosting-img-bg">
-            <img src="assets/images/landing/boosting-5.png" alt="Background decoration"/>
+            <img src="assets/images/landing/boosting-5.png"/>
         </div>
         <div class="boosting-img-bg">
-            <img src="assets/images/landing/boosting-6.png" alt="Background decoration"/>
+            <img src="assets/images/landing/boosting-6.png"/>
         </div>
         <div class="boosting-img-bg">
-            <img src="assets/images/landing/boosting-7.png" alt="Background decoration"/>
+            <img src="assets/images/landing/boosting-7.png"/>
         </div>
         <div class="boosting-img-bg">
-            <img src="assets/images/landing/boosting-8.png" alt="Background decoration"/>
+            <img src="assets/images/landing/boosting-8.png"/>
         </div>
         <div class="boosting-img-bg">
-            <img src="assets/images/landing/boosting-9.png" alt="Background decoration"/>
+            <img src="assets/images/landing/boosting-9.png"/>
         </div>
-        <div class="container">
-            <div class="boosting-content">
-                <h2 class="boosting-content-heading">Start <span class="highlight">boosting</span> your signal today
-                </h2>
-                <span class="boosting-content-description">Join thousands of satisfied customers who have improved their mobile connectivity</span>
-                <a href="product.html" class="btn-secondary">Shop Signal Boosters</a>
+        <div class="boosting-img-bg">
+            <img src="assets/images/landing/boosting-5.png"/>
+        </div>
+        <div class="boosting-img-bg">
+            <img src="assets/images/landing/boosting-8.png"/>
+        </div>
+        <div class="boosting-img-bg">
+            <img src="assets/images/landing/boosting-9.png"/>
+        </div>
+        <div class="boosting-img-bg">
+            <div class="yellow-circle-sm"></div>
+        </div>
+        <div class="boosting-img-bg">
+            <div class="yellow-circle-sm"></div>
+        </div>
+        <div class="boosting-img-bg">
+            <div class="yellow-circle-sm"></div>
+        </div>
+        <div class="boosting-img-bg">
+            <div class="yellow-circle-lg"></div>
+        </div>
+        <div class="boosting-img-bg">
+            <div class="yellow-circle-lg"></div>
+        </div>
+        <div class="boosting-img-bg">
+            <div class="cyan-circle-lg"></div>
+        </div>
+        <div class="boosting-img-bg">
+            <div class="cyan-circle-lg"></div>
+        </div>
+        <div class="container boosting-content">
+            <div class="boosting-content-card">
+                <img src="assets/images/landing/boosting-card-img.png"/>
+                <p class="boosting-content-card-heading">"I was barely getting any reception in my rural home, but after
+                    installing the booster, my signal
+                    jumped from " </p>
+                <span class="boosting-content-card-name">— Sarah, Yorkshire, UK</span>
+            </div>
+            <div>
+                <h2 class="boosting-content-heading">See who's boosting.</h2>
+                <span class="boosting-content-description">Connect with other users enhancing their signal in your area.</span>
             </div>
         </div>
     </section>
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-tags">
+                <p>Testimonials</p>
+            </div>
+            <h2 class="section-heading leading-normal lg-w-75">Don't take our word for it</h2>
+            <div class="glide">
+                <div data-glide-el="track" class="glide__track">
+                    <ul class="glide__slides">
+                        <li class="glide__slide">
+                            <p class="review-header">"The best Signal Booster ever"</p>
+                            <span class="review-description">Our company struggled with poor reception for years. <span
+                                    class="highlight">This signal booster changed everything</span>. Now we have clear calls and fast data in every corner of our office.</span>
+                            <span class="review-info-container">
+                            <img src="assets/images/landing/review-img-1.png"/>
+                            <span class="review-info">
+                                <span class="reviewer-name">John Doe</span>
+                                <span class="reviewer-title">CEO at Webflow Agency</span>
+                            </span>
+                        </span>
+                        </li>
+                        <li class="glide__slide">
+                            <p class="review-header">"Mobile Booster is the #1""</p>
+                            <span class="review-description">I've tried many boosters, but this one stands out. <span
+                                    class="highlight">Easy to set up and incredibly effective</span> . It turned my home office from a dead zone into a high-speed hub.</span>
+                            <span class="review-info-container">
+                            <img src="assets/images/landing/review-img-2.png"/>
+                            <span class="review-info">
+                                <span class="reviewer-name">Joseph Johnson</span>
+                                <span class="reviewer-title">CEO at Rural Tech Solutions</span>
+                            </span>
+                        </span>
+                        </li>
+                        <li class="glide__slide">
+                            <p class="review-header">"The best Signal Booster ever"</p>
+                            <span class="review-description">Our company struggled with poor reception for years. <span
+                                    class="highlight">This signal booster changed everything</span>. Now we have clear calls and fast data in every corner of our office.</span>
+                            <span class="review-info-container">
+                            <img src="assets/images/landing/review-img-1.png"/>
+                            <span class="review-info">
+                                <span class="reviewer-name">John Doe</span>
+                                <span class="reviewer-title">CEO at Webflow Agency</span>
+                            </span>
+                        </span>
+                        </li>
+                        <li class="glide__slide">
+                            <p class="review-header">"Mobile Booster is the #1""</p>
+                            <span class="review-description">I've tried many boosters, but this one stands out. <span
+                                    class="highlight">Easy to set up and incredibly effective</span> . It turned my home office from a dead zone into a high-speed hub.</span>
+                            <span class="review-info-container">
+                            <img src="assets/images/landing/review-img-2.png"/>
+                            <span class="review-info">
+                                <span class="reviewer-name">Joseph Johnson</span>
+                                <span class="reviewer-title">CEO at Rural Tech Solutions</span>
+                            </span>
+                        </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow  glide__arrow--right" data-glide-dir="<">
+                        <img id="glide-left-arrow" src="assets/images/landing/glide-left-arrow.svg"/>
+                    </button>
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir=">">
+                        <img id="glide-next-arrow" src="assets/images/landing/glide-left-arrow.svg"/>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-section-heading">Frequently asked questions</h2>
+            <div class="accordion" id="accordion">
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="headingOne">
+                        <button class="faq-card-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <p>Why do I need a mobile signal booster?</p>
+                            <span class="faq-icon">
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                        </button>
+                    </h5>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                         data-bs-parent="#accordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="headingTwo">
+                        <button class="faq-card-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <p>Is the installation of a mobile signal booster difficult?</p>
+                            <span class="faq-icon">
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                        </button>
+                    </h5>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                         data-bs-parent="#accordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="headingThree">
+                        <button class="faq-card-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <p>Can a signal booster improve my cellular data speed?</p>
+                            <span class="faq-icon">
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                        </button>
+                    </h5>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                         data-bs-parent="#accordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="headingFour">
+                        <button class="faq-card-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                            <p>Do I need different boosters for different carriers?</p>
+                            <span class="faq-icon">
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                        </button>
+                    </h5>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                         data-bs-parent="#accordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h5 class="accordion-header" id="headingFive">
+                        <button class="faq-card-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+                            <p>How do I know if I need a signal booster?</p>
+                            <span class="faq-icon">
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                        </button>
+                    </h5>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                         data-bs-parent="#accordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="quiz-error-message">
-        <img src="assets/images/Featured%20icon.png"/>
+        <img src="assets/images/landing/Featured%20icon.png"/>
         <p>Please select an option to continue.</p>
     </div>
 </main>
-
 <footer>
     <div class="footer-content container">
         <div class="footer-list-container">
             <div>
                 <h6 class="footer-list-heading">Explore Products</h6>
                 <ul class="footer-list">
-                    <li><a href="#booster-quiz">Find a Booster Quiz</a></li>
-                    <li><a href="product.html">Accessories</a></li>
+                    <li><a href="#">Find a Booster Quiz</a></li>
+                    <li><a href="#">Accessories</a></li>
                     <li><a href="#">Installation Guide</a></li>
-                    <li><a href="product.html">Enterprise Solutions</a></li>
+                    <li><a href="#">Enterprise Solutions</a></li>
                 </ul>
             </div>
             <div>
@@ -802,7 +893,7 @@ This is for larger buildings who need extra cable from roof to the Booster insid
                     <li><a href="#">Terms & Conditions</a></li>
                     <li><a href="#">Buyer's Guide</a></li>
                     <li><a href="#">About Us</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#">Blog</a></li>
                 </ul>
             </div>
             <div>
@@ -857,7 +948,6 @@ This is for larger buildings who need extra cable from roof to the Booster insid
         </div>
     </div>
 </footer>
-
 <div class="modal fade" id="country-modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -903,7 +993,5 @@ This is for larger buildings who need extra cable from roof to the Booster insid
         </div>
     </div>
 </div>
-
-<script src="assets/js/index.js" type="module"></script>
 </body>
 </html>
