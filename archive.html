@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Mobile Booster Archive - Signal Boosters by Category</title>
+    <title>Signal Boosters Collection - Mobile Booster</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.css"/>
     <link rel="stylesheet" href="assets/css/blog.css"/>
     <link rel="stylesheet" href="assets/css/archive.css"/>
@@ -160,179 +160,355 @@
 </header>
 
 <main>
-    <!-- Enhanced Archive Hero Section -->
+    <!-- Hero Section with Parallax Effect -->
     <section class="archive-hero-section">
-        <div class="hero-section-content container archive-hero-content">
-            <div class="hero-text">
-                <h1>Signal Boosters Collection</h1>
-                <p class="hero-subtext">Discover our premium collection of mobile signal boosters designed for every space and need. From compact home solutions to enterprise-grade systems.</p>
-                
-                <div class="search-container">
-                    <i class="fas fa-search search-icon"></i>
-                    <input type="text" class="search-input" placeholder="Search for signal boosters..." id="productSearch">
+        <div class="hero-particles"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Signal Boosters Collection</h1>
+                        <p class="hero-description">Discover premium solutions to enhance your mobile connectivity. From home to enterprise, find the perfect signal booster for your needs.</p>
+                        
+                        <div class="search-container">
+                            <input type="text" class="form-control search-input" placeholder="Search for signal boosters..." id="productSearch">
+                            <button class="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="hero-badges">
+                            <span class="hero-badge">
+                                <i class="fas fa-check-circle"></i> UK Approved
+                            </span>
+                            <span class="hero-badge">
+                                <i class="fas fa-truck"></i> Free Shipping
+                            </span>
+                            <span class="hero-badge">
+                                <i class="fas fa-shield-alt"></i> 3-Year Warranty
+                            </span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-illustration">
-                <img src="assets/images/landing/2150040428-removebg-preview%202.png"
-                     alt="Browse signal boosters by category"/>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="hero-image">
+                        <img src="assets/images/landing/Black1%201.png" alt="Signal Booster Collection" class="floating">
+                        <div class="hero-shape-1"></div>
+                        <div class="hero-shape-2"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Breadcrumb Navigation -->
-    <section class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="/archive.html">Shop</a></li>
-                <li class="breadcrumb-item active" aria-current="page">All Signal Boosters</li>
-            </ol>
-        </nav>
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Signal Boosters</li>
+                </ol>
+            </nav>
+        </div>
     </section>
 
-    <!-- Enhanced Filter Section -->
-    <section class="container">
-        <div class="archive-filters">
+    <!-- Category Highlights -->
+    <section class="category-highlights">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <a href="#" class="highlight-card">
+                        <div class="highlight-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Home</h3>
+                        <span class="highlight-count">12 Products</span>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="#" class="highlight-card">
+                        <div class="highlight-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Office</h3>
+                        <span class="highlight-count">8 Products</span>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="#" class="highlight-card">
+                        <div class="highlight-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3>Commercial</h3>
+                        <span class="highlight-count">6 Products</span>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="#" class="highlight-card">
+                        <div class="highlight-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3>Enterprise</h3>
+                        <span class="highlight-count">4 Products</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="products-section">
+        <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-3">
-                    <div class="filter-sidebar">
-                        <h3>Refine Your Search</h3>
+                <!-- Sidebar Filters -->
+                <div class="col-lg-3">
+                    <div class="filters-sidebar">
+                        <div class="filters-header">
+                            <h3>Filter Products</h3>
+                            <button class="btn-reset" id="clear-filters">
+                                <i class="fas fa-undo-alt"></i> Reset
+                            </button>
+                        </div>
                         
-                        <div class="filter-group">
-                            <h5>Coverage Area</h5>
-                            <div class="filter-options">
-                                <label class="filter-option">
-                                    <input type="checkbox" name="coverage" value="small">
-                                    <span>Small Space (300 SQM)</span>
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox" name="coverage" value="medium">
-                                    <span>Midsize Space (500 SQM)</span>
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox" name="coverage" value="large">
-                                    <span>Large Space (1000 SQM)</span>
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox" name="coverage" value="huge">
-                                    <span>Huge Space (5000 SQM)</span>
-                                </label>
+                        <div class="accordion" id="filtersAccordion">
+                            <!-- Coverage Filter -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#coverageCollapse" aria-expanded="true" aria-controls="coverageCollapse">
+                                        Coverage Area
+                                    </button>
+                                </h2>
+                                <div id="coverageCollapse" class="accordion-collapse collapse show" data-bs-parent="#filtersAccordion">
+                                    <div class="accordion-body">
+                                        <div class="filter-options">
+                                            <label class="filter-option">
+                                                <input type="checkbox" name="coverage" value="small">
+                                                <span class="checkmark"></span>
+                                                <div class="option-content">
+                                                    <span>Small Space</span>
+                                                    <span class="option-detail">Up to 300 SQM</span>
+                                                </div>
+                                            </label>
+                                            <label class="filter-option">
+                                                <input type="checkbox" name="coverage" value="medium">
+                                                <span class="checkmark"></span>
+                                                <div class="option-content">
+                                                    <span>Medium Space</span>
+                                                    <span class="option-detail">300-500 SQM</span>
+                                                </div>
+                                            </label>
+                                            <label class="filter-option">
+                                                <input type="checkbox" name="coverage" value="large">
+                                                <span class="checkmark"></span>
+                                                <div class="option-content">
+                                                    <span>Large Space</span>
+                                                    <span class="option-detail">500-1000 SQM</span>
+                                                </div>
+                                            </label>
+                                            <label class="filter-option">
+                                                <input type="checkbox" name="coverage" value="huge">
+                                                <span class="checkmark"></span>
+                                                <div class="option-content">
+                                                    <span>Huge Space</span>
+                                                    <span class="option-detail">1000-5000 SQM</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Signal Technology Filter -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#signalCollapse" aria-expanded="false" aria-controls="signalCollapse">
+                                        Signal Technology
+                                    </button>
+                                </h2>
+                                <div id="signalCollapse" class="accordion-collapse collapse" data-bs-parent="#filtersAccordion">
+                                    <div class="accordion-body">
+                                        <div class="filter-options">
+                                            <label class="filter-option">
+                                                <input type="checkbox" name="signal" value="3g">
+                                                <span class="checkmark"></span>
+                                                <div class="option-content">
+                                                    <span>3G Network</span>
+                                                </div>
+                                            </label>
+                                            <label class="filter-option">
+                                                <input type="checkbox" name="signal" value="4g">
+                                                <span class="checkmark"></span>
+                                                <div class="option-content">
+                                                    <span>4G LTE</span>
+                                                </div>
+                                            </label>
+                                            <label class="filter-option">
+                                                <input type="checkbox" name="signal" value="5g">
+                                                <span class="checkmark"></span>
+                                                <div class="option-content">
+                                                    <span>5G Ready</span>
+                                                </div>
+                                            </label>
+                                            <label class="filter-option">
+                                                <input type="checkbox" name="signal" value="all">
+                                                <span class="checkmark"></span>
+                                                <div class="option-content">
+                                                    <span>Multi-Band (3G/4G/5G)</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Network Carriers Filter -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#carriersCollapse" aria-expanded="false" aria-controls="carriersCollapse">
+                                        Network Carriers
+                                    </button>
+                                </h2>
+                                <div id="carriersCollapse" class="accordion-collapse collapse" data-bs-parent="#filtersAccordion">
+                                    <div class="accordion-body">
+                                        <div class="filter-options">
+                                            <label class="filter-option">
+                                                <input type="checkbox" name="carrier" value="vodafone">
+                                                <span class="checkmark"></span>
+                                                <div class="option-content">
+                                                    <span>Vodafone</span>
+                                                </div>
+                                            </label>
+                                            <label class="filter-option">
+                                                <input type="checkbox" name="carrier" value="o2">
+                                                <span class="checkmark"></span>
+                                                <div class="option-content">
+                                                    <span>O2</span>
+                                                </div>
+                                            </label>
+                                            <label class="filter-option">
+                                                <input type="checkbox" name="carrier" value="ee">
+                                                <span class="checkmark"></span>
+                                                <div class="option-content">
+                                                    <span>EE</span>
+                                                </div>
+                                            </label>
+                                            <label class="filter-option">
+                                                <input type="checkbox" name="carrier" value="three">
+                                                <span class="checkmark"></span>
+                                                <div class="option-content">
+                                                    <span>Three UK</span>
+                                                </div>
+                                            </label>
+                                            <label class="filter-option">
+                                                <input type="checkbox" name="carrier" value="other">
+                                                <span class="checkmark"></span>
+                                                <div class="option-content">
+                                                    <span>Other Carriers</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Price Range Filter -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#priceCollapse" aria-expanded="false" aria-controls="priceCollapse">
+                                        Price Range
+                                    </button>
+                                </h2>
+                                <div id="priceCollapse" class="accordion-collapse collapse" data-bs-parent="#filtersAccordion">
+                                    <div class="accordion-body">
+                                        <div class="price-slider">
+                                            <div class="price-range">
+                                                <div class="range-slider">
+                                                    <input type="range" class="min-price" value="0" min="0" max="1000" step="10">
+                                                    <input type="range" class="max-price" value="1000" min="0" max="1000" step="10">
+                                                </div>
+                                                <div class="price-inputs">
+                                                    <div class="field">
+                                                        <span>£</span>
+                                                        <input type="number" class="input-min" value="0">
+                                                    </div>
+                                                    <div class="separator">-</div>
+                                                    <div class="field">
+                                                        <span>£</span>
+                                                        <input type="number" class="input-max" value="1000">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="filter-group">
-                            <h5>Signal Technology</h5>
-                            <div class="filter-options">
-                                <label class="filter-option">
-                                    <input type="checkbox" name="signal" value="3g">
-                                    <span>3G Network</span>
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox" name="signal" value="4g">
-                                    <span>4G LTE</span>
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox" name="signal" value="5g">
-                                    <span>5G Ready</span>
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox" name="signal" value="all">
-                                    <span>Multi-Band (3G/4G/5G)</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="filter-group">
-                            <h5>Network Carriers</h5>
-                            <div class="filter-options">
-                                <label class="filter-option">
-                                    <input type="checkbox" name="carrier" value="vodafone">
-                                    <span>Vodafone</span>
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox" name="carrier" value="o2">
-                                    <span>O2</span>
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox" name="carrier" value="ee">
-                                    <span>EE</span>
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox" name="carrier" value="three">
-                                    <span>Three UK</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="filter-group">
-                            <h5>Price Range</h5>
-                            <div class="filter-options">
-                                <label class="filter-option">
-                                    <input type="checkbox" name="price" value="budget">
-                                    <span>Under £200</span>
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox" name="price" value="mid">
-                                    <span>£200 - £500</span>
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox" name="price" value="premium">
-                                    <span>£500 - £800</span>
-                                </label>
-                                <label class="filter-option">
-                                    <input type="checkbox" name="price" value="enterprise">
-                                    <span>Over £800</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <button class="btn-primary w-100 mt-3" id="apply-filters">
+                        
+                        <button class="btn-primary w-100 mt-4" id="apply-filters">
                             <i class="fas fa-filter me-2"></i>Apply Filters
-                        </button>
-                        <button class="btn-secondary w-100 mt-2" id="clear-filters">
-                            <i class="fas fa-times me-2"></i>Clear All
                         </button>
                     </div>
                 </div>
-
-                <div class="col-12 col-lg-9">
-                    <!-- Enhanced Results Header -->
-                    <div class="archive-results-header">
-                        <div class="d-flex justify-content-between align-items-center mb-0">
-                            <div>
-                                <h2>Signal Boosters
-                                    <span class="results-count-badge">
-                                        <i class="fas fa-signal me-1"></i>
-                                        <span id="results-count">24</span> products
-                                    </span>
-                                </h2>
-                                <p class="text-muted mb-0">Find the perfect signal booster for your needs</p>
+                
+                <!-- Products Grid -->
+                <div class="col-lg-9">
+                    <div class="products-header">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                            <div class="products-count">
+                                <h2>Signal Boosters</h2>
+                                <p><span id="results-count">24</span> products found</p>
                             </div>
-                            <div class="sort-options">
-                                <select class="form-select" id="sort-select">
-                                    <option value="newest">🆕 Newest First</option>
-                                    <option value="oldest">📅 Oldest First</option>
-                                    <option value="price-low">💰 Price: Low to High</option>
-                                    <option value="price-high">💎 Price: High to Low</option>
-                                    <option value="popular">⭐ Most Popular</option>
-                                </select>
+                            <div class="products-sorting">
+                                <div class="d-flex align-items-center gap-2">
+                                    <label for="sort-select">Sort by:</label>
+                                    <select class="form-select" id="sort-select">
+                                        <option value="featured">Featured</option>
+                                        <option value="newest">Newest</option>
+                                        <option value="price-low">Price: Low to High</option>
+                                        <option value="price-high">Price: High to Low</option>
+                                        <option value="rating">Top Rated</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
+                        
+                        <div class="active-filters mt-3" id="active-filters">
+                            <!-- Active filters will be added here dynamically -->
+                        </div>
                     </div>
-
-                    <!-- Enhanced Products Grid -->
-                    <div class="archive-products-grid">
-                        <div class="row row-gap-4">
-                            <!-- Enhanced Product Card 1 -->
-                            <div class="col-12 col-md-6 col-xl-4">
-                                <div class="archive-product-card">
-                                    <div class="archive-product-img">
-                                        <img src="assets/images/landing/Black1%201.png" alt="Professional Signal Booster Pro"/>
-                                        <div class="product-badge">Best Seller</div>
+                    
+                    <div class="products-grid">
+                        <div class="row g-4">
+                            <!-- Product Card 1 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="product-card">
+                                    <div class="product-badge bestseller">Best Seller</div>
+                                    <div class="product-image">
+                                        <img src="assets/images/landing/Black1%201.png" alt="Professional Signal Booster Pro">
+                                        <div class="product-actions">
+                                            <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                                                <i class="far fa-heart"></i>
+                                            </button>
+                                            <button class="action-btn compare-btn" title="Compare">
+                                                <i class="fas fa-exchange-alt"></i>
+                                            </button>
+                                            <button class="action-btn quickview-btn" title="Quick View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="archive-product-content">
-                                        <h4>Professional Signal Booster Pro</h4>
-                                        <p class="product-description">Advanced signal amplification technology perfect for small to medium spaces up to 500 SQM. Supports all major networks with 5G compatibility.</p>
+                                    <div class="product-content">
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <span>(42)</span>
+                                        </div>
+                                        <h3 class="product-title">Professional Signal Booster Pro</h3>
+                                        <p class="product-description">Advanced signal amplification for spaces up to 500 SQM with multi-network support.</p>
                                         <div class="product-features">
                                             <span class="feature-tag">3G/4G/5G</span>
                                             <span class="feature-tag">500 SQM</span>
@@ -342,23 +518,45 @@
                                             <span class="current-price">£299.99</span>
                                             <span class="original-price">£399.99</span>
                                         </div>
-                                        <a href="#" class="btn-primary w-100">
-                                            <i class="fas fa-eye me-2"></i>View Details
-                                        </a>
+                                        <div class="product-buttons">
+                                            <a href="product.html" class="btn-view">View Details</a>
+                                            <button class="btn-cart">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Enhanced Product Card 2 -->
-                            <div class="col-12 col-md-6 col-xl-4">
-                                <div class="archive-product-card">
-                                    <div class="archive-product-img">
-                                        <img src="assets/images/landing/Black1%201.png" alt="Home Signal Booster Essential"/>
-                                        <div class="product-badge new">New</div>
+                            
+                            <!-- Product Card 2 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="product-card">
+                                    <div class="product-badge new">New</div>
+                                    <div class="product-image">
+                                        <img src="assets/images/landing/Black1%201.png" alt="Home Signal Booster Essential">
+                                        <div class="product-actions">
+                                            <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                                                <i class="far fa-heart"></i>
+                                            </button>
+                                            <button class="action-btn compare-btn" title="Compare">
+                                                <i class="fas fa-exchange-alt"></i>
+                                            </button>
+                                            <button class="action-btn quickview-btn" title="Quick View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="archive-product-content">
-                                        <h4>Home Signal Booster Essential</h4>
-                                        <p class="product-description">Ideal solution for small homes and apartments up to 300 SQM. Easy plug-and-play installation with automatic network detection.</p>
+                                    <div class="product-content">
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <span>(28)</span>
+                                        </div>
+                                        <h3 class="product-title">Home Signal Booster Essential</h3>
+                                        <p class="product-description">Ideal solution for small homes and apartments up to 300 SQM with easy setup.</p>
                                         <div class="product-features">
                                             <span class="feature-tag">3G/4G</span>
                                             <span class="feature-tag">300 SQM</span>
@@ -367,22 +565,44 @@
                                         <div class="product-price">
                                             <span class="current-price">£199.99</span>
                                         </div>
-                                        <a href="#" class="btn-primary w-100">
-                                            <i class="fas fa-eye me-2"></i>View Details
-                                        </a>
+                                        <div class="product-buttons">
+                                            <a href="product.html" class="btn-view">View Details</a>
+                                            <button class="btn-cart">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Enhanced Product Card 3 -->
-                            <div class="col-12 col-md-6 col-xl-4">
-                                <div class="archive-product-card">
-                                    <div class="archive-product-img">
-                                        <img src="assets/images/landing/Black1%201.png" alt="Enterprise Signal Booster Max"/>
+                            
+                            <!-- Product Card 3 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="assets/images/landing/Black1%201.png" alt="Enterprise Signal Booster Max">
+                                        <div class="product-actions">
+                                            <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                                                <i class="far fa-heart"></i>
+                                            </button>
+                                            <button class="action-btn compare-btn" title="Compare">
+                                                <i class="fas fa-exchange-alt"></i>
+                                            </button>
+                                            <button class="action-btn quickview-btn" title="Quick View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="archive-product-content">
-                                        <h4>Enterprise Signal Booster Max</h4>
-                                        <p class="product-description">Heavy-duty commercial solution for large buildings and warehouses. Covers up to 5000 SQM with enterprise-grade reliability.</p>
+                                    <div class="product-content">
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>(16)</span>
+                                        </div>
+                                        <h3 class="product-title">Enterprise Signal Booster Max</h3>
+                                        <p class="product-description">Heavy-duty commercial solution for large buildings up to 5000 SQM.</p>
                                         <div class="product-features">
                                             <span class="feature-tag">5G Ready</span>
                                             <span class="feature-tag">5000 SQM</span>
@@ -391,22 +611,44 @@
                                         <div class="product-price">
                                             <span class="current-price">£899.99</span>
                                         </div>
-                                        <a href="#" class="btn-primary w-100">
-                                            <i class="fas fa-eye me-2"></i>View Details
-                                        </a>
+                                        <div class="product-buttons">
+                                            <a href="product.html" class="btn-view">View Details</a>
+                                            <button class="btn-cart">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Enhanced Product Card 4 -->
-                            <div class="col-12 col-md-6 col-xl-4">
-                                <div class="archive-product-card">
-                                    <div class="archive-product-img">
-                                        <img src="assets/images/landing/Black1%201.png" alt="Office Signal Booster Plus"/>
+                            
+                            <!-- Product Card 4 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="assets/images/landing/Black1%201.png" alt="Office Signal Booster Plus">
+                                        <div class="product-actions">
+                                            <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                                                <i class="far fa-heart"></i>
+                                            </button>
+                                            <button class="action-btn compare-btn" title="Compare">
+                                                <i class="fas fa-exchange-alt"></i>
+                                            </button>
+                                            <button class="action-btn quickview-btn" title="Quick View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="archive-product-content">
-                                        <h4>Office Signal Booster Plus</h4>
-                                        <p class="product-description">Perfect for medium offices and co-working spaces up to 1000 SQM. Optimized for business environments with multiple users.</p>
+                                    <div class="product-content">
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <span>(34)</span>
+                                        </div>
+                                        <h3 class="product-title">Office Signal Booster Plus</h3>
+                                        <p class="product-description">Perfect for medium offices and co-working spaces up to 1000 SQM.</p>
                                         <div class="product-features">
                                             <span class="feature-tag">4G/5G</span>
                                             <span class="feature-tag">1000 SQM</span>
@@ -416,22 +658,44 @@
                                             <span class="current-price">£499.99</span>
                                             <span class="original-price">£599.99</span>
                                         </div>
-                                        <a href="#" class="btn-primary w-100">
-                                            <i class="fas fa-eye me-2"></i>View Details
-                                        </a>
+                                        <div class="product-buttons">
+                                            <a href="product.html" class="btn-view">View Details</a>
+                                            <button class="btn-cart">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Enhanced Product Card 5 -->
-                            <div class="col-12 col-md-6 col-xl-4">
-                                <div class="archive-product-card">
-                                    <div class="archive-product-img">
-                                        <img src="assets/images/landing/Black1%201.png" alt="Compact Signal Booster Mini"/>
+                            
+                            <!-- Product Card 5 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="assets/images/landing/Black1%201.png" alt="Compact Signal Booster Mini">
+                                        <div class="product-actions">
+                                            <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                                                <i class="far fa-heart"></i>
+                                            </button>
+                                            <button class="action-btn compare-btn" title="Compare">
+                                                <i class="fas fa-exchange-alt"></i>
+                                            </button>
+                                            <button class="action-btn quickview-btn" title="Quick View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="archive-product-content">
-                                        <h4>Compact Signal Booster Mini</h4>
-                                        <p class="product-description">Ultra-compact design perfect for small apartments and single rooms up to 100 SQM. Discreet and powerful solution.</p>
+                                    <div class="product-content">
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                            <span>(19)</span>
+                                        </div>
+                                        <h3 class="product-title">Compact Signal Booster Mini</h3>
+                                        <p class="product-description">Ultra-compact design perfect for small apartments up to 100 SQM.</p>
                                         <div class="product-features">
                                             <span class="feature-tag">3G/4G</span>
                                             <span class="feature-tag">100 SQM</span>
@@ -440,23 +704,45 @@
                                         <div class="product-price">
                                             <span class="current-price">£149.99</span>
                                         </div>
-                                        <a href="#" class="btn-primary w-100">
-                                            <i class="fas fa-eye me-2"></i>View Details
-                                        </a>
+                                        <div class="product-buttons">
+                                            <a href="product.html" class="btn-view">View Details</a>
+                                            <button class="btn-cart">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Enhanced Product Card 6 -->
-                            <div class="col-12 col-md-6 col-xl-4">
-                                <div class="archive-product-card">
-                                    <div class="archive-product-img">
-                                        <img src="assets/images/landing/Black1%201.png" alt="Hotel Signal Booster Premium"/>
-                                        <div class="product-badge sale">Sale</div>
+                            
+                            <!-- Product Card 6 -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="product-card">
+                                    <div class="product-badge sale">Sale</div>
+                                    <div class="product-image">
+                                        <img src="assets/images/landing/Black1%201.png" alt="Hotel Signal Booster Premium">
+                                        <div class="product-actions">
+                                            <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                                                <i class="far fa-heart"></i>
+                                            </button>
+                                            <button class="action-btn compare-btn" title="Compare">
+                                                <i class="fas fa-exchange-alt"></i>
+                                            </button>
+                                            <button class="action-btn quickview-btn" title="Quick View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="archive-product-content">
-                                        <h4>Hotel Signal Booster Premium</h4>
-                                        <p class="product-description">Professional-grade solution designed for hotels and hospitality venues up to 2000 SQM. Guest satisfaction guaranteed.</p>
+                                    <div class="product-content">
+                                        <div class="product-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <span>(23)</span>
+                                        </div>
+                                        <h3 class="product-title">Hotel Signal Booster Premium</h3>
+                                        <p class="product-description">Professional-grade solution for hotels and venues up to 2000 SQM.</p>
                                         <div class="product-features">
                                             <span class="feature-tag">5G Ready</span>
                                             <span class="feature-tag">2000 SQM</span>
@@ -466,113 +752,126 @@
                                             <span class="current-price">£699.99</span>
                                             <span class="original-price">£899.99</span>
                                         </div>
-                                        <a href="#" class="btn-primary w-100">
-                                            <i class="fas fa-eye me-2"></i>View Details
-                                        </a>
+                                        <div class="product-buttons">
+                                            <a href="product.html" class="btn-view">View Details</a>
+                                            <button class="btn-cart">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Load More Button -->
-                    <div class="text-center mb-5">
-                        <button class="btn-primary px-5 py-3" id="load-more">
-                            <i class="fas fa-sync-alt me-2"></i>Load More Products
-                        </button>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination-container">
+                        <div class="pagination-info">
+                            <p>Showing <span>1-6</span> of <span>24</span> products</p>
+                        </div>
+                        <div class="pagination">
+                            <button class="page-btn prev" disabled>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <span class="dots">...</span>
+                            <button class="page-btn">4</button>
+                            <button class="page-btn next">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="per-page-selector">
+                            <label for="per-page">Show:</label>
+                            <select id="per-page" class="form-select">
+                                <option value="6">6</option>
+                                <option value="12">12</option>
+                                <option value="24">24</option>
+                                <option value="48">48</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced Pagination -->
-    <section class="pagination-container">
-        <div class="pagination">
-            <button class="page-btn prev" disabled>
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="page-btn active">1</button>
-            <button class="page-btn">2</button>
-            <button class="page-btn">3</button>
-            <span class="dots">...</span>
-            <button class="page-btn">8</button>
-            <button class="page-btn next">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-    </section>
-
-    <!-- Enhanced Related Categories -->
-    <section class="container mb-5">
-        <h2 style="text-align: center; margin-bottom: 3rem; color: var(--color-dark-navy); font-weight: 700;">Browse by Category</h2>
-        <div class="row row-gap-4 mt-4">
-            <div class="col-12 col-md-6 col-lg-3">
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <img src="assets/images/landing/home-button%201.svg" alt="Home Boosters"/>
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Free Shipping</h4>
+                            <p>On all orders over £200</p>
+                        </div>
                     </div>
-                    <h4>Home Boosters</h4>
-                    <p>Perfect for residential use and family homes</p>
-                    <span class="category-count">12 products</span>
-                </a>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <img src="assets/images/landing/building-icon.svg" alt="Office Boosters"/>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>24/7 Support</h4>
+                            <p>Expert assistance available</p>
+                        </div>
                     </div>
-                    <h4>Office Boosters</h4>
-                    <p>Ideal for business environments and workspaces</p>
-                    <span class="category-count">8 products</span>
-                </a>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <img src="assets/images/landing/hotel%201.svg" alt="Commercial Boosters"/>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-undo-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>30-Day Returns</h4>
+                            <p>Money back guarantee</p>
+                        </div>
                     </div>
-                    <h4>Commercial Boosters</h4>
-                    <p>Heavy-duty solutions for large venues</p>
-                    <span class="category-count">6 products</span>
-                </a>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <a href="#" class="category-card">
-                    <div class="category-icon">
-                        <img src="assets/images/landing/company-icon.svg" alt="Enterprise Boosters"/>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>3-Year Warranty</h4>
+                            <p>On all signal boosters</p>
+                        </div>
                     </div>
-                    <h4>Enterprise Boosters</h4>
-                    <p>Large-scale installations and custom solutions</p>
-                    <span class="category-count">4 products</span>
-                </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Newsletter Section -->
-    <section class="container-fluid py-5 mb-5" style="background-color: #F0F4FF;">
+    <section class="newsletter-section">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="mb-4" style="color: var(--primary-color); font-weight: 700;">Stay Updated</h2>
-                    <p class="mb-4" style="color: var(--Blue-Gray-600); font-size: 1.125rem;">Subscribe to our newsletter for exclusive offers, new product announcements, and expert tips to improve your signal quality.</p>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card border-0 shadow-sm rounded-4 p-4">
-                        <div class="card-body">
-                            <form class="newsletter-form needs-validation" novalidate>
-                                <div class="row g-3">
-                                    <div class="col-md-8">
-                                        <input type="email" class="form-control form-control-lg" placeholder="Your email address" required>
-                                        <div class="invalid-feedback">Please provide a valid email address.</div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button type="submit" class="btn-primary w-100 h-100">Subscribe</button>
-                                    </div>
-                                </div>
-                            </form>
+            <div class="newsletter-container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="newsletter-content">
+                            <h2>Stay Updated on Signal Technology</h2>
+                            <p>Subscribe to our newsletter for exclusive offers, new product announcements, and expert tips to improve your signal quality.</p>
                         </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <form class="newsletter-form needs-validation" novalidate>
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Your email address" required>
+                                <button class="btn-subscribe" type="submit">
+                                    Subscribe <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                            <div class="form-text">
+                                <i class="fas fa-lock me-1"></i> Your information is secure and will never be shared with third parties.
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -664,6 +963,7 @@
     </div>
 </footer>
 
+<!-- Country Modal -->
 <div class="modal fade" id="country-modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -703,6 +1003,77 @@
                         <label for="UAE"><img src="https://flagcdn.com/ae.svg" class="country-popup-logo"
                                               alt="UAE Flag">
                             UAE</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick View Modal -->
+<div class="modal fade" id="quickview-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Quick View</h3>
+                <span class="close-btn">
+                    <img src="assets/images/landing/close-icon.svg" data-bs-dismiss="modal" aria-label="Close"/>
+                </span>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="quickview-image">
+                            <img src="assets/images/landing/Black1%201.png" alt="Product Image">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="quickview-content">
+                            <h2 class="product-title">Professional Signal Booster Pro</h2>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(42 reviews)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">£299.99</span>
+                                <span class="original-price">£399.99</span>
+                                <span class="discount-badge">-25%</span>
+                            </div>
+                            <div class="product-description">
+                                <p>Advanced signal amplification technology perfect for small to medium spaces up to 500 SQM. Supports all major networks with 5G compatibility.</p>
+                            </div>
+                            <div class="product-features">
+                                <h4>Key Features:</h4>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> 3G/4G/5G Compatible</li>
+                                    <li><i class="fas fa-check"></i> Coverage up to 500 SQM</li>
+                                    <li><i class="fas fa-check"></i> Supports all UK carriers</li>
+                                    <li><i class="fas fa-check"></i> Easy installation</li>
+                                </ul>
+                            </div>
+                            <div class="product-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus">-</button>
+                                    <input type="number" value="1" min="1" max="10">
+                                    <button class="qty-btn plus">+</button>
+                                </div>
+                                <button class="btn-add-to-cart">
+                                    <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                                </button>
+                                <button class="btn-wishlist">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="product-meta">
+                                <p><span>SKU:</span> MB-PRO-500</p>
+                                <p><span>Category:</span> Signal Boosters</p>
+                                <p><span>Tags:</span> 5G, Office, Professional</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
