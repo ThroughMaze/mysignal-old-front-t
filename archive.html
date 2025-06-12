@@ -6,9 +6,10 @@
     <title>Mobile Booster Archive - Signal Boosters by Category</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.css"/>
     <link rel="stylesheet" href="assets/css/blog.css"/>
+    <link rel="stylesheet" href="assets/css/archive.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 <header class="header-white">
@@ -156,12 +157,12 @@
 </header>
 
 <main>
-    <!-- Archive Hero Section -->
-    <section class="blog-hero-section">
-        <div class="hero-section-content container">
+    <!-- Enhanced Archive Hero Section -->
+    <section class="archive-hero-section blog-hero-section">
+        <div class="hero-section-content container archive-hero-content">
             <div class="hero-text">
                 <h1>Signal Boosters Archive</h1>
-                <p class="hero-subtext">Browse our complete collection of mobile signal boosters by category, carrier, and coverage area.</p>
+                <p class="hero-subtext">Discover our premium collection of mobile signal boosters designed for every space and need. From compact home solutions to enterprise-grade systems.</p>
             </div>
             <div class="hero-illustration">
                 <img src="assets/images/landing/2150040428-removebg-preview%202.png"
@@ -181,13 +182,14 @@
         </nav>
     </section>
 
-    <!-- Filter Section -->
+    <!-- Enhanced Filter Section -->
     <section class="container">
         <div class="archive-filters">
             <div class="row">
                 <div class="col-12 col-lg-3">
                     <div class="filter-sidebar">
-                        <h3>Filter by Category</h3>
+                        <h3>Filter Products</h3>
+                        
                         <div class="filter-group">
                             <h5>Coverage Area</h5>
                             <div class="filter-options">
@@ -211,29 +213,29 @@
                         </div>
 
                         <div class="filter-group">
-                            <h5>Signal Type</h5>
+                            <h5>Signal Technology</h5>
                             <div class="filter-options">
                                 <label class="filter-option">
                                     <input type="checkbox" name="signal" value="3g">
-                                    <span>3G</span>
+                                    <span>3G Network</span>
                                 </label>
                                 <label class="filter-option">
                                     <input type="checkbox" name="signal" value="4g">
-                                    <span>4G</span>
+                                    <span>4G LTE</span>
                                 </label>
                                 <label class="filter-option">
                                     <input type="checkbox" name="signal" value="5g">
-                                    <span>5G</span>
+                                    <span>5G Ready</span>
                                 </label>
                                 <label class="filter-option">
                                     <input type="checkbox" name="signal" value="all">
-                                    <span>3G & 4G & 5G</span>
+                                    <span>Multi-Band (3G/4G/5G)</span>
                                 </label>
                             </div>
                         </div>
 
                         <div class="filter-group">
-                            <h5>Carriers</h5>
+                            <h5>Network Carriers</h5>
                             <div class="filter-options">
                                 <label class="filter-option">
                                     <input type="checkbox" name="carrier" value="vodafone">
@@ -254,44 +256,53 @@
                             </div>
                         </div>
 
-                        <button class="btn-primary w-100 mt-3" id="apply-filters">Apply Filters</button>
-                        <button class="btn-secondary w-100 mt-2" id="clear-filters">Clear All</button>
+                        <button class="btn-primary w-100 mt-3" id="apply-filters">
+                            <i class="fas fa-filter me-2"></i>Apply Filters
+                        </button>
+                        <button class="btn-secondary w-100 mt-2" id="clear-filters">
+                            <i class="fas fa-times me-2"></i>Clear All
+                        </button>
                     </div>
                 </div>
 
                 <div class="col-12 col-lg-9">
-                    <!-- Results Header -->
+                    <!-- Enhanced Results Header -->
                     <div class="archive-results-header">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-0">
                             <div>
-                                <h2>Signal Boosters</h2>
-                                <p class="text-muted">Showing <span id="results-count">24</span> products</p>
+                                <h2>Signal Boosters
+                                    <span class="results-count-badge">
+                                        <i class="fas fa-signal me-1"></i>
+                                        <span id="results-count">24</span> products
+                                    </span>
+                                </h2>
+                                <p class="text-muted mb-0">Find the perfect signal booster for your needs</p>
                             </div>
                             <div class="sort-options">
                                 <select class="form-select" id="sort-select">
-                                    <option value="newest">Newest First</option>
-                                    <option value="oldest">Oldest First</option>
-                                    <option value="price-low">Price: Low to High</option>
-                                    <option value="price-high">Price: High to Low</option>
-                                    <option value="popular">Most Popular</option>
+                                    <option value="newest">🆕 Newest First</option>
+                                    <option value="oldest">📅 Oldest First</option>
+                                    <option value="price-low">💰 Price: Low to High</option>
+                                    <option value="price-high">💎 Price: High to Low</option>
+                                    <option value="popular">⭐ Most Popular</option>
                                 </select>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Products Grid -->
+                    <!-- Enhanced Products Grid -->
                     <div class="archive-products-grid">
                         <div class="row row-gap-4">
-                            <!-- Product Card 1 -->
+                            <!-- Enhanced Product Card 1 -->
                             <div class="col-12 col-md-6 col-xl-4">
                                 <div class="archive-product-card">
                                     <div class="archive-product-img">
-                                        <img src="assets/images/landing/Black1%201.png" alt="Mobile Signal Booster"/>
+                                        <img src="assets/images/landing/Black1%201.png" alt="Professional Signal Booster Pro"/>
                                         <div class="product-badge">Best Seller</div>
                                     </div>
                                     <div class="archive-product-content">
                                         <h4>Professional Signal Booster Pro</h4>
-                                        <p class="product-description">Perfect for small to medium spaces up to 500 SQM. Supports 3G, 4G, and 5G networks.</p>
+                                        <p class="product-description">Advanced signal amplification technology perfect for small to medium spaces up to 500 SQM. Supports all major networks with 5G compatibility.</p>
                                         <div class="product-features">
                                             <span class="feature-tag">3G/4G/5G</span>
                                             <span class="feature-tag">500 SQM</span>
@@ -301,21 +312,23 @@
                                             <span class="current-price">£299.99</span>
                                             <span class="original-price">£399.99</span>
                                         </div>
-                                        <a href="#" class="btn-primary w-100">View Details</a>
+                                        <a href="#" class="btn-primary w-100">
+                                            <i class="fas fa-eye me-2"></i>View Details
+                                        </a>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Product Card 2 -->
+                            <!-- Enhanced Product Card 2 -->
                             <div class="col-12 col-md-6 col-xl-4">
                                 <div class="archive-product-card">
                                     <div class="archive-product-img">
-                                        <img src="assets/images/landing/Black1%201.png" alt="Mobile Signal Booster"/>
+                                        <img src="assets/images/landing/Black1%201.png" alt="Home Signal Booster Essential"/>
                                         <div class="product-badge new">New</div>
                                     </div>
                                     <div class="archive-product-content">
                                         <h4>Home Signal Booster Essential</h4>
-                                        <p class="product-description">Ideal for small homes and apartments up to 300 SQM. Easy installation and setup.</p>
+                                        <p class="product-description">Ideal solution for small homes and apartments up to 300 SQM. Easy plug-and-play installation with automatic network detection.</p>
                                         <div class="product-features">
                                             <span class="feature-tag">3G/4G</span>
                                             <span class="feature-tag">300 SQM</span>
@@ -324,20 +337,22 @@
                                         <div class="product-price">
                                             <span class="current-price">£199.99</span>
                                         </div>
-                                        <a href="#" class="btn-primary w-100">View Details</a>
+                                        <a href="#" class="btn-primary w-100">
+                                            <i class="fas fa-eye me-2"></i>View Details
+                                        </a>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Product Card 3 -->
+                            <!-- Enhanced Product Card 3 -->
                             <div class="col-12 col-md-6 col-xl-4">
                                 <div class="archive-product-card">
                                     <div class="archive-product-img">
-                                        <img src="assets/images/landing/Black1%201.png" alt="Mobile Signal Booster"/>
+                                        <img src="assets/images/landing/Black1%201.png" alt="Enterprise Signal Booster Max"/>
                                     </div>
                                     <div class="archive-product-content">
                                         <h4>Enterprise Signal Booster Max</h4>
-                                        <p class="product-description">Heavy-duty solution for large buildings and warehouses up to 5000 SQM coverage.</p>
+                                        <p class="product-description">Heavy-duty commercial solution for large buildings and warehouses. Covers up to 5000 SQM with enterprise-grade reliability.</p>
                                         <div class="product-features">
                                             <span class="feature-tag">5G Ready</span>
                                             <span class="feature-tag">5000 SQM</span>
@@ -346,20 +361,22 @@
                                         <div class="product-price">
                                             <span class="current-price">£899.99</span>
                                         </div>
-                                        <a href="#" class="btn-primary w-100">View Details</a>
+                                        <a href="#" class="btn-primary w-100">
+                                            <i class="fas fa-eye me-2"></i>View Details
+                                        </a>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Product Card 4 -->
+                            <!-- Enhanced Product Card 4 -->
                             <div class="col-12 col-md-6 col-xl-4">
                                 <div class="archive-product-card">
                                     <div class="archive-product-img">
-                                        <img src="assets/images/landing/Black1%201.png" alt="Mobile Signal Booster"/>
+                                        <img src="assets/images/landing/Black1%201.png" alt="Office Signal Booster Plus"/>
                                     </div>
                                     <div class="archive-product-content">
                                         <h4>Office Signal Booster Plus</h4>
-                                        <p class="product-description">Perfect for medium offices and co-working spaces up to 1000 SQM.</p>
+                                        <p class="product-description">Perfect for medium offices and co-working spaces up to 1000 SQM. Optimized for business environments with multiple users.</p>
                                         <div class="product-features">
                                             <span class="feature-tag">4G/5G</span>
                                             <span class="feature-tag">1000 SQM</span>
@@ -369,20 +386,22 @@
                                             <span class="current-price">£499.99</span>
                                             <span class="original-price">£599.99</span>
                                         </div>
-                                        <a href="#" class="btn-primary w-100">View Details</a>
+                                        <a href="#" class="btn-primary w-100">
+                                            <i class="fas fa-eye me-2"></i>View Details
+                                        </a>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Product Card 5 -->
+                            <!-- Enhanced Product Card 5 -->
                             <div class="col-12 col-md-6 col-xl-4">
                                 <div class="archive-product-card">
                                     <div class="archive-product-img">
-                                        <img src="assets/images/landing/Black1%201.png" alt="Mobile Signal Booster"/>
+                                        <img src="assets/images/landing/Black1%201.png" alt="Compact Signal Booster Mini"/>
                                     </div>
                                     <div class="archive-product-content">
                                         <h4>Compact Signal Booster Mini</h4>
-                                        <p class="product-description">Ultra-compact design for small apartments and single rooms up to 100 SQM.</p>
+                                        <p class="product-description">Ultra-compact design perfect for small apartments and single rooms up to 100 SQM. Discreet and powerful solution.</p>
                                         <div class="product-features">
                                             <span class="feature-tag">3G/4G</span>
                                             <span class="feature-tag">100 SQM</span>
@@ -391,21 +410,23 @@
                                         <div class="product-price">
                                             <span class="current-price">£149.99</span>
                                         </div>
-                                        <a href="#" class="btn-primary w-100">View Details</a>
+                                        <a href="#" class="btn-primary w-100">
+                                            <i class="fas fa-eye me-2"></i>View Details
+                                        </a>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Product Card 6 -->
+                            <!-- Enhanced Product Card 6 -->
                             <div class="col-12 col-md-6 col-xl-4">
                                 <div class="archive-product-card">
                                     <div class="archive-product-img">
-                                        <img src="assets/images/landing/Black1%201.png" alt="Mobile Signal Booster"/>
+                                        <img src="assets/images/landing/Black1%201.png" alt="Hotel Signal Booster Premium"/>
                                         <div class="product-badge sale">Sale</div>
                                     </div>
                                     <div class="archive-product-content">
                                         <h4>Hotel Signal Booster Premium</h4>
-                                        <p class="product-description">Professional-grade solution for hotels and hospitality venues up to 2000 SQM.</p>
+                                        <p class="product-description">Professional-grade solution designed for hotels and hospitality venues up to 2000 SQM. Guest satisfaction guaranteed.</p>
                                         <div class="product-features">
                                             <span class="feature-tag">5G Ready</span>
                                             <span class="feature-tag">2000 SQM</span>
@@ -415,7 +436,9 @@
                                             <span class="current-price">£699.99</span>
                                             <span class="original-price">£899.99</span>
                                         </div>
-                                        <a href="#" class="btn-primary w-100">View Details</a>
+                                        <a href="#" class="btn-primary w-100">
+                                            <i class="fas fa-eye me-2"></i>View Details
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -426,14 +449,14 @@
         </div>
     </section>
 
-    <!-- Pagination -->
+    <!-- Enhanced Pagination -->
     <section class="pagination-container">
         <div class="pagination"></div>
     </section>
 
-    <!-- Related Categories -->
+    <!-- Enhanced Related Categories -->
     <section class="container">
-        <h2>Browse by Category</h2>
+        <h2 style="text-align: center; margin-bottom: 3rem; color: var(--color-dark-navy); font-weight: 700;">Browse by Category</h2>
         <div class="row row-gap-4 mt-4">
             <div class="col-12 col-md-6 col-lg-3">
                 <a href="#" class="category-card">
@@ -441,7 +464,7 @@
                         <img src="assets/images/landing/home-button%201.svg" alt="Home Boosters"/>
                     </div>
                     <h4>Home Boosters</h4>
-                    <p>Perfect for residential use</p>
+                    <p>Perfect for residential use and family homes</p>
                     <span class="category-count">12 products</span>
                 </a>
             </div>
@@ -451,7 +474,7 @@
                         <img src="assets/images/landing/building-icon.svg" alt="Office Boosters"/>
                     </div>
                     <h4>Office Boosters</h4>
-                    <p>Ideal for business environments</p>
+                    <p>Ideal for business environments and workspaces</p>
                     <span class="category-count">8 products</span>
                 </a>
             </div>
@@ -461,7 +484,7 @@
                         <img src="assets/images/landing/hotel%201.svg" alt="Commercial Boosters"/>
                     </div>
                     <h4>Commercial Boosters</h4>
-                    <p>Heavy-duty solutions</p>
+                    <p>Heavy-duty solutions for large venues</p>
                     <span class="category-count">6 products</span>
                 </a>
             </div>
@@ -471,7 +494,7 @@
                         <img src="assets/images/landing/company-icon.svg" alt="Enterprise Boosters"/>
                     </div>
                     <h4>Enterprise Boosters</h4>
-                    <p>Large-scale installations</p>
+                    <p>Large-scale installations and custom solutions</p>
                     <span class="category-count">4 products</span>
                 </a>
             </div>
@@ -507,6 +530,7 @@
                     <li><a href="#">Buyer's Guide</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Blog</a></li>
+                    <li><a href="archive.html">Archive</a></li>
                 </ul>
             </div>
             <div>
