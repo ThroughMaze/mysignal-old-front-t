@@ -40,7 +40,8 @@ export default defineConfig({
                 main: path.resolve('', 'index.html'),
                 blog: path.resolve('', 'blog.html'),
                 article: path.resolve('', 'article.html'),
-                product: path.resolve('', 'product.html')
+                product: path.resolve('', 'product.html'),
+                archive: path.resolve('', 'archive.html')
             },
         },
         assetsDir: 'assets',
