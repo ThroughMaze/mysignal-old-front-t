@@ -45,7 +45,8 @@ export default defineConfig({
                 cart: path.resolve('', 'cart.html'),
                 checkout: path.resolve('', 'checkout.html'),
                 orderConfirmation: path.resolve('', 'order-confirmation.html'),
-                category: path.resolve('', 'category.html')
+                category: path.resolve('', 'category.html'),
+                layout: path.resolve('', 'layout.html')
             },
         },
         assetsDir: 'assets',
