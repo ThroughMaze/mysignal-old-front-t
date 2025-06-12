@@ -316,9 +316,13 @@ document.querySelectorAll('.country-item').forEach((country) => {
         }
     })
 })
-document.querySelector('#up-btn').addEventListener('click', () => {
-    document.querySelector('header').style = "display:none";
-})
+
+const upBtn = document.querySelector('#up-btn');
+if (upBtn) {
+    upBtn.addEventListener('click', () => {
+        document.querySelector('header').style = "display:none";
+    })
+}
 
 
 new Glide('.glide', {
