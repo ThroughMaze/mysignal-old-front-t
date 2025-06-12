@@ -1,7 +1,7 @@
 :root {
     --primary-color: #1434CB;
     --color-dark-navy: #0F172A;
-    --primary-hover-color: #01D1EE;
+    --primary-hover-color: #1434CB;
     --primary-stroke: #D3DDFD;
     --light-heading: #484848;
     --light-paragraph: #333;
@@ -1732,11 +1732,11 @@ footer {
     }
 
     .navbar-list > li:hover {
-        color: var(--primary-hover-color);
+        color: var(--primary-color);
     }
 
     .navbar-list > li:hover svg {
-        stroke: var(--primary-hover-color);
+        stroke: var(--primary-color);
         transform: rotate(180deg);
     }
 
@@ -1773,11 +1773,11 @@ footer {
     }
 
     .navbar-list > li:hover .nav-link {
-        color: var(--primary-hover-color);
+        color: var(--primary-color);
     }
 
     .navbar-list > li:hover svg {
-        stroke: var(--primary-hover-color);
+        stroke: var(--primary-color);
         transform: rotate(180deg);
     }
 

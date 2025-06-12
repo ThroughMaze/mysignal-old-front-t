@@ -19,7 +19,7 @@
 }
 
 .breadcrumb-item a:hover {
-    color: var(--primary-hover-color);
+    color: var(--primary-color);
     text-decoration: underline;
 }
 
@@ -87,7 +87,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary-color), var(--primary-hover-color));
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-color));
     border-radius: 2px;
 }
 
@@ -220,7 +220,7 @@
     font-size: 2.25rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover-color));
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -230,7 +230,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover-color));
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-color));
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 2rem;
@@ -281,7 +281,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--primary-hover-color));
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-color));
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -482,7 +482,7 @@
 }
 
 .category-card:hover .category-icon {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover-color));
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-color));
     transform: scale(1.1) rotate(5deg);
 }
 
@@ -567,14 +567,14 @@
 }
 
 .page-btn.active {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover-color));
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-color));
     color: white;
     border-color: var(--primary-color);
     box-shadow: 0 4px 15px rgba(20, 52, 203, 0.3);
 }
 
 .prev, .next {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover-color));
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-color));
     color: white;
     border: none;
     width: 3.5rem;
