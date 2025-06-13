@@ -1,4 +1,4 @@
-import"./bootstrap.js";import{c as js}from"./_commonjsHelpers.js";var qo={exports:{}};/*!
+import{c as js}from"./_commonjsHelpers.js";var qo={exports:{}};/*!
  * jQuery JavaScript Library v3.7.1
  * https://jquery.com/
  *
