@@ -1,6 +1,5 @@
-import "bootstrap/dist/js/bootstrap.min.js";
-
-// Form validation
+import "../../node_modules/bootstrap/dist/js/bootstrap.min.js";
+// Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
     'use strict'
 
@@ -20,16 +19,13 @@ import "bootstrap/dist/js/bootstrap.min.js";
             }, false)
         })
 })()
-
-// Subscribe form
 document.querySelector('.subscribe-form').addEventListener('submit', (e) => {
     e.preventDefault()
     if (e.currentTarget.checkValidity()) {
         e.currentTarget.classList.add('subscribed');
+
     }
 })
-
-// Mobile menu toggle
 document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.querySelector('[data-bs-toggle="collapse"]');
     const fullscreenNav = document.querySelector(".fullscreen-nav");
@@ -40,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Menu list toggle
 function handleMenuList(e) {
     e.currentTarget.classList.toggle('active');
 }
@@ -48,8 +43,6 @@ function handleMenuList(e) {
 document.querySelectorAll('.navbar-list > li').forEach((el) => {
     el.addEventListener('click', handleMenuList);
 });
-
-// Pagination
 const paginationContainer = document.querySelector('.pagination');
 const totalPages = 10; // Total number of pages
 let currentPage = 1; // Current active page
@@ -143,8 +136,6 @@ function updatePagination() {
 
 // Initialize pagination
 updatePagination();
-
-// Country selection
 document.querySelectorAll('.country-item').forEach((country) => {
     country.addEventListener('click', (e) => {
         if (e.currentTarget.querySelector('input[type=radio]').checked) {

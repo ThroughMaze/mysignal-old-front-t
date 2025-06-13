@@ -1,109 +1,50 @@
-import "bootstrap/dist/js/bootstrap.min.js";
-
-// Form validation
-(function () {
-    'use strict'
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-            }, false)
-        })
-})()
-
-// Subscribe form
-document.querySelector('.subscribe-form').addEventListener('submit', (e) => {
-    e.preventDefault()
-    if (e.currentTarget.checkValidity()) {
-        e.currentTarget.classList.add('subscribed');
-    }
-})
-
-// Mobile menu toggle
-document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.querySelector('[data-bs-toggle="collapse"]');
-    const fullscreenNav = document.querySelector(".fullscreen-nav");
-
-    if (menuToggle && fullscreenNav) {
-        menuToggle.addEventListener("click", () => {
-            menuToggle.classList.toggle("active");
-            fullscreenNav.classList.toggle("active");
-        });
-    }
-});
-
-// Menu list toggle
-function handleMenuList(e) {
-    e.currentTarget.classList.toggle('active');
-}
-
-document.querySelectorAll('.navbar-list > li').forEach((el) => {
-    el.addEventListener('click', handleMenuList);
-});
-
-// Country selection
-document.querySelectorAll('.country-item').forEach((country) => {
-    country.addEventListener('click', (e) => {
-        if (e.currentTarget.querySelector('input[type=radio]').checked) {
-            document.querySelector('#openPopup img').src = e.currentTarget.querySelector('img').src;
-        } else {
-            document.querySelector('#openPopup img').src = 'https://flagcdn.com/gb.svg';
-        }
-    })
-})
+import "../../node_modules/bootstrap/dist/js/bootstrap.min.js";
 
 // Checkout functionality
 class CheckoutManager {
     constructor() {
+        this.cart = this.loadCart();
+        this.shippingCost = 0;
         this.init();
     }
-    
+
     init() {
         this.bindEvents();
         this.updateOrderSummary();
+        this.setupFormValidation();
     }
-    
+
     bindEvents() {
-        // Same as billing address checkbox
-        const sameAsBillingCheckbox = document.getElementById('sameAsbilling');
-        if (sameAsBillingCheckbox) {
-            sameAsBillingCheckbox.addEventListener('change', (e) => {
-                this.toggleShippingAddress(e.target.checked);
+        // Shipping address toggle
+        const sameAsBindingCheckbox = document.getElementById('sameAsBinding');
+        const shippingAddressSection = document.getElementById('shippingAddress');
+        
+        if (sameAsBindingCheckbox && shippingAddressSection) {
+            sameAsBindingCheckbox.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    shippingAddressSection.style.display = 'none';
+                    this.clearShippingFields();
+                } else {
+                    shippingAddressSection.style.display = 'block';
+                    this.copyBillingToShipping();
+                }
             });
         }
-        
+
         // Shipping method changes
         document.querySelectorAll('input[name="shipping"]').forEach(radio => {
             radio.addEventListener('change', (e) => {
                 this.updateShippingCost(e.target.value);
             });
         });
-        
+
         // Payment method changes
         document.querySelectorAll('input[name="payment"]').forEach(radio => {
             radio.addEventListener('change', (e) => {
-                this.togglePaymentDetails(e.target.value);
+                this.togglePaymentFields(e.target.value);
             });
         });
-        
-        // Form submission
-        const checkoutForm = document.getElementById('checkoutForm');
-        if (checkoutForm) {
-            checkoutForm.addEventListener('submit', (e) => {
-                this.handleFormSubmission(e);
-            });
-        }
-        
+
         // Card number formatting
         const cardNumberInput = document.getElementById('cardNumber');
         if (cardNumberInput) {
@@ -111,7 +52,7 @@ class CheckoutManager {
                 this.formatCardNumber(e);
             });
         }
-        
+
         // Expiry date formatting
         const expiryDateInput = document.getElementById('expiryDate');
         if (expiryDateInput) {
@@ -119,118 +60,150 @@ class CheckoutManager {
                 this.formatExpiryDate(e);
             });
         }
-        
-        // CVV formatting
+
+        // CVV validation
         const cvvInput = document.getElementById('cvv');
         if (cvvInput) {
             cvvInput.addEventListener('input', (e) => {
                 this.formatCVV(e);
             });
         }
-    }
-    
-    toggleShippingAddress(sameAsBilling) {
-        const shippingAddressSection = document.getElementById('shippingAddress');
-        if (shippingAddressSection) {
-            if (sameAsBilling) {
-                shippingAddressSection.style.display = 'none';
-                // Remove required attributes from shipping fields
-                shippingAddressSection.querySelectorAll('input, select').forEach(field => {
-                    field.removeAttribute('required');
-                });
-            } else {
-                shippingAddressSection.style.display = 'block';
-                // Add required attributes to shipping fields
-                shippingAddressSection.querySelectorAll('input[id*="shipping"], select[id*="shipping"]').forEach(field => {
-                    if (!field.id.includes('Address2')) { // Address line 2 is optional
-                        field.setAttribute('required', '');
-                    }
-                });
-            }
+
+        // Form submission
+        const checkoutForm = document.getElementById('checkoutForm');
+        if (checkoutForm) {
+            checkoutForm.addEventListener('submit', (e) => {
+                this.handleFormSubmission(e);
+            });
         }
     }
-    
+
     updateShippingCost(shippingMethod) {
-        const shippingCostElement = document.querySelector('.shipping-cost');
-        let shippingCost = 0;
-        
-        switch (shippingMethod) {
-            case 'standard':
-                shippingCost = 0;
-                shippingCostElement.textContent = 'Free';
-                break;
-            case 'express':
-                shippingCost = 9.99;
-                shippingCostElement.textContent = '£9.99';
-                break;
-            case 'nextday':
-                shippingCost = 19.99;
-                shippingCostElement.textContent = '£19.99';
-                break;
-        }
-        
-        this.updateOrderSummary(shippingCost);
+        const shippingCosts = {
+            'standard': 0,
+            'express': 9.99,
+            'nextday': 19.99
+        };
+
+        this.shippingCost = shippingCosts[shippingMethod] || 0;
+        this.updateOrderSummary();
     }
-    
-    togglePaymentDetails(paymentMethod) {
+
+    togglePaymentFields(paymentMethod) {
         const cardDetails = document.getElementById('cardDetails');
+        
         if (cardDetails) {
             if (paymentMethod === 'card') {
                 cardDetails.style.display = 'block';
-                // Add required attributes to card fields
-                cardDetails.querySelectorAll('input').forEach(field => {
-                    field.setAttribute('required', '');
-                });
+                this.setCardFieldsRequired(true);
             } else {
                 cardDetails.style.display = 'none';
-                // Remove required attributes from card fields
-                cardDetails.querySelectorAll('input').forEach(field => {
-                    field.removeAttribute('required');
-                });
+                this.setCardFieldsRequired(false);
             }
         }
     }
-    
+
+    setCardFieldsRequired(required) {
+        const cardFields = ['cardNumber', 'expiryDate', 'cvv', 'cardName'];
+        cardFields.forEach(fieldId => {
+            const field = document.getElementById(fieldId);
+            if (field) {
+                field.required = required;
+            }
+        });
+    }
+
     formatCardNumber(e) {
         let value = e.target.value.replace(/\s/g, '').replace(/[^0-9]/gi, '');
         let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
-        if (formattedValue.length > 19) formattedValue = formattedValue.substr(0, 19);
+        
+        if (formattedValue.length > 19) {
+            formattedValue = formattedValue.substring(0, 19);
+        }
+        
         e.target.value = formattedValue;
     }
-    
+
     formatExpiryDate(e) {
         let value = e.target.value.replace(/\D/g, '');
+        
         if (value.length >= 2) {
             value = value.substring(0, 2) + '/' + value.substring(2, 4);
         }
+        
         e.target.value = value;
     }
-    
+
     formatCVV(e) {
         let value = e.target.value.replace(/\D/g, '');
-        if (value.length > 3) value = value.substring(0, 3);
-        e.target.value = value;
-    }
-    
-    updateOrderSummary(shippingCost = 0) {
-        // Calculate totals (these would normally come from the cart)
-        const subtotal = 749.97;
-        const discount = 100.00;
-        const taxableAmount = subtotal - discount + shippingCost;
-        const tax = taxableAmount * 0.2; // 20% VAT
-        const total = taxableAmount + tax;
         
-        // Update shipping cost display
-        if (shippingCost === 0) {
-            document.querySelector('.shipping-cost').textContent = 'Free';
-        } else {
-            document.querySelector('.shipping-cost').textContent = `£${shippingCost.toFixed(2)}`;
+        if (value.length > 4) {
+            value = value.substring(0, 4);
         }
         
-        // Update tax and total
-        document.querySelector('.tax').textContent = `£${tax.toFixed(2)}`;
-        document.querySelector('.total').textContent = `£${total.toFixed(2)}`;
+        e.target.value = value;
+    }
+
+    copyBillingToShipping() {
+        const billingFields = {
+            'address1': 'shippingAddress1',
+            'address2': 'shippingAddress2',
+            'city': 'shippingCity',
+            'postcode': 'shippingPostcode',
+            'country': 'shippingCountry'
+        };
+
+        Object.entries(billingFields).forEach(([billing, shipping]) => {
+            const billingField = document.getElementById(billing);
+            const shippingField = document.getElementById(shipping);
+            
+            if (billingField && shippingField) {
+                shippingField.value = billingField.value;
+            }
+        });
+    }
+
+    clearShippingFields() {
+        const shippingFields = ['shippingAddress1', 'shippingAddress2', 'shippingCity', 'shippingPostcode', 'shippingCountry'];
         
+        shippingFields.forEach(fieldId => {
+            const field = document.getElementById(fieldId);
+            if (field) {
+                field.value = '';
+            }
+        });
+    }
+
+    updateOrderSummary() {
+        let subtotal = 0;
+        this.cart.forEach(item => {
+            const price = parseFloat(item.price.replace('£', ''));
+            subtotal += price * item.quantity;
+        });
+
+        const discount = 100; // Example discount
+        const tax = (subtotal - discount + this.shippingCost) * 0.2; // 20% VAT
+        const total = subtotal + tax - discount + this.shippingCost;
+
+        // Update shipping cost display
+        const shippingElements = document.querySelectorAll('.shipping-cost');
+        shippingElements.forEach(el => {
+            el.textContent = this.shippingCost === 0 ? 'Free' : `£${this.shippingCost.toFixed(2)}`;
+        });
+
+        // Update totals
+        document.querySelectorAll('.subtotal').forEach(el => {
+            el.textContent = `£${subtotal.toFixed(2)}`;
+        });
+
+        document.querySelectorAll('.tax').forEach(el => {
+            el.textContent = `£${tax.toFixed(2)}`;
+        });
+
+        document.querySelectorAll('.total').forEach(el => {
+            el.textContent = `£${total.toFixed(2)}`;
+        });
+
         // Update place order button
         const placeOrderBtn = document.querySelector('.place-order-btn');
         if (placeOrderBtn) {
@@ -243,13 +216,67 @@ class CheckoutManager {
             `;
         }
     }
-    
+
+    setupFormValidation() {
+        // Custom validation for card number
+        const cardNumberInput = document.getElementById('cardNumber');
+        if (cardNumberInput) {
+            cardNumberInput.addEventListener('blur', (e) => {
+                const cardNumber = e.target.value.replace(/\s/g, '');
+                if (cardNumber.length < 13 || cardNumber.length > 19) {
+                    e.target.setCustomValidity('Please enter a valid card number');
+                } else {
+                    e.target.setCustomValidity('');
+                }
+            });
+        }
+
+        // Custom validation for expiry date
+        const expiryDateInput = document.getElementById('expiryDate');
+        if (expiryDateInput) {
+            expiryDateInput.addEventListener('blur', (e) => {
+                const expiry = e.target.value;
+                const regex = /^(0[1-9]|1[0-2])\/\d{2}$/;
+                
+                if (!regex.test(expiry)) {
+                    e.target.setCustomValidity('Please enter a valid expiry date (MM/YY)');
+                } else {
+                    const [month, year] = expiry.split('/');
+                    const currentDate = new Date();
+                    const currentYear = currentDate.getFullYear() % 100;
+                    const currentMonth = currentDate.getMonth() + 1;
+                    
+                    if (parseInt(year) < currentYear || (parseInt(year) === currentYear && parseInt(month) < currentMonth)) {
+                        e.target.setCustomValidity('Card has expired');
+                    } else {
+                        e.target.setCustomValidity('');
+                    }
+                }
+            });
+        }
+
+        // Custom validation for CVV
+        const cvvInput = document.getElementById('cvv');
+        if (cvvInput) {
+            cvvInput.addEventListener('blur', (e) => {
+                const cvv = e.target.value;
+                if (cvv.length < 3 || cvv.length > 4) {
+                    e.target.setCustomValidity('Please enter a valid CVV');
+                } else {
+                    e.target.setCustomValidity('');
+                }
+            });
+        }
+    }
+
     handleFormSubmission(e) {
         e.preventDefault();
         
-        if (e.target.checkValidity()) {
+        const form = e.target;
+        
+        if (form.checkValidity()) {
             // Show loading state
-            const submitBtn = document.querySelector('.place-order-btn');
+            const submitBtn = form.querySelector('.place-order-btn');
             const originalText = submitBtn.innerHTML;
             
             submitBtn.innerHTML = `
@@ -262,133 +289,157 @@ class CheckoutManager {
             
             // Simulate order processing
             setTimeout(() => {
-                this.showSuccessMessage();
-                
-                // Reset button after success
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                }, 3000);
+                this.processOrder(form);
             }, 2000);
         } else {
             // Show validation errors
-            e.target.classList.add('was-validated');
-            this.scrollToFirstError();
+            form.classList.add('was-validated');
+            
+            // Scroll to first error
+            const firstError = form.querySelector('.form-control:invalid');
+            if (firstError) {
+                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                firstError.focus();
+            }
         }
     }
-    
-    scrollToFirstError() {
-        const firstInvalidField = document.querySelector('.form-control:invalid');
-        if (firstInvalidField) {
-            firstInvalidField.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            firstInvalidField.focus();
-        }
+
+    processOrder(form) {
+        // Collect form data
+        const formData = new FormData(form);
+        const orderData = {
+            customer: {
+                firstName: formData.get('firstName'),
+                lastName: formData.get('lastName'),
+                email: formData.get('email'),
+                phone: formData.get('phone')
+            },
+            billing: {
+                address1: formData.get('address1'),
+                address2: formData.get('address2'),
+                city: formData.get('city'),
+                postcode: formData.get('postcode'),
+                country: formData.get('country')
+            },
+            shipping: formData.get('sameAsBinding') ? null : {
+                address1: formData.get('shippingAddress1'),
+                address2: formData.get('shippingAddress2'),
+                city: formData.get('shippingCity'),
+                postcode: formData.get('shippingPostcode'),
+                country: formData.get('shippingCountry')
+            },
+            shippingMethod: formData.get('shipping'),
+            paymentMethod: formData.get('payment'),
+            orderNotes: formData.get('orderNotes'),
+            cart: this.cart,
+            total: this.calculateTotal()
+        };
+
+        // In a real application, you would send this to your server
+        console.log('Order data:', orderData);
+        
+        // Clear cart
+        localStorage.removeItem('mobileBoosterCart');
+        
+        // Redirect to success page or show success message
+        this.showSuccessMessage();
     }
-    
-    showSuccessMessage() {
-        const notification = document.createElement('div');
-        notification.className = 'notification notification-success';
-        notification.innerHTML = `
-            <div class="notification-content">
-                <i class="fas fa-check-circle"></i>
-                <div>
-                    <strong>Order Placed Successfully!</strong>
-                    <p>You will receive a confirmation email shortly.</p>
-                </div>
-                <button class="notification-close">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-        `;
-        
-        notification.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #00C73C;
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-            max-width: 400px;
-        `;
-        
-        notification.querySelector('.notification-content').style.cssText = `
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        `;
-        
-        notification.querySelector('.notification-close').style.cssText = `
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            margin-left: auto;
-        `;
-        
-        document.body.appendChild(notification);
-        
-        setTimeout(() => {
-            notification.style.transform = 'translateX(0)';
-        }, 100);
-        
-        notification.querySelector('.notification-close').addEventListener('click', () => {
-            notification.style.transform = 'translateX(100%)';
-            setTimeout(() => {
-                notification.remove();
-            }, 300);
+
+    calculateTotal() {
+        let subtotal = 0;
+        this.cart.forEach(item => {
+            const price = parseFloat(item.price.replace('£', ''));
+            subtotal += price * item.quantity;
         });
-        
-        setTimeout(() => {
-            notification.style.transform = 'translateX(100%)';
-            setTimeout(() => {
-                notification.remove();
-            }, 300);
-        }, 8000);
+
+        const discount = 100;
+        const tax = (subtotal - discount + this.shippingCost) * 0.2;
+        return subtotal + tax - discount + this.shippingCost;
+    }
+
+    showSuccessMessage() {
+        // Create success overlay
+        const overlay = document.createElement('div');
+        overlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        `;
+
+        const successCard = document.createElement('div');
+        successCard.style.cssText = `
+            background: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            text-align: center;
+            max-width: 500px;
+            margin: 2rem;
+        `;
+
+        successCard.innerHTML = `
+            <div style="color: #00C73C; font-size: 4rem; margin-bottom: 1rem;">✓</div>
+            <h2 style="color: var(--color-dark-navy); margin-bottom: 1rem;">Order Placed Successfully!</h2>
+            <p style="color: var(--Blue-Gray-600); margin-bottom: 2rem;">
+                Thank you for your order. You will receive a confirmation email shortly.
+            </p>
+            <button onclick="window.location.href='/'" style="
+                background: var(--primary-color);
+                color: white;
+                border: none;
+                padding: 1rem 2rem;
+                border-radius: 0.5rem;
+                font-weight: 600;
+                cursor: pointer;
+            ">Continue Shopping</button>
+        `;
+
+        overlay.appendChild(successCard);
+        document.body.appendChild(overlay);
+    }
+
+    loadCart() {
+        const savedCart = localStorage.getItem('mobileBoosterCart');
+        return savedCart ? JSON.parse(savedCart) : [
+            { id: '1', name: 'Professional Signal Booster Pro', price: '£299.99', quantity: 1 },
+            { id: '2', name: 'Home Signal Booster Essential', price: '£199.99', quantity: 2 },
+            { id: '3', name: 'Signal Booster Accessories Kit', price: '£49.99', quantity: 1 }
+        ];
     }
 }
 
 // Initialize checkout manager
 const checkoutManager = new CheckoutManager();
 
-// Add custom styles
-const style = document.createElement('style');
-style.textContent = `
-    .spinner-border-sm {
-        width: 1rem;
-        height: 1rem;
-        border-width: 0.1em;
-    }
-    
-    .spinner-border {
-        display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        vertical-align: text-bottom;
-        border: 0.25em solid currentColor;
-        border-right-color: transparent;
-        border-radius: 50%;
-        animation: spinner-border 0.75s linear infinite;
-    }
-    
-    @keyframes spinner-border {
-        to { transform: rotate(360deg); }
-    }
-    
-    .visually-hidden {
-        position: absolute !important;
-        width: 1px !important;
-        height: 1px !important;
-        padding: 0 !important;
-        margin: -1px !important;
-        overflow: hidden !important;
-        clip: rect(0, 0, 0, 0) !important;
-        white-space: nowrap !important;
-        border: 0 !important;
-    }
-`;
-document.head.appendChild(style);
+// Form validation
+(function () {
+    'use strict'
+    var forms = document.querySelectorAll('.needs-validation')
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+})()
+
+// Subscribe form
+const subscribeForm = document.querySelector('.subscribe-form');
+if (subscribeForm) {
+    subscribeForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        if (e.currentTarget.checkValidity()) {
+            e.currentTarget.classList.add('subscribed');
+        }
+    })
+}
