@@ -3,23 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Mobile Booster</title>
-    <!-- Load CSS files -->
+    <title>Mobile Booster Product</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Load JavaScript files -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.min.js"
-            integrity="sha512-2sI5N95oT62ughlApCe/8zL9bQAXKsPPtZZI2KE3dznuZ8HpE2gTMHYzyVN7OoSPJCM1k9ZkhcCo3FvOirIr2A=="
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet"/>
+
+    <!-- Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+          integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+            integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script type="module" crossorigin src="/assets/js/main.js"></script>
+    <!-- Fancybox JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.4/jquery.fancybox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.4/jquery.fancybox.min.js"></script>
+
+    <script>
+        window.require = function (module) {
+            if (module === 'jquery') {
+                return window.jQuery;
+            }
+        };
+    </script>
+  <script type="module" crossorigin src="/assets/js/product.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/js/bootstrap.js">
-  <link rel="modulepreload" crossorigin href="/assets/js/_commonjsHelpers.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/booster-quiz.js">
   <link rel="stylesheet" crossorigin href="/assets/css/bootstrap2.css">
-  <link rel="stylesheet" crossorigin href="/assets/css/main.css">
+  <link rel="stylesheet" crossorigin href="/assets/css/product.css">
 </head>
 <body>
-<header class="header-blue">
+<header class="header-white">
     <nav class="navbar navbar-expand-lg">
         <div class="container header-content">
             <a href="/" class="logo-container">
@@ -28,7 +48,7 @@
             </a>
             <div id="header-icons" class="d-flex d-lg-none">
                 <a id="cart" href="#">
-                    <img src="data:image/svg+xml,%3csvg%20width='48'%20height='48'%20viewBox='0%200%2048%2048'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M31.4684%2035H16.0004C15.7168%2035.0001%2015.4364%2034.9398%2015.1779%2034.8232C14.9193%2034.7066%2014.6885%2034.5364%2014.5008%2034.3238C14.3131%2034.1112%2014.1727%2033.8611%2014.089%2033.5901C14.0054%2033.3191%2013.9803%2033.0334%2014.0154%2032.752L15.7344%2019H31.7344L33.4534%2032.752C33.4886%2033.0334%2033.4635%2033.3191%2033.3798%2033.5901C33.2961%2033.8611%2033.1558%2034.1112%2032.9681%2034.3238C32.7803%2034.5364%2032.5495%2034.7066%2032.291%2034.8232C32.0324%2034.9398%2031.7521%2035.0001%2031.4684%2035Z'%20stroke='white'%20stroke-width='2'%20stroke-miterlimit='10'%20stroke-linecap='square'/%3e%3cpath%20d='M19.7344%2022V17C19.7378%2015.9402%2020.1603%2014.9248%2020.9097%2014.1754C21.6591%2013.426%2022.6746%2013.0034%2023.7344%2013V13C24.7942%2013.0034%2025.8096%2013.426%2026.559%2014.1754C27.3084%2014.9248%2027.7309%2015.9402%2027.7344%2017V22'%20stroke='white'%20stroke-width='2'%20stroke-miterlimit='10'%20stroke-linecap='square'/%3e%3c/svg%3e"/>
+                    <img src="data:image/svg+xml,%3csvg%20width='48'%20height='48'%20viewBox='0%200%2048%2048'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M31.4684%2035H16.0004C15.7168%2035.0001%2015.4364%2034.9398%2015.1779%2034.8232C14.9193%2034.7066%2014.6885%2034.5364%2014.5008%2034.3238C14.3131%2034.1112%2014.1727%2033.8611%2014.089%2033.5901C14.0054%2033.3191%2013.9803%2033.0334%2014.0154%2032.752L15.7344%2019H31.7344L33.4534%2032.752C33.4886%2033.0334%2033.4635%2033.3191%2033.3798%2033.5901C33.2961%2033.8611%2033.1558%2034.1112%2032.9681%2034.3238C32.7803%2034.5364%2032.5495%2034.7066%2032.291%2034.8232C32.0324%2034.9398%2031.7521%2035.0001%2031.4684%2035Z'%20stroke='black'%20stroke-width='2'%20stroke-miterlimit='10'%20stroke-linecap='square'/%3e%3cpath%20d='M19.7344%2022V17C19.7378%2015.9402%2020.1603%2014.9248%2020.9097%2014.1754C21.6591%2013.426%2022.6746%2013.0034%2023.7344%2013V13C24.7942%2013.0034%2025.8096%2013.426%2026.559%2014.1754C27.3084%2014.9248%2027.7309%2015.9402%2027.7344%2017V22'%20stroke='black'%20stroke-width='2'%20stroke-miterlimit='10'%20stroke-linecap='square'/%3e%3c/svg%3e"/>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                         aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,11 +57,6 @@
                     </div>
                 </button>
             </div>
-            <a href="#hero-section-content" id="up-btn" class="go-to-top">
-            <span class="circle-down-arrow">
-<img src="data:image/svg+xml,%3csvg%20stroke='%231434CB'%20width='12'%20height='8'%20viewBox='0%200%2012%208'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M1%201.5L6%206.5L11%201.5'%20stroke-width='1.4'%20stroke-linecap='round'%20stroke-linejoin='round'%3e%3c/path%3e%3c/svg%3e"/>
-            </span>
-                <p>Find my booster quiz</p>
             </a>
             <div class="collapse navbar-collapse d-none d-lg-block" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-lg-0 navbar-nav-scroll navbar-list"
@@ -118,9 +133,14 @@
                         <a class="nav-link" href="#" role="button">Floor Plan Analysis</a>
                     </li>
                 </ul>
-                <div id="openPopup" class="country-logo" data-bs-toggle="modal" data-bs-target="#country-modal">
-                    <img class="logo" src="https://flagcdn.com/gb.svg">
-                    <img src="data:image/svg+xml,%3csvg%20width='12'%20height='8'%20viewBox='0%200%2012%208'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M1%201.5L6%206.5L11%201.5'%20stroke='white'%20stroke-width='1.4'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"/>
+                <div class="d-none d-lg-flex gap-3">
+                    <div id="openPopup" class="country-logo" data-bs-toggle="modal" data-bs-target="#country-modal">
+                        <img class="logo" src="https://flagcdn.com/gb.svg">
+                        <img src="data:image/svg+xml,%3csvg%20width='12'%20height='8'%20viewBox='0%200%2012%208'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M1%201.5L6%206.5L11%201.5'%20stroke='black'%20stroke-width='1.4'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"/>
+                    </div>
+                    <a id="cart-desktop-header" href="#">
+                        <img src="data:image/svg+xml,%3csvg%20width='48'%20height='48'%20viewBox='0%200%2048%2048'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M31.4684%2035H16.0004C15.7168%2035.0001%2015.4364%2034.9398%2015.1779%2034.8232C14.9193%2034.7066%2014.6885%2034.5364%2014.5008%2034.3238C14.3131%2034.1112%2014.1727%2033.8611%2014.089%2033.5901C14.0054%2033.3191%2013.9803%2033.0334%2014.0154%2032.752L15.7344%2019H31.7344L33.4534%2032.752C33.4886%2033.0334%2033.4635%2033.3191%2033.3798%2033.5901C33.2961%2033.8611%2033.1558%2034.1112%2032.9681%2034.3238C32.7803%2034.5364%2032.5495%2034.7066%2032.291%2034.8232C32.0324%2034.9398%2031.7521%2035.0001%2031.4684%2035Z'%20stroke='black'%20stroke-width='2'%20stroke-miterlimit='10'%20stroke-linecap='square'/%3e%3cpath%20d='M19.7344%2022V17C19.7378%2015.9402%2020.1603%2014.9248%2020.9097%2014.1754C21.6591%2013.426%2022.6746%2013.0034%2023.7344%2013V13C24.7942%2013.0034%2025.8096%2013.426%2026.559%2014.1754C27.3084%2014.9248%2027.7309%2015.9402%2027.7344%2017V22'%20stroke='black'%20stroke-width='2'%20stroke-miterlimit='10'%20stroke-linecap='square'/%3e%3c/svg%3e"/>
+                    </a>
                 </div>
             </div>
         </div>
@@ -165,20 +185,291 @@
     </nav>
 </header>
 <main>
-    <section class="hero-section">
-        <div class="hero-section-white-bg"></div>
-        <div class="container">
-            <div id="hero-section-content" class="hero-section-content">
-                <div class="hero-text">
-                    <h1>Clear signal, every time</h1>
-                    <p class="hero-subtext">Get stronger connections anywhere – find the perfect signal booster for your
-                        needs.</p>
+    <section class="container product-page-wrapper">
+
+        <!--Breadcrumb-->
+        <section class="breadcrumb-wrapper">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/"><i class="icon icon-home"></i> Home</a></li>
+                    <li class="breadcrumb-item"><a href="/small-space">Small Space</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">BoostMaster 5000 ProSignal Plus</li>
+                </ol>
+            </nav>
+        </section>
+
+        <section class="product-details row">
+            <div class="col-12 col-md-5 col-lg-6 product-imgs-wrapper">
+                <div class="product-gallery-wrapper">
+                    <a href="./assets/images/product/product-4x.png" data-fancybox="gallery" class="featured-img">
+                        <img alt="Product image" width="381" height="381" src="/assets/images/product.png"/>
+                    </a>
+                    <div class="product-images-slider">
+                        <a href="./assets/images/product/product1-4x.png" data-fancybox="gallery">
+                            <img alt="Product image" width="204" height="204"
+                                 src="/assets/images/product1.png"/>
+                        </a>
+                        <a href="./assets/images/product/product2-4x.png" data-fancybox="gallery">
+                            <img alt="Product image" width="204" height="204"
+                                 src="/assets/images/product2.png"/>
+                        </a>
+                        <a href="./assets/images/product/product-4x.png" data-fancybox="gallery">
+                            <img alt="Product image" width="381" height="381"
+                                 src="/assets/images/product.png"/>
+                        </a>
+                        <a href="./assets/images/product/product2-4x.png" data-fancybox="gallery">
+                            <img alt="Product image" width="204" height="204"
+                                 src="/assets/images/product2.png"/>
+                        </a>
+                        <a href="./assets/images/product/product1-4x.png" data-fancybox="gallery">
+                            <img alt="Product image" width="204" height="204"
+                                 src="/assets/images/product1.png"/>
+                        </a>
+                    </div>
                 </div>
-                <div class="hero-illustration">
-                    <img src="/assets/images/hero-illustration.svg"
-                         alt="Get stronger connections anywhere – find the perfect signal booster for your needs"/>
+
+
+            </div>
+            <div class="col-12 col-md-7 col-lg-6 product-options-wrapper">
+                <h1 class="product-title">BoostMaster 5000 ProSignal Plus</h1>
+                <div class="product-price-wrapper">
+                    <span class="product-price">170$</span>
+                    <del class="product-old-price">250$</del>
+                    <span class="product-discount">10% OFF</span>
+                </div>
+                <div class="product-accordion">
+                    <div>
+                        <h3 class="product-accordion-header">
+                            Product Highlights
+                        </h3>
+                        <div class="accordion-collapse">
+                            <div class="product-accordion-body">
+                                <ul>
+                                    <li><strong>Coverage Area:</strong> Best for one large or multiple small rooms
+                                        (300 SQM) where you
+                                        have a medium to strong outside signal.
+                                    </li>
+                                    <li><strong>Signal Compatibility:</strong> 3G & 4G</li>
+                                    <li><strong>Supported Networks:</strong> Etisalat, Virgin, du</li>
+                                    <li><strong>Frequency Bands:</strong> 800/1800/2100 MHz</li>
+                                    <li><strong>Simultaneous Users:</strong> Supports up to 250 users concurrently
+                                    </li>
+                                    <li><a href="#"><strong>Installation guide</strong></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse mt-4" id="product-highlight">
+                        <div>
+                            <h3 class="product-accordion-header">
+                                What's Included
+                            </h3>
+                            <div id="highlight-2" class="accordion-collapse">
+                                <div class="product-accordion-body">
+                                    <ul>
+                                        <li><strong>Coverage Area:</strong> Best for one large or multiple small
+                                            rooms
+                                            (300 SQM) where you
+                                            have a medium to strong outside signal.
+                                        </li>
+                                        <li><strong>Signal Compatibility:</strong> 3G & 4G</li>
+                                        <li><strong>Supported Networks:</strong> Etisalat, Virgin, du</li>
+                                        <li><strong>Frequency Bands:</strong> 800/1800/2100 MHz</li>
+                                        <li><strong>Simultaneous Users:</strong> Supports up to 250 users
+                                            concurrently
+                                        </li>
+                                        <li><a href="#"><strong>Installation guide</strong></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="product-highlight-btn" data-bs-toggle="collapse" href="#product-highlight" role="button"
+                       aria-expanded="false" aria-controls="product-highlight">
+                        Read <span id="full-content">full</span> <span id="less-content">less</span> description
+                        <img src="data:image/svg+xml,%3csvg%20width='12'%20height='11'%20viewBox='0%200%2012%2011'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M1.00032%205.5L6.00293%2010.5026L11.0055%205.5'%20stroke='%231434CB'%20stroke-width='0.834131'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"/>
+                    </a>
+                </div>
+                <button type="button" form="options-form" class="btn btn-primary btn-primary-full btn-add-cart">
+                    <svg class="d-none" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 14.5L6.5 18.5L18.5 3.5" stroke="#1434CB" stroke-linecap="round"
+                              stroke-linejoin="round"/>
+                        <path d="M23.5 8.5H20.5" stroke="#1434CB" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M23.5 13.5H16.5" stroke="#1434CB" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M23.5 18.5H12.5" stroke="#1434CB" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    ADD TO CART
+                </button>
+                <!-- Options Form -->
+                <form id="options-form" class="product-options" novalidate method="post" action="/product">
+                    <div class="product-option-container">
+                        <h3>Get extra cable <span class="info" data-bs-toggle="tooltip"
+                                                  data-bs-placement="top" data-bs-html="true"
+                                                  data-bs-title="<h3>Why do I need this?</h3><p>Upgrade the external cable from 10 meters.This is for larger buildings who need extra cable from roof to the Booster inside.</p>"
+                                                  data-bs-custom-class="info-tooltip"><i
+                                class="icon icon-info2-solid"></i></span>
+                        </h3>
+
+                        <ul class="product-options-radios-holder">
+                            <li>
+                                <label class="option-radio">
+                                    <input type="radio" value="10" name="cable" checked>
+                                    <div class="option-title"><strong>10 M</strong><span class="extra-value">Free</span>
+                                    </div>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="option-radio">
+                                    <input type="radio" value="20" name="cable">
+                                    <div class="option-title"><strong>20 M</strong><span
+                                            class="extra-value">+ 20$</span></div>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="option-radio">
+                                    <input type="radio" value="30" name="cable">
+                                    <div class="option-title"><strong>30 M</strong><span
+                                            class="extra-value">+ 30$</span></div>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="option-radio">
+                                    <input type="radio" value="40" name="cable">
+                                    <div class="option-title"><strong>40 M</strong><span
+                                            class="extra-value">+ 40$</span></div>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="option-radio">
+                                    <input type="radio" value="50" name="cable">
+                                    <div class="option-title"><strong>50 M</strong><span
+                                            class="extra-value">+ 50$</span></div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="product-option-container">
+                        <h3>Get extra warranty</h3>
+                        <ul class="product-options-radios-holder">
+                            <li>
+                                <label class="option-radio">
+                                    <input type="radio" value="1" name="warranty" checked>
+                                    <div class="option-title"><strong>1 Year</strong><span
+                                            class="extra-value">Free</span></div>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="option-radio">
+                                    <input type="radio" value="2" name="warranty">
+                                    <div class="option-title"><strong>2 Years</strong><span
+                                            class="extra-value">+ 35$</span></div>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="option-radio">
+                                    <input type="radio" value="3" name="warranty">
+                                    <div class="option-title"><strong>3 Years</strong><span
+                                            class="extra-value">+ 45$</span></div>
+                                </label>
+                            </li>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="product-option-container">
+                        <ul class="product-options-radios-holder colors">
+                            <li>
+                                <label class="option-radio">
+                                    <input type="radio" value="1" name="color" checked>
+                                    <div class="option-color" style="--option-color: #833B07"></div>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="option-radio">
+                                    <input type="radio" value="2" name="color">
+                                    <div class="option-color" style="--option-color: #61AF45"></div>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="option-radio">
+                                    <input type="radio" value="3" name="color">
+                                    <div class="option-color" style="--option-color: #D9A644"></div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+
+
+                <div class="product-suggestions">
+                    <div class="alert alert-warning" role="alert">
+                        If you have a weak signal of 1-3 bars outside. Please add the yaggi antenna below in booster
+                        upgrades to
+                        guarantee signal increase and the best performance from the booster.
+                    </div>
+                    <h3 class="product-suggestions-title">You may need</h3>
+                    <div class="suggested-products">
+                        <article class="suggested-booster-wrapper">
+                            <div class="booster-img-wrapper">
+                                <img src="/assets/images/yaggi-antenna.png" alt="Yaggi Antenna" width="144"
+                                     height="103">
+                            </div>
+                            <div class="booster-details">
+                                <h2>Yaggi Antenna</h2>
+                                <h3 class="booster-price">$60.00</h3>
+                                <div class="booster-description">
+                                    <p>The Yaggi high gain antenna increases the strength of the signal received by the
+                                        repeater</p>
+                                </div>
+                                <button class="btn btn-text-primary btn-add-cart">+ Add to cart</button>
+                                <a class="single-booster-link" href="/product"></a>
+                            </div>
+                        </article>
+                        <article class="suggested-booster-wrapper">
+                            <div class="booster-img-wrapper">
+                                <img src="/assets/images/power-surge.png" alt="Power Surge Protector"
+                                     width="152"
+                                     height="152">
+                            </div>
+                            <div class="booster-details">
+                                <h2>Power Surge Protector</h2>
+                                <h3 class="booster-price">$60.00</h3>
+                                <div class="booster-description">
+                                    <p>The Power Surge Protector is designed to protect your equipment from high
+                                        amperage surges.</p>
+                                </div>
+                                <button class="btn btn-text-primary btn-add-cart">+ Add to cart</button>
+                                <a class="single-booster-link" href="/product"></a>
+                            </div>
+                        </article>
+                        <article class="suggested-booster-wrapper">
+                            <div class="booster-img-wrapper">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGoAAABqCAYAAABUIcSXAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAj7SURBVHgB7Z3bT5vnHce/BozP+AS2Ew4JpCRAHCAJKaVUtCFDnZYuUjXtYjfTtrttN5M69XZVI0272f6BXe1wsYMioo6maxvSpBU0IU1YOJVxNjYGG5uDMTY+vGa/960m7WbV1r6PeR/zfBCKghDy689z+P1+z8G6QwICzVMGARcIUZwgRHGCEMUJQhQnCFGcIERxghDFCUIUJwhRnCBEcYIQxQlCFCcIUZwgRHGCEMUJQhQnCFGcIERxghDFCUIUJ5SMqMPDAiQph1LdVFUBTsllDjA/M4W15SWk95PIZtLI5/JAQYLRaoPJYoPDXY2mllZU+05Ap+O7Tep42dd3SF9SXkJg7nPMT08gubMNT209Tp46BWuVQxGjKyvDIf1OOr2PxM4WduKbiASDSKVSONlwGg3N5+A9WQej2Qze4EDUIVLJJKafjiFKb7qzxo3TZ9vgqvHBYDFDR19fhpTPI53cQzgYoN63iB0SXNvQhOYL7XC43NTTdOABTYuSX9rc5D8w9fghGhobcfZiF+zOanxl6O/tbsUx++wJludm4as7hct9r8Bqc0DrvjQpSg4MYpEIxkfuQ19ejtaubnhoyCorK4caHCrCYkojCC4toOG5FlzofgFGgwlaRXOiClIe0+OfYWlmEm3Ug874O1DGMBDY3oxg6skjRMNh9Fx7lea8RmgRTYnKUCT35ON7SFBrv3J1AG6Pj35anDFpYfoZxj4aRis1jo6eXtV6r1poRlTmII2R94dQUVmJ518ZgNFU/MhsJxbFyN+HYLE70PvNb0Ov10MraEKUHEbfHfwLzlEk1tbVg/Lyo0vvCpKEpzQ3BilC7L/xHQpe3NACR54FZrMH+OS9ITT7L+B814tHKkmmjIKX9u5e1FHe9d6f/oj95C60wJH2KDk/uj80iLrTjfA//yLNC9qqHkx99hATY5/i+ve+f+Q968jeGbl9jHx4B1V2G0nq0ZwkGX/XC2i71IXh27eQTBxtzzqSd0fuw+OjH6McBXS+dFVzEdZ/0tn9EkWfHtx75xby+RyOiqKLkmt2G2sBrMz/E1f6X6WqgB2ahkoWPQPfolqiGZ/eff+LVnYEFF1UoXCIsbsfoKO7Bza7EzxQSSlD78BrCFEVY3l+VmlsxabooqapCmCusqCh6Sx4wmy1oO/6DTx49zblW5soNkUVlU7tY2nqGS719kNvMIAvdFR1b8SFy9345M4QctkMiknRRMnDxeTYKOqbmuH2+sAlNF9d7rtKw3eeQvcxFJOiiTqgxbswrcY2nfeDb3To7h+g/GpUqU0Wi6KJmqclBXlJ3FntBe/4aAg862/H/b8NUsieRzEoiih5P8PC9CROt5xHKSDX8/1UkwwuzSO+sY5iUBRR4cAKKvQV8NbWoVSw2e1U5b+GRw+Gi7Lzibko+SEWZ6bR3NYOfSVvkd6XQIFF68UryKT3sRFaBWuYi8rShBtbD6G26QxKDb2+Euc6Oimafcg8BWYuKra+BpvDqXyXImda2rEeXEFiOw6WMBcVovmp9lQj9xsg/xtmmxUtHRfx6N5dsITpuyfPT5FgAN66BpQq8r7C0+dasbG6glwuC1YwFVUoSNijIcFR40Ep4zlRC4PFhNWFObCCqajQ8qKy3biSu7re/4c8rLd2dGFpZgasYCoqEgqiyuXW9MKgWtQ2NiEaDjFbAmEqKh6NKCcqjgM2uwNZmqNSe3tgAVNRqeQe7C4XjgPy8F5d40OMUUmJmSg54pNbl5WTVdyvjw5un4+GvzWwgJkoeefrQToFg0m7G+/Vxu3xYouGexYwE6Xs2JFP/xn5OzT2VXFW1yj75uXTKGrDThRNrPJGFi3t32aNzelEYmeHRpI01IaZqIJ0qByX0ZWXfmj+b+SDDYVCgSrq6q/8sov6qPsft4/9kI+ZFiioSNPcrPaTsxNVpkO+cPw+n4UGEupRKdVPdTETJdEQEN2K03oUu0KlFvntX2/jw48eQG2YiYrGYvjd7XexEmC/+qkl5AAquZ+E2jATZaRld5qlEI+zXVDTEsoh7sQuk0iXmSgTJboVZXqsh4uzS0cLRCJR7O7uYmdX/SM6zEQlqHyUl3KYnJrAcWFlZUX5V5I4SnglKU8rnhJCoTCOC2EaPXQU7VZVWaE2zEQZqJosH1eJxTaVJLDUkZ/x8eOHuNzZie3tLUDlTIpdUZbC8vr6epgMZYqsUufg4AALi3OwO+wIrCxB7fsxmIlaXw9hL5lERbkOa6HSDtG3t7cxOjqirBhkMxl4fV7VqzLMRFVV2WmOyigveGFhCUmSVoolpVRqH7/59a/wk5/+GEaDEfv7B/j9H/6Mt2++RaUk9YqzqouSJAl37ryDmzd/iQKJ6ei8hJ+/+SbeeONnWFpeRKmxurqKiYkJeKpdyGZz1Jvc8HhcGB7+AJub6q1NqS4qm81gcPAW9pM76PT7cShl0f/yy8oe7fHxpyg1QqEgspSG6Clwqqs/iRq3G3W1tTRnZRGLqzc3MxGV2EvCW1ODamplFosZVosJBqOBgooYSg05sXfYnYhEN+k5rVinpHdjIwqr1QyXipeIqC7KbLYoLWp5NYg4rXaGI3FMz05jM7aFE76TKDX29hI0xG3AbNQjsk7PHI/S9yb6+vrg9Z6AWqguSq5z/eCHP0KCal4pKk5uRsOodlGLi0QQ2dhAqREIBCgVycHj9dCoYYKLwnO5N0VpflLzVk3VRcmB3ezs5xTx5WCkFy5vH/D4Tij/XwuHSi75PdfSAqfLTeltBRwuD/ztF2E2WSm4qFH1Ai7Vr/KSVzl9JMZmsyEa30YuX4CTfmYwWXDmuWZuLtv9X/Gfb8dr129g7NEI5YsBxLZ20d3Tjddf/66qVXQmt4vJS9Fvvf0LivwSShSUzRbQ5r+Aa98YgM9TmgcG5BPycq4oVyjkAMPpdKnaKJldA5ehDP2LS550NAQaaRg4PptcWMDNBfXHHfEhKpwgRHGCEMUJQhQnCFGcIERxghDFCUIUJwhRnCBEcYIQxQlCFCcIUZwgRHGCEMUJQhQnCFGcIERxghDFCUIUJwhRnCBEcYIQxQlCFCf8CyTsgAhmTrjtAAAAAElFTkSuQmCC" alt="Window Jumper" width="106"
+                                     height="106">
+                            </div>
+                            <div class="booster-details">
+                                <h2>Window Jumper</h2>
+                                <h3 class="booster-price">$60.00</h3>
+                                <div class="booster-description">
+                                    <p>The Power Surge Protector is designed to protect your equipment from high
+                                        amperage surges.</p>
+                                </div>
+                                <button class="btn btn-text-primary btn-add-cart">+ Add to cart</button>
+                                <a class="single-booster-link" href="/product"></a>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
+        </section>
+    </section>
+    <section class="booster-quiz-section">
+        <div class="container">
+            <h3 class="booster-quiz-section-heading">Unsure of which signal Booster you need?</h3>
+            <p class="booster-quiz-section-subheading">Engage in our 30-second booster quiz by answering a few
+                questions, and discover the perfect booster
+                tailored to your needs.</p>
             <div class="booster-quiz" id="booster-quiz">
                 <div class="tooltip-arrow"></div>
                 <div class="tooltip" data-tooltip="data_only">
@@ -199,12 +490,12 @@ This is for larger buildings who need extra cable from roof to the Booster insid
                             class="booster-quiz-counter" id="page-indicator">(1/3)</span>
                     </p>
                 </div>
+                <div id="prev-lg" class="slider-btn sm-none">
+                    <img src="data:image/svg+xml,%3csvg%20width='20'%20height='18'%20viewBox='0%200%2020%2018'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M0.996094%209.00195H19'%20stroke='%231434CB'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M6.99739%2015.0033L0.996094%209.00195L6.99739%203.00066'%20stroke='%231434CB'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"/>
+                    <span>Previous</span>
+                </div>
                 <div class="slider-container">
-                    <div id="prev-lg" class="slider-btn sm-none">
-                        <img src="data:image/svg+xml,%3csvg%20width='20'%20height='18'%20viewBox='0%200%2020%2018'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M0.996094%209.00195H19'%20stroke='%231434CB'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M6.99739%2015.0033L0.996094%209.00195L6.99739%203.00066'%20stroke='%231434CB'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"/>
-                        <span>Previous</span>
-                    </div>
-                    <div id="slider" class="slider">
+                    <div id="slider" class="custom-slider">
                         <div>
                             <div id="slide1" class="booster-quiz-cards-container slide">
                                 <div data-type="all_networks" data-term="providers" class="booster-quiz-card">
@@ -314,443 +605,151 @@ This is for larger buildings who need extra cable from roof to the Booster insid
                         <input type="hidden" name="frequencies"
                                value="[{termID:483,list:[202,308,307,200,309,201,198,310,315]},{termID:37,list:[203,202,308,307,200,309,201,198,310,312,378]},{termID:486,list:[203,202,308,307,200,309,201,198,310,314,378]},{termID:490,list:[203,202,308,307,200,309,201,198,310,315,378]},{termID:488,list:[202,308,307,200,309,201,198,310,312,315,378]},{termID:30,list:[203,312,315,378]},{termID:485,list:[203,202,308,307,200,309,201,198,310,314,312,315,378]},{termID:318,list:[202,312,378]},{termID:319,list:[203,202,308,307,200,309,201,198,310,312,315,378]},{termID:489,list:[436]},{termID:27,list:[436,314]},{termID:29,list:[203,200,309,310,312,378]},{termID:504,list:[203,202,200,198,312,315,378]}]">
                     </div>
-                    <div class="slider-btn-sm-container">
-                        <div id="prev" class="slider-btn">
-                            <img src="data:image/svg+xml,%3csvg%20width='20'%20height='18'%20viewBox='0%200%2020%2018'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M0.996094%209.00195H19'%20stroke='%231434CB'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M6.99739%2015.0033L0.996094%209.00195L6.99739%203.00066'%20stroke='%231434CB'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"/>
-                            <span>Previous</span>
-                        </div>
-                        <div class="slider-btn" id="next">
-                            <img src="data:image/svg+xml,%3csvg%20width='20'%20height='18'%20viewBox='0%200%2020%2018'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M19%209.00195H0.996106'%20stroke='%231434CB'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M12.9987%2015.0033L19%209.00195L12.9987%203.00066'%20stroke='%231434CB'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"/>
-                            <span>Next</span>
-                        </div>
+                </div>
+                <div class="slider-btn-sm-container">
+                    <div id="prev" class="slider-btn">
+                        <img src="data:image/svg+xml,%3csvg%20width='20'%20height='18'%20viewBox='0%200%2020%2018'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M0.996094%209.00195H19'%20stroke='%231434CB'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M6.99739%2015.0033L0.996094%209.00195L6.99739%203.00066'%20stroke='%231434CB'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"/>
+                        <span>Previous</span>
+                    </div>
+                    <div class="slider-btn" id="next">
+                        <img src="data:image/svg+xml,%3csvg%20width='20'%20height='18'%20viewBox='0%200%2020%2018'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M19%209.00195H0.996106'%20stroke='%231434CB'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M12.9987%2015.0033L19%209.00195L12.9987%203.00066'%20stroke='%231434CB'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"/>
+                        <span>Next</span>
                     </div>
                 </div>
                 <div class="progress-bar-container">
                     <div class="progress-bar" id="progress-bar"></div>
                 </div>
             </div>
+
         </div>
     </section>
-    <section class="features-section container">
-        <div class="section-tags">
-            <p>benefits</p>
-        </div>
+    <section class="features-section">
         <h2 class="section-heading">Our Unbeatable Features</h2>
-        <div class="features">
-            <div class="features-card">
-                <img src="data:image/svg+xml,%3csvg%20width='81'%20height='56'%20viewBox='0%200%2081%2056'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M64.3609%2035.4883C59.6343%2035.4883%2055.7891%2040.0369%2055.7891%2045.6281C55.7891%2051.2193%2059.6343%2055.7678%2064.3609%2055.7678C69.0882%2055.7678%2072.9327%2051.2193%2072.9327%2045.6281C72.9327%2040.0369%2069.0874%2035.4883%2064.3609%2035.4883ZM64.3609%2050.698C61.9972%2050.698%2060.075%2048.4241%2060.075%2045.6281C60.075%2042.8321%2061.9972%2040.5582%2064.3609%2040.5582C66.7245%2040.5582%2068.6468%2042.8321%2068.6468%2045.6281C68.6468%2048.4242%2066.7245%2050.698%2064.3609%2050.698Z'%20fill='%231434CB'/%3e%3cpath%20d='M35.0679%2035.4883C30.3413%2035.4883%2026.4961%2040.0369%2026.4961%2045.6281C26.4961%2051.2193%2030.3413%2055.7678%2035.0679%2055.7678C39.7945%2055.7678%2043.6397%2051.2193%2043.6397%2045.6281C43.6397%2040.0369%2039.7945%2035.4883%2035.0679%2035.4883ZM35.0679%2050.698C32.7043%2050.698%2030.782%2048.4241%2030.782%2045.6281C30.782%2042.8321%2032.7043%2040.5582%2035.0679%2040.5582C37.4309%2040.5582%2039.3538%2042.8321%2039.3538%2045.6281C39.3538%2048.4242%2037.4315%2050.698%2035.0679%2050.698Z'%20fill='%231434CB'/%3e%3cpath%20d='M70.131%206.46627C69.7667%205.61031%2069.0259%205.07031%2068.2159%205.07031H56.9297V10.1402H66.8943L72.7296%2023.8694L76.5598%2021.5913L70.131%206.46627Z'%20fill='%231434CB'/%3e%3cpath%20d='M57.9259%2043.1797H41.7109V48.2496H57.9259V43.1797Z'%20fill='%231434CB'/%3e%3cpath%20d='M28.642%2043.1777H21.2132C20.0295%2043.1777%2019.0703%2044.3126%2019.0703%2045.7126C19.0703%2047.1128%2020.0297%2048.2475%2021.2132%2048.2475H28.6421C29.8258%2048.2475%2030.785%2047.1126%2030.785%2045.7126C30.785%2044.3124%2029.8256%2043.1777%2028.642%2043.1777Z'%20fill='%231434CB'/%3e%3cpath%20d='M80.5513%2027.6815L76.3362%2021.2596C75.9312%2020.6411%2075.3062%2020.2794%2074.644%2020.2794H59.0719V2.53487C59.0719%201.13467%2058.1125%200%2056.929%200H21.2132C20.0295%200%2019.0703%201.13483%2019.0703%202.53487C19.0703%203.9349%2020.0297%205.06973%2021.2132%205.06973H54.786V22.8143C54.786%2024.2145%2055.7453%2025.3491%2056.9288%2025.3491H73.5946L76.7154%2030.1047V43.1782H70.7865C69.6029%2043.1782%2068.6436%2044.313%2068.6436%2045.7131C68.6436%2047.1133%2069.603%2048.248%2070.7865%2048.248H78.8583C80.0419%2048.248%2081.0011%2047.1131%2081.0013%2045.7131V29.2363C81.0013%2028.6735%2080.8427%2028.126%2080.5513%2027.6815Z'%20fill='%231434CB'/%3e%3cpath%20d='M21.0005%2030.334H11.1429C9.95921%2030.334%209%2031.4688%209%2032.8689C9%2034.269%209.95934%2035.4037%2011.1429%2035.4037H21.0004C22.184%2035.4037%2023.1432%2034.2689%2023.1432%2032.8689C23.1434%2031.4688%2022.184%2030.334%2021.0005%2030.334Z'%20fill='%231434CB'/%3e%3cpath%20d='M20.4294%2020.3633H2.14288C0.959343%2020.3633%200%2021.4981%200%2022.8983C0%2024.2985%200.959343%2025.4332%202.14288%2025.4332H20.4294C21.613%2025.4332%2022.5723%2024.2983%2022.5723%2022.8983C22.5723%2021.4983%2021.613%2020.3633%2020.4294%2020.3633Z'%20fill='%231434CB'/%3e%3cpath%20d='M20.4294%2010.3926H2.14288C0.95921%2010.3926%200%2011.5274%200%2012.9274C0%2014.3276%200.959343%2015.4623%202.14288%2015.4623H20.4294C21.613%2015.4623%2022.5723%2014.3275%2022.5723%2012.9274C22.5724%2011.5274%2021.613%2010.3926%2020.4294%2010.3926Z'%20fill='%231434CB'/%3e%3c/svg%3e"/>
-                <div class="features-card-content">
-                    <p class="features-card-content-heading">Free Delivery In The UK</p>
-                    <span class="features-card-content-subtext">Boost with convenience - enjoy free delivery on all our boosters, Arrives in 5-7 Working Days</span>
-                </div>
-            </div>
-            <div class="features-card">
-                <img src="/assets/images/warranty-icon.png"/>
-                <div class="features-card-content">
-                    <p class="features-card-content-heading">1-Year Warranty</p>
-                    <span class="features-card-content-subtext">Experience worry-free boosting with a compli-mentary 1-year warranty on all our products.</span>
-                </div>
-            </div>
-            <div class="features-card">
-                <img src="data:image/svg+xml,%3csvg%20width='56'%20height='56'%20viewBox='0%200%2056%2056'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M55.0376%2025.1159H52.3121V13.5837C52.3121%206.09374%2046.3624%200%2039.049%200C31.7363%200%2025.7869%206.09355%2025.7869%2013.5837V42.185C25.7869%2047.1758%2021.823%2051.2363%2016.9505%2051.2363C12.0772%2051.2363%208.11247%2047.1758%208.11247%2042.185V30.3392H10.838C11.3692%2030.3392%2011.8%2029.8982%2011.8%2029.3539V15.4837C11.8%2014.9397%2011.3692%2014.4984%2010.838%2014.4984H9.93641V9.3163C9.93641%208.77221%209.50563%208.33099%208.97441%208.33099H2.82556C2.29435%208.33099%201.86357%208.77221%201.86357%209.3163V14.4986H0.961991C0.43078%2014.4986%200%2014.9398%200%2015.4839V29.3539C0%2029.8982%200.43078%2030.3392%200.961991%2030.3392H3.6875V42.185C3.6875%2049.6752%209.63723%2055.7687%2016.9507%2055.7687C24.2631%2055.7687%2030.2123%2049.6752%2030.2123%2042.185V13.5837C30.2123%208.59288%2034.1765%204.53242%2039.0491%204.53242C43.9224%204.53242%2047.8871%208.59268%2047.8871%2013.5837V25.1159H45.1616C44.6304%2025.1159%2044.1996%2025.5571%2044.1996%2026.1012V39.9714C44.1996%2040.5157%2044.6304%2040.9567%2045.1616%2040.9567H46.0632V46.1389C46.0632%2046.6832%2046.494%2047.1242%2047.0252%2047.1242H53.1744C53.7057%2047.1242%2054.1364%2046.6832%2054.1364%2046.1389V40.9567H55.038C55.5692%2040.9567%2056%2040.5157%2056%2039.9714V26.1012C55.9996%2025.5571%2055.5688%2025.1159%2055.0376%2025.1159ZM3.78755%2010.3016H8.01281V14.4986H3.78755V10.3016ZM52.2121%2045.1536H47.9868V40.9567H52.2121V45.1536Z'%20fill='%231434CB'/%3e%3c/svg%3e"/>
-                <div class="features-card-content">
-                    <p class="features-card-content-heading">Free 10m Cable</p>
-                    <span class="features-card-content-subtext">Enhance your signal without extra costs - each booster comes with a free 10m cable.</span>
-                </div>
-            </div>
-            <div class="features-card">
-                <img src="/assets/images/premium-icon.png"/>
-                <div class="features-card-content">
-                    <p class="features-card-content-heading">Premium Quality</p>
-                    <span class="features-card-content-subtext">Rely on the best - our boosters are crafted with top-notch materials and precision.</span>
-                </div>
-            </div>
-            <div class="features-card">
-                <img src="/assets/images/support-icon.png"/>
-                <div class="features-card-content">
-                    <p class="features-card-content-heading">24/7 chat support</p>
-                    <span class="features-card-content-subtext">Get help anytime with our 24/7 live chat support. Our experts are ready to assist you whenever you need.</span>
-                </div>
-            </div>
-            <div class="features-card">
-                <img src="/assets/images/refund-icon.png"/>
-                <div class="features-card-content">
-                    <p class="features-card-content-heading">Money-Back Guarantee</p>
-                    <span class="features-card-content-subtext">Experience confidence - our boosters are guaranteed, or your money back.</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="categories-section container">
-        <div class="section-tags">
-            <p>Categories</p>
-        </div>
-        <h2 class="section-heading leading-normal lg-w-75">Boost Your Connection: Find the Perfect Signal
-            Solution for Any Space</h2>
-        <div class="categories-content">
-            <ul class="nav nav-fill nav-tabs tabs-container" role="tablist">
-                <li class="tab" role="presentation">
-                    <a class="active " id="fill-tab-0" data-bs-toggle="tab" href="#fill-tabpanel-0" role="tab"
-                       aria-controls="fill-tabpanel-0" aria-selected="true"> Homes </a>
-                </li>
-                <li class="tab" role="presentation">
-                    <a class="" id="fill-tab-1" data-bs-toggle="tab" href="#fill-tabpanel-1" role="tab"
-                       aria-controls="fill-tabpanel-1" aria-selected="false"> Offices </a>
-                </li>
-                <li class="tab" role="presentation">
-                    <a class="" id="fill-tab-2" data-bs-toggle="tab" href="#fill-tabpanel-2" role="tab"
-                       aria-controls="fill-tabpanel-2" aria-selected="false"> Hotels </a>
-                </li>
-                <li class="tab" role="presentation">
-                    <a class="" id="fill-tab-3" data-bs-toggle="tab" href="#fill-tabpanel-3" role="tab"
-                       aria-controls="fill-tabpanel-3" aria-selected="false"> Farms </a>
-                </li>
-                <li class="tab" role="presentation">
-                    <a class="" id="fill-tab-4" data-bs-toggle="tab" href="#fill-tabpanel-4" role="tab"
-                       aria-controls="fill-tabpanel-4" aria-selected="false"> Boats </a>
-                </li>
-                <li class="tab" role="presentation">
-                    <a class="" id="fill-tab-5" data-bs-toggle="tab" href="#fill-tabpanel-5" role="tab"
-                       aria-controls="fill-tabpanel-5" aria-selected="false"> Warehouses </a>
-                </li>
-            </ul>
-            <div class="tab-content" id="tab-content">
-                <div class="tab-pane active" id="fill-tabpanel-0" role="tabpanel" aria-labelledby="fill-tab-0">
-                    <div class="tabs-content-img-container">
-                        <img src="/assets/images/tabs-content-1.png" class="tabs-content-img"/>
-                        <a href="#" class="btn-primary ">show more for homes</a>
-                    </div>
-                    <div class="tabs-content">
-                        <a href="#" class="tab-product-card">
-                            <img src="data:image/png;base64,aHR0cHM6Ly9zdGFja2JsaXR6LmNvbS9zdG9yYWdlL2Jsb2JzL3JlZGlyZWN0L2V5SmZjbUZwYkhNaU9uc2liV1Z6YzJGblpTSTZJa0pCYUhCQ1FYZFJTVUZGUFNJc0ltVjRjQ0k2Ym5Wc2JDd2ljSFZ5SWpvaVlteHZZbDlwWkNKOWZRPT0tLTZjMGRkZjcxZWJjYTY5MGE3NTk2MGRkN2ZiOTY3ZDBjNTZhOTQwZDgvLUJsYWNrMSUyMDEucG5n" class="tab-product-card-img"/>
-                            <span class="tab-product-card-content">
-                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
-                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
-                        <span class="tab-product-card-price">£ 200.00</span>
-                    </span>
-                        </a>
-                        <a href="#" class="tab-product-card">
-                            <img src="/assets/images/signal-expert.png" class="tab-product-card-img"/>
-                            <span class="tab-product-card-content">
-                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
-                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
-                        <span class="tab-product-card-price">£ 200.00</span>
-                    </span>
-                        </a>
-                    </div>
-                    <a href="#" class="btn-primary lg-none">show more for homes</a>
-                </div>
-                <div class="tab-pane" id="fill-tabpanel-1" role="tabpanel" aria-labelledby="fill-tab-1">
-                    <div class="tabs-content-img-container">
-                        <img src="/assets/images/tabs-content-1.png" class="tabs-content-img"/>
-                        <a href="#" class="btn-primary ">show more for homes</a>
-                    </div>
-                    <div class="tabs-content">
-                        <a href="#" class="tab-product-card">
-                            <img src="/assets/images/signal-expert.png" class="tab-product-card-img"/>
-                            <span class="tab-product-card-content">
-                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
-                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
-                        <span class="tab-product-card-price">£ 200.00</span>
-                    </span>
-                        </a>
-                        <a href="#" class="tab-product-card">
-                            <img src="data:image/png;base64,aHR0cHM6Ly9zdGFja2JsaXR6LmNvbS9zdG9yYWdlL2Jsb2JzL3JlZGlyZWN0L2V5SmZjbUZwYkhNaU9uc2liV1Z6YzJGblpTSTZJa0pCYUhCQ1FYZFJTVUZGUFNJc0ltVjRjQ0k2Ym5Wc2JDd2ljSFZ5SWpvaVlteHZZbDlwWkNKOWZRPT0tLTZjMGRkZjcxZWJjYTY5MGE3NTk2MGRkN2ZiOTY3ZDBjNTZhOTQwZDgvLUJsYWNrMSUyMDEucG5n" class="tab-product-card-img"/>
-                            <span class="tab-product-card-content">
-                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
-                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
-                        <span class="tab-product-card-price">£ 200.00</span>
-                    </span>
-                        </a>
-                    </div>
-                    <a href="#" class="btn-primary lg-none">show more for homes</a>
-                </div>
-                <div class="tab-pane" id="fill-tabpanel-2" role="tabpanel" aria-labelledby="fill-tab-2">
-                    <div class="tabs-content-img-container">
-                        <img src="/assets/images/tabs-content-1.png" class="tabs-content-img"/>
-                        <a href="#" class="btn-primary ">show more for homes</a>
-                    </div>
-                    <div class="tabs-content">
-                        <a href="#" class="tab-product-card">
-                            <img src="data:image/png;base64,aHR0cHM6Ly9zdGFja2JsaXR6LmNvbS9zdG9yYWdlL2Jsb2JzL3JlZGlyZWN0L2V5SmZjbUZwYkhNaU9uc2liV1Z6YzJGblpTSTZJa0pCYUhCQ1FYZFJTVUZGUFNJc0ltVjRjQ0k2Ym5Wc2JDd2ljSFZ5SWpvaVlteHZZbDlwWkNKOWZRPT0tLTZjMGRkZjcxZWJjYTY5MGE3NTk2MGRkN2ZiOTY3ZDBjNTZhOTQwZDgvLUJsYWNrMSUyMDEucG5n" class="tab-product-card-img"/>
-                            <span class="tab-product-card-content">
-                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
-                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
-                        <span class="tab-product-card-price">£ 200.00</span>
-                    </span>
-                        </a>
-                        <a href="#" class="tab-product-card">
-                            <img src="/assets/images/signal-expert.png" class="tab-product-card-img"/>
-                            <span class="tab-product-card-content">
-                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
-                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
-                        <span class="tab-product-card-price">£ 200.00</span>
-                    </span>
-                        </a>
-                    </div>
-                    <a href="#" class="btn-primary lg-none">show more for homes</a>
-                </div>
-                <div class="tab-pane" id="fill-tabpanel-3" role="tabpanel" aria-labelledby="fill-tab-3">
-                    <div class="tabs-content-img-container">
-                        <img src="/assets/images/tabs-content-1.png" class="tabs-content-img"/>
-                        <a href="#" class="btn-primary ">show more for homes</a>
-                    </div>
-                    <div class="tabs-content">
-                        <a href="#" class="tab-product-card">
-                            <img src="/assets/images/signal-expert.png" class="tab-product-card-img"/>
-                            <span class="tab-product-card-content">
-                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
-                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
-                        <span class="tab-product-card-price">£ 200.00</span>
-                    </span>
-                        </a>
-                        <a href="#" class="tab-product-card">
-                            <img src="data:image/png;base64,aHR0cHM6Ly9zdGFja2JsaXR6LmNvbS9zdG9yYWdlL2Jsb2JzL3JlZGlyZWN0L2V5SmZjbUZwYkhNaU9uc2liV1Z6YzJGblpTSTZJa0pCYUhCQ1FYZFJTVUZGUFNJc0ltVjRjQ0k2Ym5Wc2JDd2ljSFZ5SWpvaVlteHZZbDlwWkNKOWZRPT0tLTZjMGRkZjcxZWJjYTY5MGE3NTk2MGRkN2ZiOTY3ZDBjNTZhOTQwZDgvLUJsYWNrMSUyMDEucG5n" class="tab-product-card-img"/>
-                            <span class="tab-product-card-content">
-                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
-                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
-                        <span class="tab-product-card-price">£ 200.00</span>
-                    </span>
-                        </a>
-                    </div>
-                    <a href="#" class="btn-primary lg-none">show more for homes</a>
-                </div>
-                <div class="tab-pane" id="fill-tabpanel-4" role="tabpanel" aria-labelledby="fill-tab-4">
-                    <div class="tabs-content-img-container">
-                        <img src="/assets/images/tabs-content-1.png" class="tabs-content-img"/>
-                        <a href="#" class="btn-primary ">show more for homes</a>
-                    </div>
-                    <div class="tabs-content">
-                        <a href="#" class="tab-product-card">
-                            <img src="data:image/png;base64,aHR0cHM6Ly9zdGFja2JsaXR6LmNvbS9zdG9yYWdlL2Jsb2JzL3JlZGlyZWN0L2V5SmZjbUZwYkhNaU9uc2liV1Z6YzJGblpTSTZJa0pCYUhCQ1FYZFJTVUZGUFNJc0ltVjRjQ0k2Ym5Wc2JDd2ljSFZ5SWpvaVlteHZZbDlwWkNKOWZRPT0tLTZjMGRkZjcxZWJjYTY5MGE3NTk2MGRkN2ZiOTY3ZDBjNTZhOTQwZDgvLUJsYWNrMSUyMDEucG5n" class="tab-product-card-img"/>
-                            <span class="tab-product-card-content">
-                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
-                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
-                        <span class="tab-product-card-price">£ 200.00</span>
-                    </span>
-                        </a>
-                        <a href="#" class="tab-product-card">
-                            <img src="/assets/images/signal-expert.png" class="tab-product-card-img"/>
-                            <span class="tab-product-card-content">
-                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
-                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
-                        <span class="tab-product-card-price">£ 200.00</span>
-                    </span>
-                        </a>
-                    </div>
-                    <a href="#" class="btn-primary lg-none">show more for homes</a>
-                </div>
-                <div class="tab-pane" id="fill-tabpanel-5" role="tabpanel" aria-labelledby="fill-tab-5">
-                    <div class="tabs-content-img-container">
-                        <img src="/assets/images/tabs-content-1.png" class="tabs-content-img"/>
-                        <a href="#" class="btn-primary ">show more for homes</a>
-                    </div>
-                    <div class="tabs-content">
-                        <a href="#" class="tab-product-card">
-                            <img src="/assets/images/signal-expert.png" class="tab-product-card-img"/>
-                            <span class="tab-product-card-content">
-                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
-                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
-                        <span class="tab-product-card-price">£ 200.00</span>
-                    </span>
-                        </a>
-                        <a href="#" class="tab-product-card">
-                            <img src="data:image/png;base64,aHR0cHM6Ly9zdGFja2JsaXR6LmNvbS9zdG9yYWdlL2Jsb2JzL3JlZGlyZWN0L2V5SmZjbUZwYkhNaU9uc2liV1Z6YzJGblpTSTZJa0pCYUhCQ1FYZFJTVUZGUFNJc0ltVjRjQ0k2Ym5Wc2JDd2ljSFZ5SWpvaVlteHZZbDlwWkNKOWZRPT0tLTZjMGRkZjcxZWJjYTY5MGE3NTk2MGRkN2ZiOTY3ZDBjNTZhOTQwZDgvLUJsYWNrMSUyMDEucG5n" class="tab-product-card-img"/>
-                            <span class="tab-product-card-content">
-                        <span class="tab-product-card-heading">Home Elite 3G Signal Booster</span>
-                        <span class="tab-product-card-subtext">Best for one large or multiple small rooms where you have a medium to strong outside signal.</span>
-                        <span class="tab-product-card-price">£ 200.00</span>
-                    </span>
-                        </a>
-                    </div>
-                    <a href="#" class="btn-primary lg-none">show more for homes</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="struggle-section">
         <div class="container">
-            <div class="struggle-section-content">
-                <h2>Struggling with Signal in a Big Space?</h2>
-                <span>Our Floor Plan Analysis ensures even the largest spaces get complete signal coverage. With expert engineers evaluating your layout, we'll design a solution tailored to eliminate weak spots and keep your connectivity strong and reliable.</span>
-                <a href="#" class="btn-secondary">Learn More</a>
+            <div class="features">
+                <div class="features-card">
+                    <img src="data:image/svg+xml,%3csvg%20width='81'%20height='56'%20viewBox='0%200%2081%2056'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M64.3609%2035.4883C59.6343%2035.4883%2055.7891%2040.0369%2055.7891%2045.6281C55.7891%2051.2193%2059.6343%2055.7678%2064.3609%2055.7678C69.0882%2055.7678%2072.9327%2051.2193%2072.9327%2045.6281C72.9327%2040.0369%2069.0874%2035.4883%2064.3609%2035.4883ZM64.3609%2050.698C61.9972%2050.698%2060.075%2048.4241%2060.075%2045.6281C60.075%2042.8321%2061.9972%2040.5582%2064.3609%2040.5582C66.7245%2040.5582%2068.6468%2042.8321%2068.6468%2045.6281C68.6468%2048.4242%2066.7245%2050.698%2064.3609%2050.698Z'%20fill='%231434CB'/%3e%3cpath%20d='M35.0679%2035.4883C30.3413%2035.4883%2026.4961%2040.0369%2026.4961%2045.6281C26.4961%2051.2193%2030.3413%2055.7678%2035.0679%2055.7678C39.7945%2055.7678%2043.6397%2051.2193%2043.6397%2045.6281C43.6397%2040.0369%2039.7945%2035.4883%2035.0679%2035.4883ZM35.0679%2050.698C32.7043%2050.698%2030.782%2048.4241%2030.782%2045.6281C30.782%2042.8321%2032.7043%2040.5582%2035.0679%2040.5582C37.4309%2040.5582%2039.3538%2042.8321%2039.3538%2045.6281C39.3538%2048.4242%2037.4315%2050.698%2035.0679%2050.698Z'%20fill='%231434CB'/%3e%3cpath%20d='M70.131%206.46627C69.7667%205.61031%2069.0259%205.07031%2068.2159%205.07031H56.9297V10.1402H66.8943L72.7296%2023.8694L76.5598%2021.5913L70.131%206.46627Z'%20fill='%231434CB'/%3e%3cpath%20d='M57.9259%2043.1797H41.7109V48.2496H57.9259V43.1797Z'%20fill='%231434CB'/%3e%3cpath%20d='M28.642%2043.1777H21.2132C20.0295%2043.1777%2019.0703%2044.3126%2019.0703%2045.7126C19.0703%2047.1128%2020.0297%2048.2475%2021.2132%2048.2475H28.6421C29.8258%2048.2475%2030.785%2047.1126%2030.785%2045.7126C30.785%2044.3124%2029.8256%2043.1777%2028.642%2043.1777Z'%20fill='%231434CB'/%3e%3cpath%20d='M80.5513%2027.6815L76.3362%2021.2596C75.9312%2020.6411%2075.3062%2020.2794%2074.644%2020.2794H59.0719V2.53487C59.0719%201.13467%2058.1125%200%2056.929%200H21.2132C20.0295%200%2019.0703%201.13483%2019.0703%202.53487C19.0703%203.9349%2020.0297%205.06973%2021.2132%205.06973H54.786V22.8143C54.786%2024.2145%2055.7453%2025.3491%2056.9288%2025.3491H73.5946L76.7154%2030.1047V43.1782H70.7865C69.6029%2043.1782%2068.6436%2044.313%2068.6436%2045.7131C68.6436%2047.1133%2069.603%2048.248%2070.7865%2048.248H78.8583C80.0419%2048.248%2081.0011%2047.1131%2081.0013%2045.7131V29.2363C81.0013%2028.6735%2080.8427%2028.126%2080.5513%2027.6815Z'%20fill='%231434CB'/%3e%3cpath%20d='M21.0005%2030.334H11.1429C9.95921%2030.334%209%2031.4688%209%2032.8689C9%2034.269%209.95934%2035.4037%2011.1429%2035.4037H21.0004C22.184%2035.4037%2023.1432%2034.2689%2023.1432%2032.8689C23.1434%2031.4688%2022.184%2030.334%2021.0005%2030.334Z'%20fill='%231434CB'/%3e%3cpath%20d='M20.4294%2020.3633H2.14288C0.959343%2020.3633%200%2021.4981%200%2022.8983C0%2024.2985%200.959343%2025.4332%202.14288%2025.4332H20.4294C21.613%2025.4332%2022.5723%2024.2983%2022.5723%2022.8983C22.5723%2021.4983%2021.613%2020.3633%2020.4294%2020.3633Z'%20fill='%231434CB'/%3e%3cpath%20d='M20.4294%2010.3926H2.14288C0.95921%2010.3926%200%2011.5274%200%2012.9274C0%2014.3276%200.959343%2015.4623%202.14288%2015.4623H20.4294C21.613%2015.4623%2022.5723%2014.3275%2022.5723%2012.9274C22.5724%2011.5274%2021.613%2010.3926%2020.4294%2010.3926Z'%20fill='%231434CB'/%3e%3c/svg%3e"/>
+                    <div class="features-card-content">
+                        <p class="features-card-content-heading">Free Delivery In The UK</p>
+                        <span class="features-card-content-subtext">Boost with convenience - enjoy free delivery on all our boosters, Arrives in 5-7 Working Days</span>
+                    </div>
+                </div>
+                <div class="features-card">
+                    <img src="/assets/images/warranty-icon.png"/>
+                    <div class="features-card-content">
+                        <p class="features-card-content-heading">1-Year Warranty</p>
+                        <span class="features-card-content-subtext">Experience worry-free boosting with a compli-mentary 1-year warranty on all our products.</span>
+                    </div>
+                </div>
+                <div class="features-card">
+                    <img src="data:image/svg+xml,%3csvg%20width='56'%20height='56'%20viewBox='0%200%2056%2056'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M55.0376%2025.1159H52.3121V13.5837C52.3121%206.09374%2046.3624%200%2039.049%200C31.7363%200%2025.7869%206.09355%2025.7869%2013.5837V42.185C25.7869%2047.1758%2021.823%2051.2363%2016.9505%2051.2363C12.0772%2051.2363%208.11247%2047.1758%208.11247%2042.185V30.3392H10.838C11.3692%2030.3392%2011.8%2029.8982%2011.8%2029.3539V15.4837C11.8%2014.9397%2011.3692%2014.4984%2010.838%2014.4984H9.93641V9.3163C9.93641%208.77221%209.50563%208.33099%208.97441%208.33099H2.82556C2.29435%208.33099%201.86357%208.77221%201.86357%209.3163V14.4986H0.961991C0.43078%2014.4986%200%2014.9398%200%2015.4839V29.3539C0%2029.8982%200.43078%2030.3392%200.961991%2030.3392H3.6875V42.185C3.6875%2049.6752%209.63723%2055.7687%2016.9507%2055.7687C24.2631%2055.7687%2030.2123%2049.6752%2030.2123%2042.185V13.5837C30.2123%208.59288%2034.1765%204.53242%2039.0491%204.53242C43.9224%204.53242%2047.8871%208.59268%2047.8871%2013.5837V25.1159H45.1616C44.6304%2025.1159%2044.1996%2025.5571%2044.1996%2026.1012V39.9714C44.1996%2040.5157%2044.6304%2040.9567%2045.1616%2040.9567H46.0632V46.1389C46.0632%2046.6832%2046.494%2047.1242%2047.0252%2047.1242H53.1744C53.7057%2047.1242%2054.1364%2046.6832%2054.1364%2046.1389V40.9567H55.038C55.5692%2040.9567%2056%2040.5157%2056%2039.9714V26.1012C55.9996%2025.5571%2055.5688%2025.1159%2055.0376%2025.1159ZM3.78755%2010.3016H8.01281V14.4986H3.78755V10.3016ZM52.2121%2045.1536H47.9868V40.9567H52.2121V45.1536Z'%20fill='%231434CB'/%3e%3c/svg%3e"/>
+                    <div class="features-card-content">
+                        <p class="features-card-content-heading">Free 10m Cable</p>
+                        <span class="features-card-content-subtext">Enhance your signal without extra costs - each booster comes with a free 10m cable.</span>
+                    </div>
+                </div>
+                <div class="features-card">
+                    <img src="/assets/images/premium-icon.png"/>
+                    <div class="features-card-content">
+                        <p class="features-card-content-heading">Premium Quality</p>
+                        <span class="features-card-content-subtext">Rely on the best - our boosters are crafted with top-notch materials and precision.</span>
+                    </div>
+                </div>
+                <div class="features-card">
+                    <img src="/assets/images/support-icon.png"/>
+                    <div class="features-card-content">
+                        <p class="features-card-content-heading">24/7 chat support</p>
+                        <span class="features-card-content-subtext">Get help anytime with our 24/7 live chat support. Our experts are ready to assist you whenever you need.</span>
+                    </div>
+                </div>
+                <div class="features-card">
+                    <img src="/assets/images/refund-icon.png"/>
+                    <div class="features-card-content">
+                        <p class="features-card-content-heading">Money-Back Guarantee</p>
+                        <span class="features-card-content-subtext">Experience confidence - our boosters are guaranteed, or your money back.</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section class="work-section container">
-        <h2 class="work-section-heading">How it works</h2>
-        <div class="row justify-content-center px-lg-4" style="gap: 2.5rem;">
-            <div class="work-section-content-card col col-md-6 col-lg-4 p-0">
-                <img src="/assets/images/how-work-1.png"/>
-                <div class="work-section-card-text">
-                    <h3>Step 1: Receive</h3>
-                    <p>The external antenna captures weak cell signals from nearby towers, gathering all available
-                        network
-                        connections in your area.</p>
-                </div>
-            </div>
-            <div class="work-section-content-card col col-md-6 col-lg-4 p-0">
-                <img src="/assets/images/how-work-2.png"/>
-                <div class="work-section-card-text">
-                    <h3>Step 2: Amplify</h3>
-                    <p>Our powerful signal amplifier boosts the captured signal up to 32x, significantly enhancing its
-                        strength and quality.</p>
-                </div>
-            </div>
-            <div class="work-section-content-card col col-md-6 col-lg-4 p-0">
-                <img src="/assets/images/how-work-3.png"/>
-                <div class="work-section-card-text">
-                    <h3>Step 3: Broadcast</h3>
-                    <p>The inside antenna distributes the amplified signal throughout space, providing strong, reliable
-                        coverage to all your mobile devices.</p>
-                </div>
-            </div>
-        </div>
-        <a href="#" class="work-section-btn">
-            <span>See How Our Boosters Work</span>
-            <img src="data:image/svg+xml,%3csvg%20width='20'%20height='18'%20viewBox='0%200%2020%2018'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M19%209.00195H0.996106'%20stroke='%231434CB'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M12.9987%2015.0033L19%209.00195L12.9987%203.00066'%20stroke='%231434CB'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"/>
-        </a>
-    </section>
-    <section class="boosting-section">
-        <div class="boosting-img-bg">
-            <img src="/assets/images/boosting-1.png"/>
-        </div>
-        <div class="boosting-img-bg">
-            <img src="/assets/images/boosting-2.png"/>
-        </div>
-        <div class="boosting-img-bg">
-            <img src="/assets/images/boosting-3.png"/>
-        </div>
-        <div class="boosting-img-bg">
-            <img src="/assets/images/boosting-4.png"/>
-        </div>
-        <div class="boosting-img-bg">
-            <img src="/assets/images/boosting-5.png"/>
-        </div>
-        <div class="boosting-img-bg">
-            <img src="/assets/images/boosting-6.png"/>
-        </div>
-        <div class="boosting-img-bg">
-            <img src="/assets/images/boosting-7.png"/>
-        </div>
-        <div class="boosting-img-bg">
-            <img src="/assets/images/boosting-8.png"/>
-        </div>
-        <div class="boosting-img-bg">
-            <img src="/assets/images/boosting-9.png"/>
-        </div>
-        <div class="boosting-img-bg">
-            <img src="/assets/images/boosting-5.png"/>
-        </div>
-        <div class="boosting-img-bg">
-            <img src="/assets/images/boosting-8.png"/>
-        </div>
-        <div class="boosting-img-bg">
-            <img src="/assets/images/boosting-9.png"/>
-        </div>
-        <div class="boosting-img-bg">
-            <div class="yellow-circle-sm"></div>
-        </div>
-        <div class="boosting-img-bg">
-            <div class="yellow-circle-sm"></div>
-        </div>
-        <div class="boosting-img-bg">
-            <div class="yellow-circle-sm"></div>
-        </div>
-        <div class="boosting-img-bg">
-            <div class="yellow-circle-lg"></div>
-        </div>
-        <div class="boosting-img-bg">
-            <div class="yellow-circle-lg"></div>
-        </div>
-        <div class="boosting-img-bg">
-            <div class="cyan-circle-lg"></div>
-        </div>
-        <div class="boosting-img-bg">
-            <div class="cyan-circle-lg"></div>
-        </div>
-        <div class="container boosting-content">
-            <div class="boosting-content-card">
-                <img src="/assets/images/boosting-card-img.png"/>
-                <p class="boosting-content-card-heading">"I was barely getting any reception in my rural home, but after
-                    installing the booster, my signal
-                    jumped from " </p>
-                <span class="boosting-content-card-name">— Sarah, Yorkshire, UK</span>
-            </div>
-            <div>
-                <h2 class="boosting-content-heading">See who's boosting.</h2>
-                <span class="boosting-content-description">Connect with other users enhancing their signal in your area.</span>
-            </div>
-        </div>
-    </section>
-    <section class="testimonials-section">
+    <section>
         <div class="container">
-            <div class="section-tags">
-                <p>Testimonials</p>
-            </div>
-            <h2 class="section-heading leading-normal lg-w-75">Don't take our word for it</h2>
-            <div class="glide">
-                <div data-glide-el="track" class="glide__track">
-                    <ul class="glide__slides">
-                        <li class="glide__slide">
-                            <p class="review-header">"The best Signal Booster ever"</p>
-                            <span class="review-description">Our company struggled with poor reception for years. <span
-                                    class="highlight">This signal booster changed everything</span>. Now we have clear calls and fast data in every corner of our office.</span>
-                            <span class="review-info-container">
-                            <img src="/assets/images/review-img-1.png"/>
-                            <span class="review-info">
-                                <span class="reviewer-name">John Doe</span>
-                                <span class="reviewer-title">CEO at Webflow Agency</span>
-                            </span>
-                        </span>
-                        </li>
-                        <li class="glide__slide">
-                            <p class="review-header">"Mobile Booster is the #1""</p>
-                            <span class="review-description">I've tried many boosters, but this one stands out. <span
-                                    class="highlight">Easy to set up and incredibly effective</span> . It turned my home office from a dead zone into a high-speed hub.</span>
-                            <span class="review-info-container">
-                            <img src="/assets/images/review-img-2.png"/>
-                            <span class="review-info">
-                                <span class="reviewer-name">Joseph Johnson</span>
-                                <span class="reviewer-title">CEO at Rural Tech Solutions</span>
-                            </span>
-                        </span>
-                        </li>
-                        <li class="glide__slide">
-                            <p class="review-header">"The best Signal Booster ever"</p>
-                            <span class="review-description">Our company struggled with poor reception for years. <span
-                                    class="highlight">This signal booster changed everything</span>. Now we have clear calls and fast data in every corner of our office.</span>
-                            <span class="review-info-container">
-                            <img src="/assets/images/review-img-1.png"/>
-                            <span class="review-info">
-                                <span class="reviewer-name">John Doe</span>
-                                <span class="reviewer-title">CEO at Webflow Agency</span>
-                            </span>
-                        </span>
-                        </li>
-                        <li class="glide__slide">
-                            <p class="review-header">"Mobile Booster is the #1""</p>
-                            <span class="review-description">I've tried many boosters, but this one stands out. <span
-                                    class="highlight">Easy to set up and incredibly effective</span> . It turned my home office from a dead zone into a high-speed hub.</span>
-                            <span class="review-info-container">
-                            <img src="/assets/images/review-img-2.png"/>
-                            <span class="review-info">
-                                <span class="reviewer-name">Joseph Johnson</span>
-                                <span class="reviewer-title">CEO at Rural Tech Solutions</span>
-                            </span>
-                        </span>
-                        </li>
-                    </ul>
+            <details class="product-details">
+                <summary>
+                    <h3 class="product-details-heading">Overview</h3>
+                    <svg width="42" height="22" viewBox="0 0 42 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.44856 1.5511L21 20.1025L39.5514 1.5511" stroke="black" stroke-width="3"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </summary>
+                <p>The Home Elite 3G Signal Booster is an excellent choice to cover areas of up to 300 square metres.
+                    This
+                    is a perfect signal booster for enhancing 3G signals in small homes, small offices, or any other
+                    smaller
+                    area of 300 square metres.
+                    It supports 3G signal enhancement for all major UK networks
+                    like Vodafone, EE, iD, O2, Three, Virgin, Tesco, GiffGaff, BT, etc. This booster can serve 6
+                    users simultaneously.
+                    .</p>
+            </details>
+            <details class="product-details">
+                <summary>
+                    <h3 class="product-details-heading">Technical Specifications</h3>
+                    <svg width="42" height="22" viewBox="0 0 42 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.44856 1.5511L21 20.1025L39.5514 1.5511" stroke="black" stroke-width="3"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </summary>
+                <div class="tab-pane" id="technical-specifications-tab-pane" role="tabpanel"
+                     aria-labelledby="technical-specifications-tab"
+                     tabindex="1">
+                    <div class="table-responsive">
+                        <table class="table specs-table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Specification </th>
+                                <th scope="col">Uplink</th>
+                                <th scope="col">Downlink</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><span>Max Gain</span></td>
+                                <td>76dB</td>
+                                <td>
+                                    83dB
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span>Bandwidth</span></td>
+                                <td>25 MHz</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><span>Ripple in Band</span></td>
+                                <td>?8dB</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><span>Max. Input Power Without Damage</span></td>
+                                <td>0 dBm</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><span>Output Power</span></td>
+                                <td>23 dBm</td>
+                                <td>27 dBm</td>
+                            </tr>
+                            <tr>
+                                <td><span>Noise Figure @ max. gain </span></td>
+                                <td>4.5db</td>
+                                <td>8db</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="glide__arrows" data-glide-el="controls">
-                    <button class="glide__arrow  glide__arrow--right" data-glide-dir="<">
-                        <img id="glide-left-arrow" src="data:image/svg+xml,%3csvg%20width='65'%20height='65'%20viewBox='0%200%2065%2065'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20filter='url(%23filter0_d_312_6916)'%3e%3ccircle%20cx='32.2417'%20cy='28.2021'%20r='28'%20fill='%231434CB'/%3e%3c/g%3e%3cpath%20d='M29.2583%2019.7651L37.6953%2028.2021L29.2583%2036.6391'%20stroke='white'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cdefs%3e%3cfilter%20id='filter0_d_312_6916'%20x='0.241699'%20y='0.202148'%20width='64'%20height='64'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeColorMatrix%20in='SourceAlpha'%20type='matrix'%20values='0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200'%20result='hardAlpha'/%3e%3cfeOffset%20dy='4'/%3e%3cfeGaussianBlur%20stdDeviation='2'/%3e%3cfeComposite%20in2='hardAlpha'%20operator='out'/%3e%3cfeColorMatrix%20type='matrix'%20values='0%200%200%200%200.0462007%200%200%200%200%200.0147569%200%200%200%200%200.40191%200%200%200%200.2%200'/%3e%3cfeBlend%20mode='normal'%20in2='BackgroundImageFix'%20result='effect1_dropShadow_312_6916'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='effect1_dropShadow_312_6916'%20result='shape'/%3e%3c/filter%3e%3c/defs%3e%3c/svg%3e"/>
-                    </button>
-                    <button class="glide__arrow glide__arrow--left" data-glide-dir=">">
-                        <img id="glide-next-arrow" src="data:image/svg+xml,%3csvg%20width='65'%20height='65'%20viewBox='0%200%2065%2065'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20filter='url(%23filter0_d_312_6916)'%3e%3ccircle%20cx='32.2417'%20cy='28.2021'%20r='28'%20fill='%231434CB'/%3e%3c/g%3e%3cpath%20d='M29.2583%2019.7651L37.6953%2028.2021L29.2583%2036.6391'%20stroke='white'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cdefs%3e%3cfilter%20id='filter0_d_312_6916'%20x='0.241699'%20y='0.202148'%20width='64'%20height='64'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeColorMatrix%20in='SourceAlpha'%20type='matrix'%20values='0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200'%20result='hardAlpha'/%3e%3cfeOffset%20dy='4'/%3e%3cfeGaussianBlur%20stdDeviation='2'/%3e%3cfeComposite%20in2='hardAlpha'%20operator='out'/%3e%3cfeColorMatrix%20type='matrix'%20values='0%200%200%200%200.0462007%200%200%200%200%200.0147569%200%200%200%200%200.40191%200%200%200%200.2%200'/%3e%3cfeBlend%20mode='normal'%20in2='BackgroundImageFix'%20result='effect1_dropShadow_312_6916'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='effect1_dropShadow_312_6916'%20result='shape'/%3e%3c/filter%3e%3c/defs%3e%3c/svg%3e"/>
-                    </button>
-                </div>
-            </div>
+            </details>
         </div>
     </section>
     <section class="faq-section">
@@ -864,7 +863,7 @@ This is for larger buildings who need extra cable from roof to the Booster insid
         </div>
     </section>
     <div class="quiz-error-message">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVlSURBVHgBzZrPbxtFFMe/M3ZSSJzEgYogcahTOHBqnL+gsYRScWtyhpIrXNJI3JOcuBSRnOBGWzg35YRaKsX9C3B6psI9IFIJsEuSQht7p+/tD9d2nJnZ9Xidj7TOJn478dfvzZuZNyPgGFXbyQNvFIFsEVLNQQm6F3kIVeg0FFV6oQt1KDwEGhUx/XEZjhFwQCBqbAFCrlKLJAh5JIPFlqHUT2J68SYc0JdAX5jMrdLtdSQXdVrrVXopw2tukmerSEgigYMV1pMNeI1bSYTGFqhq965Cim/o0QJShTzqYTNu6FoLDL22jsBrw2QLXpaEluo2xlYCVe3nAmRmh8yLOBOwN5slm5A1CgzF7aYfkibsRGoF9iXu5R5dj4HjR3T9BjSPqMHD8L/maJicoetdui4C5+aA0TnExyzyVIGJxCkScXgnuCIxtmRI7LlLwMQ1up+J8aBeZE+BQUIZ/9VaHAv79zZwdAdOGFuMK7RCiafUK/HInuZ+thQF2MDe2v/EnTjm+X3gry+Dn3bQtLCx3uuNEx5UtfsrNM59DxuefetWWC9yy8Dk53a2nrckpq/cbf9Th0Drfsch+Q99YS/2kAoj7wPnbwTJSQv3x5H59lDtDFE5+plVaHL4pCWOOaZs/PeGhaEoUOrumIi0PBh4L/u7qYlUwvI07MK1TglnNvJimwflhulJv9MPSxzDCe1ox2SVb/fia4FSXNY+1nwKHPyAoXNw2zzGSrmqarv+KscX6GdOiIKx4eY+ho53aPNFsxcX+Cb0oLqqNWfv2Y9Jg8dmppSRvF4NBUqpD0/23lnj0NAXFYocplLVflmAaVX+4hHOHOZkR5r+L7IH9Ws8XhU46Hv1A+DJH8FPJ3BfNI7FggV6C1obRwP63QdA4SNg+xbc0Xisf1/KOUmlvimt0bGhkWFi7Dq+BzGrtWk8hUsK78EdvJDWovLkQVzQ2jTdCnQKT/q1iIKEsZGYK/M08cyfzSzQEbMuQzMGZoHGNVg8LrgUKs2fTdKI/0RvMQ4XsLAVmhDmJ+EOY81GVTnJ1LQ2vJp2AGfP67ScLn4Id3AlTgc5T8JT+pE8Ub3yJFs0nS0uAWtfwR0jF/XvC1WnPigq+kbceHAgmL58T5WFP9mW2NUa/rnkZLjgeWh+Am7g/jfzo97Ga5TIg1n2oH6nJrcEFzgTx5i7Tp23xKVfnBHQh+n4Ms4cE58aDLyH/BqMg02xrbXl8WbMjRed8OZisHGjwxN+ATgc6DNlmMJ08przQT8R3PeM3hPVaCfYF+iHqQezF40NpwB/BpP3BMrRbdtULbsFY7JZHm6oci4Yu2K2a2Y2o9uWQCsvMvkvKINdQurweDxlswnj8f59Nfqta7LNXhRVYxtv0ReUTXECwF/o2zcsDOmze6M32//SITD04hpMcH9857t0wpXD8vzXVisH2j7r8B7Te4f32QPypFqFDc/vBZVm1yt/MR7s8uZsx2C1LaYWTxxxOWULm+r6ssHTN7tjI439QOR/jqrf7DXOltJ2WOLQzMz32sLWHELYpe20JonsOiWoIxLq11JjepQ9xsLYYzLOeOuLK3WHZutd3aOJREZwPTU6SsKFYxYcFYlYDIvgRMUnK0Y+CI6SxEYvzreAgb5EDhSzOMZYk/EboIasho/0qNiIY6yqaqHIebozTwQGjtoOz8RUbawTHKfkYyZyPf2Q5ZBsrnUfEzE+hQQE/bKxQrfrGDiiHnpty/YIZcfT6INA6PEGRfpl9x7tT1irFTgiCF3eCs+w2ITHnEmU8vagFM2kRsv9CGu1iAEQ7hoXIWnvUYm8f8Che5PHLzgrKpcoyoiSSyYVrg+5ENXOKzdR+iwzw95oAAAAAElFTkSuQmCC"/>
+        <img src="assets/images/Featured%20icon.png"/>
         <p>Please select an option to continue.</p>
     </div>
 </main>
@@ -995,5 +994,104 @@ This is for larger buildings who need extra cable from roof to the Booster insid
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script>
+    function handleMenu(e) {
+        $(e.currentTarget).toggleClass('active');
+    }
+
+    $(document).ready(function () {
+        const menuToggle = $('header [data-bs-toggle="collapse"]');
+        const fullscreenNav = $('.fullscreen-nav');
+
+        menuToggle.on('click', function () {
+            $(this).toggleClass('active');
+            fullscreenNav.toggleClass('active');
+        });
+    });
+
+
+    function handleMenuList(e) {
+        $(e.currentTarget).toggleClass('active');
+    }
+
+    $('.navbar-list > li').on('click', handleMenuList);
+    document.querySelector('#menu').addEventListener('click', handleMenu);
+    $('.product-options-wrapper > .btn-add-cart').click(function () {
+        $(this).addClass('btn-outline-primary');
+        $(this).removeClass('btn-primary');
+        $(".btn-add-cart svg").removeClass('d-none');
+        setTimeout(() => {
+            $(this).removeClass('btn-outline-primary');
+            $(this).addClass('btn-primary');
+            $(".btn-add-cart svg").addClass('d-none');
+        }, 3000)
+    })
+    $('.country-item').on('click', function () {
+        if ($(this).find('input[type=radio]').is(':checked')) {
+            $('#openPopup .logo').attr('src', $(this).find('img').attr('src'));
+        } else {
+            $('#openPopup .logo').attr('src', 'https://flagcdn.com/gb.svg');
+        }
+    });
+
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.addClass('was-validated')
+                }, false)
+            })
+    })()
+    $('.subscribe-form').on('submit', (e) => {
+        e.preventDefault()
+        if ($(e.currentTarget).checkValidity()) {
+            $(e.currentTarget).classList.add('subscribed');
+
+        }
+    })
+
+    function handleToolTip(e) {
+        const el = e.currentTarget.parentNode;
+        const quiz = document.querySelector('.booster-quiz');
+        const rect = el.getBoundingClientRect();
+        const quizRect = quiz.getBoundingClientRect();
+        document.querySelector(`[data-tooltip=${e.currentTarget.id}]`).classList.toggle('visible');
+        document.querySelector(`.tooltip-arrow`).classList.toggle('visible');
+        const tooltip = document.querySelector(`[data-tooltip=${e.currentTarget.id}]`);
+        if (window.matchMedia('(min-width: 991px)').matches) {
+            document.querySelector(`[data-tooltip=${e.currentTarget.id}]`).style.left = `${rect.left - quizRect.left + rect.width - 30}px`;
+            document.querySelector(`.tooltip-arrow`).style.left = `${rect.left - quizRect.left + rect.width - 15}px`;
+            document.querySelector(`[data-tooltip=${e.currentTarget.id}]`).style.top = `${rect.top - quizRect.top - tooltip.offsetHeight - 8}px`;
+            document.querySelector(`.tooltip-arrow`).style.top = `${rect.top - quizRect.top - 8}px`;
+        } else {
+            document.querySelector(`[data-tooltip=${e.currentTarget.id}]`).style.right = `${rect.right - quizRect.right + rect.width + 15}px`;
+            document.querySelector(`.tooltip-arrow`).style.left = `${rect.left - quizRect.left + rect.width - 15}px`;
+            document.querySelector(`[data-tooltip=${e.currentTarget.id}]`).style.top = `${rect.top - quizRect.top - tooltip.offsetHeight - 8}px`;
+            document.querySelector(`.tooltip-arrow`).style.top = `${rect.top - quizRect.top - 8}px`;
+        }
+    }
+
+    document.querySelectorAll('.tooltip-icon').forEach((icon) => {
+        icon.addEventListener('mouseout', handleToolTip);
+    })
+    document.querySelectorAll('.tooltip-icon').forEach((icon) => {
+        icon.addEventListener('mouseover', handleToolTip);
+    })
+</script>
+
 </body>
 </html>
