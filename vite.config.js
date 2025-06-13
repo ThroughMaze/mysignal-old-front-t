@@ -38,7 +38,11 @@ export default defineConfig({
             input: {
                 main: path.resolve('', 'index.html'),
                 blog: path.resolve('', 'blog.html'),
-                article: path.resolve('', 'article.html')
+                article: path.resolve('', 'article.html'),
+                product: path.resolve('', 'product.html'),
+                cart: path.resolve('', 'cart.html'),
+                checkout: path.resolve('', 'checkout.html'),
+                archive: path.resolve('', 'archive.html')
             },
         },
         assetsDir: 'assets',
