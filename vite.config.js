@@ -7,9 +7,6 @@ export default defineConfig({
     build: {
         outDir: "./dist",
         emptyOutDir: true,
-        define: {
-            'require': 'window.require',
-        },
         rollupOptions: {
             output: {
                 entryFileNames: "assets/js/[name].js",
@@ -27,23 +24,21 @@ export default defineConfig({
                     if (/\.ttf$/.test(name ?? '')) {
                         return 'assets/fonts/[name][extname]';
                     }
-                    if (/\.ttf$/.test(name ?? '')) {
-                        return 'fonts/[name][extname]';
+                    if (/\.woff2?$/.test(name ?? '')) {
+                        return '[name][extname]';
+                    }
+                    if (/\.eot$/.test(name ?? '')) {
+                        return '[name][extname]';
                     }
 
                     // default value
-                    // ref: https://rollupjs.org/guide/en/#outputassetfilenames
                     return '[name][extname]';
                 }
             },
             input: {
                 main: path.resolve('', 'index.html'),
                 blog: path.resolve('', 'blog.html'),
-                article: path.resolve('', 'article.html'),
-                product: path.resolve('', 'product.html'),
-                cart: path.resolve('', 'cart.html'),
-                checkout: path.resolve('', 'checkout.html'),
-                archive: path.resolve('', 'archive.html')
+                article: path.resolve('', 'article.html')
             },
         },
         assetsDir: 'assets',
