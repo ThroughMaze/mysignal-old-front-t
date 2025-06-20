@@ -20,7 +20,8 @@ export default defineConfig({
                 checkout: resolve(__dirname, 'checkout.html'),
                 orderConfirmation: resolve(__dirname, 'order-confirmation.html'),
                 archive: resolve(__dirname, 'archive.html'),
-                category: resolve(__dirname, 'category.html')
+                category: resolve(__dirname, 'category.html'),
+                layouts: resolve(__dirname, 'layouts.html')
             },
             output: {
                 entryFileNames: 'assets/bundled/js/[name].bundle.js',
