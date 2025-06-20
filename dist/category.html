@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Signal Boosters - Mobile Booster</title>
+    <link rel="stylesheet" href="assets/css/category.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -215,6 +216,9 @@
             }
         }
     </style>
+  <script type="module" crossorigin src="/assets/bundled/js/category.bundle.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/bundled/js/bootstrap.cehe8Wpv.js">
+  <link rel="stylesheet" crossorigin href="/assets/bundled/css/bootstrap.bundle.css">
 </head>
 <body>
     <header>
@@ -353,24 +357,5 @@
             <p>&copy; 2024 Mobile Booster. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        // Simple add to cart functionality
-        document.querySelectorAll('.btn-primary').forEach(button => {
-            button.addEventListener('click', function() {
-                const productTitle = this.closest('.product-card').querySelector('.product-title').textContent;
-                alert(`${productTitle} added to cart!`);
-                
-                // Visual feedback
-                this.textContent = 'Added!';
-                this.style.background = '#00C73C';
-                
-                setTimeout(() => {
-                    this.textContent = 'Add to Cart';
-                    this.style.background = '#1434CB';
-                }, 2000);
-            });
-        });
-    </script>
 </body>
 </html>
