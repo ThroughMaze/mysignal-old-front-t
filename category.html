@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" src="assets/js/category.js"></script>
+    <script type="module" src="/assets/js/category.js"></script>
     <style>
         * {
             margin: 0;
@@ -356,24 +356,5 @@
             <p>&copy; 2024 Mobile Booster. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        // Simple add to cart functionality
-        document.querySelectorAll('.btn-primary').forEach(button => {
-            button.addEventListener('click', function() {
-                const productTitle = this.closest('.product-card').querySelector('.product-title').textContent;
-                alert(`${productTitle} added to cart!`);
-                
-                // Visual feedback
-                this.textContent = 'Added!';
-                this.style.background = '#00C73C';
-                
-                setTimeout(() => {
-                    this.textContent = 'Add to Cart';
-                    this.style.background = '#1434CB';
-                }, 2000);
-            });
-        });
-    </script>
 </body>
 </html>
