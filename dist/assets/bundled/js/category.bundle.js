@@ -1,0 +1,2 @@
+import"./bootstrap.cehe8Wpv.js";document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll(".btn-primary").forEach((t=>{t.addEventListener("click",(function(){const t=this.closest(".product-card").querySelector(".product-title").textContent;alert(`${t} added to cart!`),this.textContent="Added!",this.style.background="#00C73C",setTimeout((()=>{this.textContent="Add to Cart",this.style.background="#1434CB"}),2e3)}))}))}));
+//# sourceMappingURL=category.bundle.js.map
