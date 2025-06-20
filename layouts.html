@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Signal Booster Layouts - Mobile Booster</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="assets/css/layouts.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="/assets/js/index.js"></script>
+    <script src="/assets/js/layouts.js"></script>
+</head>
+<body>
+<header class="header-white">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container header-content">
+            <a href="/" class="logo-container">
+                <img src="assets/images/landing/colored-logo.svg" alt="Mobile Booster, Clear signal, every time"
+                     class="mobile-booster-logo"/>
+            </a>
+            <div id="header-icons" class="d-flex d-lg-none">
+                <a id="cart" href="#">
+                    <img src="assets/images/landing/cart-black.svg"/>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <div id="menu">
+                        <span></span><span></span><span></span>
+                    </div>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse d-none d-lg-block" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-lg-0 navbar-nav-scroll navbar-list"
+                    style="--bs-scroll-height: 100px;">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button">
+                            Shop
+                        </a>
+                        <div class="navbar-dropdown-arrow">
+                            <img src="assets/images/landing/nav-above-icon.svg"/>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button">
+                            Carriers
+                        </a>
+                        <div class="navbar-dropdown-arrow">
+                            <img src="assets/images/landing/nav-above-icon.svg"/>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button">
+                            Frequency
+                        </a>
+                        <div class="navbar-dropdown-arrow">
+                            <img src="assets/images/landing/nav-above-icon.svg"/>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" role="button">Floor Plan Analysis</a>
+                    </li>
+                </ul>
+                <div class="d-none d-lg-flex gap-3">
+                    <div id="openPopup" class="country-logo" data-bs-toggle="modal" data-bs-target="#country-modal">
+                        <img class="logo" src="https://flagcdn.com/gb.svg">
+                        <img src="assets/images/landing/black-down-arrow.svg"/>
+                    </div>
+                    <a id="cart-desktop-header" href="#">
+                        <img src="assets/images/landing/cart-black.svg"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav class="fullscreen-nav position-fixed top-0 start-0 vh-100 bg-white d-flex flex-column">
+        <div class="container">
+            <ul class="navbar-nav navbar-list">
+                <li class="nav-item">
+                    <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">Shop</a>
+                    <ul class="inner-list">
+                        <li><a href="#">Micro-Home (300 SQM)</a></li>
+                        <li><a href="#">Home (500 SQM)</a></li>
+                        <li><a href="#">Hotel (1000 SQM)</a></li>
+                        <li><a href="#">Factory (5000 SQM)</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">Carriers</a>
+                    <ul class="inner-list">
+                        <li><a href="#">Vodafone</a></li>
+                        <li><a href="#">O2</a></li>
+                        <li><a href="#">EE</a></li>
+                        <li><a href="#">Three</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">Frequency</a>
+                    <ul class="inner-list">
+                        <li><a href="#">700 MHz (5G)</a></li>
+                        <li><a href="#">800/900 MHz</a></li>
+                        <li><a href="#">1800/2100 MHz</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link">Floor Plan Analysis</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="container">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="breadcrumb-wrapper">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/"><i class="icon icon-home"></i> Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Signal Boosters</li>
+            </ol>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h1 class="page-title">Signal Boosters</h1>
+                    <p class="results-count">Showing 1-9 of 27 results</p>
+                </div>
+                <div class="sorting-controls">
+                    <label for="sort-select" class="sort-label">Sort by:</label>
+                    <select id="sort-select" class="form-select sort-select">
+                        <option value="popularity">Popularity</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest First</option>
+                        <option value="rating">Customer Rating</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Filters -->
+            <div class="col-12 col-lg-3 sidebar-filters">
+                <div class="filters-header">
+                    <h2 class="filters-title">Filters</h2>
+                    <button class="clear-filters-btn" id="clear-filters">Clear All</button>
+                </div>
+                <div class="active-filters" id="active-filters" style="display: none;">
+                    <h4>Active Filters:</h4>
+                    <div class="filter-tags"></div>
+                </div>
+                <!-- Price Filter -->
+                <div class="filter-section">
+                    <div class="filter-header">
+                        <h3 class="filter-title">Price</h3>
+                        <img src="assets/images/landing/black-down-arrow.svg" class="filter-arrow" />
+                    </div>
+                    <div class="filter-content">
+                        <div class="price-inputs-wrapper">
+                            <div class="price-input-group">
+                                <label for="min-price">Min</label>
+                                <input type="text" id="min-price" value="$699.00" class="price-input">
+                            </div>
+                            <div class="price-input-group">
+                                <label for="max-price">Max</label>
+                                <input type="text" id="max-price" value="$1,699.99" class="price-input">
+                            </div>
+                        </div>
+                        <div class="price-slider">
+                            <input type="range" min="699" max="1699" value="699" class="slider" id="price-range">
+                        </div>
+                        <button class="btn btn-primary apply-btn">Apply</button>
+                    </div>
+                </div>
+
+                <!-- Providers Filter -->
+                <div class="filter-section">
+                    <div class="filter-header">
+                        <h3 class="filter-title">Providers</h3>
+                        <img src="assets/images/landing/black-down-arrow.svg" class="filter-arrow rotated" />
+                    </div>
+                    <div class="filter-content expanded">
+                        <div class="provider-list">
+                            <label class="provider-item">
+                                <input type="checkbox" name="provider">
+                                <span class="checkmark"></span>
+                                <span class="provider-name">SignalSurge</span>
+                            </label>
+                            <label class="provider-item">
+                                <input type="checkbox" name="provider">
+                                <span class="checkmark"></span>
+                                <span class="provider-name">BoostWave</span>
+                            </label>
+                            <label class="provider-item">
+                                <input type="checkbox" name="provider">
+                                <span class="checkmark"></span>
+                                <span class="provider-name">DataDrift</span>
+                            </label>
+                            <label class="provider-item">
+                                <input type="checkbox" name="provider">
+                                <span class="checkmark"></span>
+                                <span class="provider-name">PowerSignal</span>
+                            </label>
+                            <label class="provider-item">
+                                <input type="checkbox" name="provider">
+                                <span class="checkmark"></span>
+                                <span class="provider-name">SignalForge</span>
+                            </label>
+                            <label class="provider-item">
+                                <input type="checkbox" name="provider">
+                                <span class="checkmark"></span>
+                                <span class="provider-name">SignalForge</span>
+                            </label>
+                            <label class="provider-item">
+                                <input type="checkbox" name="provider">
+                                <span class="checkmark"></span>
+                                <span class="provider-name">BoostLink</span>
+                            </label>
+                            <label class="provider-item">
+                                <input type="checkbox" name="provider">
+                                <span class="checkmark"></span>
+                                <span class="provider-name">BoostLink</span>
+                            </label>
+                        </div>
+                        <a href="#" class="view-all-link">
+                            View All
+                            <img src="assets/images/landing/next-arrow.svg" class="arrow-icon" />
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Frequencies Filter -->
+                <div class="filter-section">
+                    <div class="filter-header">
+                        <h3 class="filter-title">Frequencies</h3>
+                        <img src="assets/images/landing/black-down-arrow.svg" class="filter-arrow" />
+                    </div>
+                    <div class="filter-content expanded">
+                        <div class="frequency-list">
+                            <label class="frequency-item">
+                                <input type="checkbox" name="frequency">
+                                <span class="checkmark"></span>
+                                <span class="frequency-name">800 MHz (band 1)</span>
+                            </label>
+                            <label class="frequency-item">
+                                <input type="checkbox" name="frequency">
+                                <span class="checkmark"></span>
+                                <span class="frequency-name">900 MHz (band 2)</span>
+                            </label>
+                            <label class="frequency-item">
+                                <input type="checkbox" name="frequency">
+                                <span class="checkmark"></span>
+                                <span class="frequency-name">1800 MHz (band 1)</span>
+                            </label>
+                            <label class="frequency-item">
+                                <input type="checkbox" name="frequency">
+                                <span class="checkmark"></span>
+                                <span class="frequency-name">2100 MHz (band 1)</span>
+                            </label>
+                            <label class="frequency-item">
+                                <input type="checkbox" name="frequency">
+                                <span class="checkmark"></span>
+                                <span class="frequency-name">800/900 MHz (band 1)</span>
+                            </label>
+                            <label class="frequency-item">
+                                <input type="checkbox" name="frequency">
+                                <span class="checkmark"></span>
+                                <span class="frequency-name">800/1800 Mhz (band 1)</span>
+                            </label>
+                            <label class="frequency-item">
+                                <input type="checkbox" name="frequency">
+                                <span class="checkmark"></span>
+                                <span class="frequency-name">900/1800 MHz (band 1)</span>
+                            </label>
+                            <label class="frequency-item">
+                                <input type="checkbox" name="frequency">
+                                <span class="checkmark"></span>
+                                <span class="frequency-name">900/2100 MHz (band 1)</span>
+                            </label>
+                        </div>
+                        <a href="#" class="view-all-link">
+                            View All
+                            <img src="assets/images/landing/next-arrow.svg" class="arrow-icon" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-12 col-lg-9 main-content">
+                <!-- Product Grid -->
+                <div class="product-grid">
+                    <!-- Row 1 -->
+                    <div class="row product-row">
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <a href="#" class="product-link">
+                                        <img src="assets/images/product/dummyproduct2.png" alt="Product Image" class="product-img">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-link">
+                                        <h3 class="product-title">DualBoost Core 300SQM</h3>
+                                    </a>
+                                    <div class="product-pricing">
+                                        <span class="product-price">$181.50</span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                        <span class="rating-count">(67 reviews)</span>
+                                    </div>
+                                    <p class="product-description">Perfect entry-level signal booster for small homes and apartments. Easy installation with reliable performance for basic connectivity needs.</p>
+                                    <div class="product-tags">
+                                        <span class="tag">3G & 4G</span>
+                                        <span class="tag">Band 5</span>
+                                    </div>
+                                    <button class="btn btn-primary product-btn">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-badge">BESTSELLER</div>
+                                <div class="product-image">
+                                    <a href="#" class="product-link">
+                                        <img src="assets/images/product/dummyproduct2.png" alt="Product Image" class="product-img">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-link">
+                                        <h3 class="product-title">DualBoost Mega 5K SQM</h3>
+                                    </a>
+                                    <div class="product-pricing">
+                                        <span class="product-price">$299.99</span>
+                                        <span class="product-old-price">$349.99</span>
+                                        <span class="product-discount">15% OFF</span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                        </div>
+                                        <span class="rating-count">(124 reviews)</span>
+                                    </div>
+                                    <p class="product-description">Perfect for large homes up to 5000 SQM. Multi-carrier support with enhanced signal strength for seamless connectivity.</p>
+                                    <div class="product-tags">
+                                        <span class="tag">3G & 4G & 5G</span>
+                                        <span class="tag">Multi-Band</span>
+                                    </div>
+                                    <button class="btn btn-primary product-btn">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="product-card premium">
+                                <div class="product-badge premium-badge">PREMIUM</div>
+                                <div class="product-image">
+                                    <a href="#" class="product-link">
+                                        <img src="assets/images/product/dummyproduct2.png" alt="Product Image" class="product-img">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-link">
+                                        <h3 class="product-title">TriBand Pro 1000 SQM</h3>
+                                    </a>
+                                    <div class="product-pricing">
+                                        <span class="product-price">$449.99</span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                        <span class="rating-count">(89 reviews)</span>
+                                    </div>
+                                    <p class="product-description">Enterprise-grade signal booster with tri-band technology. Perfect for commercial spaces and large buildings up to 1000 SQM.</p>
+                                    <div class="product-tags">
+                                        <span class="tag premium-tag">5G Ready</span>
+                                        <span class="tag">Tri-Band</span>
+                                        <span class="tag">Enterprise</span>
+                                    </div>
+                                    <button class="btn btn-primary product-btn">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="row product-row">
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <a href="#" class="product-link">
+                                        <img src="assets/images/product/dummyproduct2.png" alt="Product Image" class="product-img">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-link">
+                                        <h3 class="product-title">DualBoost Core 300SQM</h3>
+                                    </a>
+                                    <div class="product-pricing">
+                                        <span class="product-price">$181.50</span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                        <span class="rating-count">(67 reviews)</span>
+                                    </div>
+                                    <p class="product-description">Perfect entry-level signal booster for small homes and apartments. Easy installation with reliable performance for basic connectivity needs.</p>
+                                    <div class="product-tags">
+                                        <span class="tag">3G & 4G</span>
+                                        <span class="tag">Band 5</span>
+                                    </div>
+                                    <button class="btn btn-primary product-btn">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <a href="#" class="product-link">
+                                        <img src="assets/images/product/dummyproduct2.png" alt="Product Image" class="product-img">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-link">
+                                        <h3 class="product-title">DualBoost Mega 5000 SQM</h3>
+                                    </a>
+                                    <div class="product-pricing">
+                                        <span class="product-price">$181.50</span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                        <span class="rating-count">(67 reviews)</span>
+                                    </div>
+                                    <p class="product-description">Perfect entry-level signal booster for small homes and apartments. Easy installation with reliable performance for basic connectivity needs.</p>
+                                    <div class="product-tags">
+                                        <span class="tag">3G & 4G</span>
+                                        <span class="tag">Band 5</span>
+                                    </div>
+                                    <button class="btn btn-primary product-btn">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <a href="#" class="product-link">
+                                        <img src="assets/images/product/dummyproduct2.png" alt="Product Image" class="product-img">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-link">
+                                        <h3 class="product-title">TriBand Pro 1000 SQM</h3>
+                                    </a>
+                                    <div class="product-pricing">
+                                        <span class="product-price">$449.99</span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                        <span class="rating-count">(89 reviews)</span>
+                                    </div>
+                                    <p class="product-description">Enterprise-grade signal booster with tri-band technology. Perfect for commercial spaces and large buildings up to 1000 SQM.</p>
+                                    <div class="product-tags">
+                                        <span class="tag premium-tag">5G Ready</span>
+                                        <span class="tag">Tri-Band</span>
+                                        <span class="tag">Enterprise</span>
+                                    </div>
+                                    <button class="btn btn-primary product-btn">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="row product-row">
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <a href="#" class="product-link">
+                                        <img src="assets/images/product/dummyproduct2.png" alt="Product Image" class="product-img">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-link">
+                                        <h3 class="product-title">DualBoost Core 300SQM</h3>
+                                    </a>
+                                    <div class="product-pricing">
+                                        <span class="product-price">$181.50</span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                        <span class="rating-count">(67 reviews)</span>
+                                    </div>
+                                    <p class="product-description">Perfect entry-level signal booster for small homes and apartments. Easy installation with reliable performance for basic connectivity needs.</p>
+                                    <div class="product-tags">
+                                        <span class="tag">3G & 4G</span>
+                                        <span class="tag">Band 5</span>
+                                    </div>
+                                    <button class="btn btn-primary product-btn">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <a href="#" class="product-link">
+                                        <img src="assets/images/product/dummyproduct2.png" alt="Product Image" class="product-img">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-link">
+                                        <h3 class="product-title">DualBoost Mega 5000 SQM</h3>
+                                    </a>
+                                    <div class="product-pricing">
+                                        <span class="product-price">$181.50</span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                        <span class="rating-count">(67 reviews)</span>
+                                    </div>
+                                    <p class="product-description">Perfect entry-level signal booster for small homes and apartments. Easy installation with reliable performance for basic connectivity needs.</p>
+                                    <div class="product-tags">
+                                        <span class="tag">3G & 4G</span>
+                                        <span class="tag">Band 5</span>
+                                    </div>
+                                    <button class="btn btn-primary product-btn">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <a href="#" class="product-link">
+                                        <img src="assets/images/product/dummyproduct2.png" alt="Product Image" class="product-img">
+                                    </a>
+                                </div>
+                                <div class="product-info">
+                                    <a href="#" class="product-link">
+                                        <h3 class="product-title">TriBand Pro 1000 SQM</h3>
+                                    </a>
+                                    <div class="product-pricing">
+                                        <span class="product-price">$449.99</span>
+                                    </div>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                        <span class="rating-count">(89 reviews)</span>
+                                    </div>
+                                    <p class="product-description">Enterprise-grade signal booster with tri-band technology. Perfect for commercial spaces and large buildings up to 1000 SQM.</p>
+                                    <div class="product-tags">
+                                        <span class="tag premium-tag">5G Ready</span>
+                                        <span class="tag">Tri-Band</span>
+                                        <span class="tag">Enterprise</span>
+                                    </div>
+                                    <button class="btn btn-primary product-btn">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination-wrapper">
+                        <div class="pagination-controls">
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn">2</button>
+                            <button class="pagination-btn">3</button>
+                            <button class="pagination-btn">...</button>
+                            <button class="pagination-btn pagination-next">
+                                Next
+                                <img src="assets/images/landing/next-arrow.svg" class="next-icon" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booster Quiz Section -->
+                <section class="booster-quiz-section" style="background: #E6EBF4; padding: 60px 0; margin-top: 80px; border-radius: 25px;">
+                    <div class="container">
+                        <h3 class="booster-quiz-section-heading text-center" style="color: #092B4D; font-size: 32px; font-weight: 700; margin-bottom: 20px;">Unsure of which signal Booster you need?</h3>
+                        <p class="booster-quiz-section-subheading text-center" style="color: var(--Blue-Gray-600); font-size: 18px; line-height: 1.6; margin-bottom: 40px;">Engage in our 30-second booster quiz by answering a few questions, and discover the perfect booster
+                            tailored to your needs.</p>
+                        
+                        <div class="booster-quiz" id="booster-quiz" style="max-width: 758px; margin: 0 auto; background: white; border-radius: 25px; box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.15); padding: 40px;">
+                            <div>
+                                <p class="booster-quiz-heading text-center" style="color: var(--primary-color); font-size: 20px; font-weight: 600; margin-bottom: 30px;">
+                                    Which network should be boosted? 
+                                    <span style="color: #6B8CBF; font-size: 16px;">(1/3)</span>
+                                </p>
+                            </div>
+                            
+                            <div class="network-selection" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(72px, 1fr)); gap: 16px; justify-items: center; margin-bottom: 30px;">
+                                <div class="network-option" style="border: 1px solid #CCE6FF; border-radius: 10px; padding: 10px; width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                    <img src="assets/images/landing/select-all-icon.svg" alt="Select All" style="width: 32px; height: 32px;">
+                                </div>
+                                <div class="network-option" style="border: 1px solid #CCE6FF; border-radius: 10px; padding: 10px; width: 134px; height: 72px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                    <img src="assets/images/landing/data-icon.svg" alt="Data Only" style="width: 32px; height: 32px;">
+                                </div>
+                                <div class="network-option" style="border: 1px solid #CCE6FF; border-radius: 10px; padding: 10px; width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                    <img src="assets/images/landing/vodafone-icon.svg" alt="Vodafone" style="width: 52px; height: 52px;">
+                                </div>
+                                <div class="network-option" style="border: 1px solid #CCE6FF; border-radius: 10px; padding: 10px; width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                    <img src="assets/images/landing/o2-2.svg" alt="O2" style="width: 52px; height: 52px;">
+                                </div>
+                                <div class="network-option" style="border: 1px solid #CCE6FF; border-radius: 10px; padding: 10px; width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                    <img src="assets/images/landing/giffgaff.svg" alt="Giffgaff" style="width: 52px; height: 52px;">
+                                </div>
+                                <div class="network-option" style="border: 1px solid #CCE6FF; border-radius: 10px; padding: 10px; width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                    <img src="assets/images/landing/Tesco_Mobile-Logo.wine.svg" alt="Tesco" style="width: 52px; height: 52px;">
+                                </div>
+                                <div class="network-option" style="border: 1px solid #CCE6FF; border-radius: 10px; padding: 10px; width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                    <img src="assets/images/landing/ee-mobile-network-uk-.svg" alt="EE" style="width: 52px; height: 52px;">
+                                </div>
+                            </div>
+                            
+                            <div class="second-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(72px, 1fr)); gap: 16px; justify-items: center; margin-bottom: 40px;">
+                                <div class="network-option" style="border: 1px solid #CCE6FF; border-radius: 10px; padding: 10px; width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                    <img src="assets/images/landing/bt-3.svg" alt="BT" style="width: 52px; height: 52px;">
+                                </div>
+                                <div class="network-option" style="border: 1px solid #CCE6FF; border-radius: 10px; padding: 10px; width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                    <img src="assets/images/landing/id-UK 1.png" alt="ID UK" style="width: 52px; height: 52px;">
+                                </div>
+                                <div class="network-option" style="border: 1px solid #CCE6FF; border-radius: 10px; padding: 10px; width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                    <img src="assets/images/landing/Three_UK-Logo.wine.svg" alt="Three UK" style="width: 52px; height: 52px;">
+                                </div>
+                                <div class="network-option" style="border: 1px solid #CCE6FF; border-radius: 10px; padding: 10px; width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                                    <img src="assets/images/landing/Virgin_Group-Logo.wine.svg" alt="Virgin" style="width: 52px; height: 52px;">
+                                </div>
+                            </div>
+
+                            <div class="quiz-navigation" style="display: flex; justify-content: flex-end;">
+                                <button class="btn btn-primary" style="min-width: 112px; height: 112px; border-radius: 50%; border: 1px solid var(--primary-color); background: white; color: var(--primary-color); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
+                                    <img src="assets/images/landing/next-arrow.svg" style="transform: rotate(135deg); width: 12px; height: 12px;">
+                                    <span style="font-size: 14px;">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content container">
+        <div class="footer-list-container">
+            <div>
+                <h6 class="footer-list-heading">Explore Products</h6>
+                <ul class="footer-list">
+                    <li><a href="#">Find a Booster Quiz</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Installation Guide</a></li>
+                    <li><a href="#">Enterprise Solutions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="footer-list-heading">Customer Support</h6>
+                <ul class="footer-list">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Help center</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="footer-list-heading">Company Information</h6>
+                <ul class="footer-list">
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Buyer's Guide</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="footer-list-heading">Our brands</h6>
+                <ul class="footer-list">
+                    <li><a href="#">mysignalboosters</a></li>
+                    <li><a href="#">Mysignal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="subscribe-section">
+            <p class="footer-list-heading">Subscribe</p>
+            <form method="post" action="/" class="subscribe-form needs-validation" novalidate>
+                <div>
+                    <input type="email" placeholder="Email address" class="input-bordered w-100" required/>
+                    <div class="invalid-feedback">This field is required Subscribe</div>
+                </div>
+                <button type="submit" class="subscribe-submit-btn">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.0039 9H1.00001" stroke="white" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                        <path d="M13.0026 15.0013L19.0039 9L13.0026 2.9987" stroke="white" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+            </form>
+            <span class="subscribe-section-description">
+                Subscribe to our newsletter and stay connected with exclusive offers, product updates, and tips to boost your signal experience.
+            </span>
+        </div>
+    </div>
+    <div class="copyright-container container">
+        <a href="/" class="sm-none">
+            <img src="assets/images/landing/colored-logo.svg" alt="Mobile Booster, Clear signal, every time"
+                 class="mobile-booster-logo">
+        </a>
+        <p>© 2024 mobilebooster . All rights reserved. </p>
+        <div class="footer-social-container">
+            <a href="#" class="social-circle">
+                <img src="assets/images/landing/linkedin.svg"/>
+            </a>
+            <a href="#" class="social-circle">
+                <img src="assets/images/landing/facebook-icon.svg"/>
+            </a>
+            <a href="#" class="social-circle">
+                <img src="assets/images/landing/twitter-icon.svg"/>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade" id="country-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Change country</h3>
+                <span class="close-btn">
+                <img src="assets/images/landing/close-icon.svg" data-bs-dismiss="modal" aria-label="Close"/>
+            </span>
+            </div>
+            <div class="modal-body">
+                <div class="search-container">
+                    <input type="text" placeholder="Search for a country" id="countrySearch">
+                    <label for="countrySearch" id="search-icon">
+                        <img src="assets/images/landing/search-icon.svg"/>
+                    </label>
+                </div>
+                <div class="country-list">
+                    <div class="country-item" data-bs-dismiss="modal" aria-label="Close">
+                        <input type="radio" id="uk" name="country" value="UK">
+                        <label for="uk"><img src="https://flagcdn.com/gb.svg" class="country-popup-logo"
+                                             alt="uk Flag">United Kingdom</label>
+                    </div>
+                    <div class="country-item" data-bs-dismiss="modal" aria-label="Close">
+                        <input type="radio" id="nz" name="country" value="NZ">
+                        <label for="nz"><img src="https://flagcdn.com/nz.svg" class="country-popup-logo"
+                                             alt="nz Flag">New Zealand</label>
+                    </div>
+                    <div class="country-item" data-bs-dismiss="modal" aria-label="Close">
+                        <input type="radio" id="australia" name="country" value="Australia">
+                        <label for="australia"><img src="https://flagcdn.com/au.svg" class="country-popup-logo"
+                                                    alt="Australia Flag"> Australia</label>
+                    </div>
+                    <div class="country-item" data-bs-dismiss="modal" aria-label="Close">
+                        <input type="radio" id="UAE" name="country" value="UAE">
+                        <label for="UAE"><img src="https://flagcdn.com/ae.svg" class="country-popup-logo"
+                                              alt="UAE Flag"> UAE</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function handleMenu(e) {
+        $(e.currentTarget).toggleClass('active');
+    }
+
+    $(document).ready(function () {
+        const menuToggle = $('header [data-bs-toggle="collapse"]');
+        const fullscreenNav = $('.fullscreen-nav');
+
+        menuToggle.on('click', function () {
+            $(this).toggleClass('active');
+            fullscreenNav.toggleClass('active');
+        });
+    });
+
+    function handleMenuList(e) {
+        $(e.currentTarget).toggleClass('active');
+    }
+
+    $('.navbar-list > li').on('click', handleMenuList);
+    document.querySelector('#menu').addEventListener('click', handleMenu);
+    
+    $('.country-item').on('click', function () {
+        if ($(this).find('input[type=radio]').is(':checked')) {
+            $('#openPopup .logo').attr('src', $(this).find('img').attr('src'));
+        } else {
+            $('#openPopup .logo').attr('src', 'https://flagcdn.com/gb.svg');
+        }
+    });
+
+    (function () {
+        'use strict'
+        var forms = document.querySelectorAll('.needs-validation')
+        Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.addClass('was-validated')
+            }, false)
+        })
+    })()
+    
+    $('.subscribe-form').on('submit', (e) => {
+        e.preventDefault()
+        if ($(e.currentTarget).checkValidity()) {
+            $(e.currentTarget).classList.add('subscribed');
+        }
+    })
+</script>
+</body>
+</html> 
